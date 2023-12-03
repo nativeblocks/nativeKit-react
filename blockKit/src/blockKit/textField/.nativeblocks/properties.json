@@ -1,0 +1,282 @@
+[
+  {
+    "description": "enable",
+    "key": "enable",
+    "type": "BOOLEAN",
+    "valuePicker": "toggle",
+    "value": "true",
+    "valuePickerCategory": "General",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "paddingTop",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "paddingStart",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "paddingEnd",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "paddingBottom",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "box shadow",
+    "key": "boxShadow",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "shadow-none",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"shadow-none\",\"value\":\"none\"},{\"id\":\"shadow-sm\",\"value\":\"sm\"},{\"id\":\"shadow\",\"value\":\"normal\"},{\"id\":\"shadow-md\",\"value\":\"md\"},{\"id\":\"shadow-lg\",\"value\":\"lg\"},{\"id\":\"shadow-xl\",\"value\":\"xl\"},{\"id\":\"shadow-2xl\",\"value\":\"2xl\"}]"
+  },
+  {
+    "description": "drop shadow",
+    "key": "dropShadow",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "drop-shadow-none",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"value\":\"none\"},{\"id\":\"drop-shadow-sm\",\"value\":\"sm\"},{\"id\":\"drop-shadow\",\"value\":\"normal\"},{\"id\":\"drop-shadow-md\",\"value\":\"md\"},{\"id\":\"drop-shadow-lg\",\"value\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"value\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"value\":\"2xl\"}]"
+  },
+  {
+    "description": "0 or any number",
+    "key": "shapeRadiusBottomEnd",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.25",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number",
+    "key": "shapeRadiusTopEnd",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.25",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number",
+    "key": "shapeRadiusTopStart",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.25",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number",
+    "key": "shapeRadiusBottomStart",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.25",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "layout direction",
+    "key": "direction",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "LTR",
+    "valuePickerCategory": "Layout",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{ \"id\": \"LTR\", \"value\": \"LTR\" }, { \"id\": \"RTL\", \"value\": \"RTL\" }]"
+  },
+  {
+    "description": "hex color",
+    "key": "backgroundColor",
+    "type": "STRING",
+    "valuePicker": "color-picker",
+    "value": "#fafafa",
+    "valuePickerCategory": "Color",
+    "valuePickerGroup": "backgroundColor",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "a number between 0 to 100",
+    "key": "backgroundColorOpacity",
+    "type": "INT",
+    "valuePicker": "slider",
+    "value": "100",
+    "valuePickerCategory": "Color",
+    "valuePickerGroup": "backgroundColor",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "hex color",
+    "key": "foregroundColor",
+    "type": "STRING",
+    "valuePicker": "color-picker",
+    "value": "#212121",
+    "valuePickerCategory": "Color",
+    "valuePickerGroup": "foregroundColor",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "a number between 0 to 100",
+    "key": "foregroundColorOpacity",
+    "type": "INT",
+    "valuePicker": "slider",
+    "value": "100",
+    "valuePickerCategory": "Color",
+    "valuePickerGroup": "foregroundColor",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "hex color",
+    "key": "borderColor",
+    "type": "STRING",
+    "valuePicker": "color-picker",
+    "value": "#212121",
+    "valuePickerCategory": "Color",
+    "valuePickerGroup": "borderColor",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "a number between 0 to 100",
+    "key": "borderColorOpacity",
+    "type": "INT",
+    "valuePicker": "slider",
+    "value": "100",
+    "valuePickerCategory": "Color",
+    "valuePickerGroup": "borderColor",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "height of the element",
+    "key": "height",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "h-auto",
+    "valuePickerCategory": "Size",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "width of the element",
+    "key": "width",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "w-full",
+    "valuePickerCategory": "Size",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "fontSize",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "1.5",
+    "valuePickerCategory": "Font",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "font family name",
+    "key": "fontFamily",
+    "type": "STRING",
+    "valuePicker": "combobox-input",
+    "value": "default",
+    "valuePickerCategory": "Font",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"default\",\"value\":\"default\"}]"
+  },
+  {
+    "description": "letter spacing (rem)",
+    "key": "letterSpacing",
+    "type": "STRING",
+    "valuePicker": "number-input",
+    "value": "",
+    "valuePickerCategory": "Font",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "text alignment",
+    "key": "textAlign",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "text-start",
+    "valuePickerCategory": "Font",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"text-start\",\"value\":\"start\"},{\"id\":\"text-end\",\"value\":\"end\"},{\"id\":\"text-center\",\"value\":\"center\"},{\"id\":\"text-justify\",\"value\":\"justify\"}]"
+  },
+  {
+    "description": "font weight",
+    "key": "fontWeight",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "normal",
+    "valuePickerCategory": "Font",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"font-thin\",\"value\":\"thin\"},{\"id\":\"font-extralight\",\"value\":\"extraLight\"},{\"id\":\"font-light\",\"value\":\"light\"},{\"id\":\"font-normal\",\"value\":\"normal\"},{\"id\":\"font-medium\",\"value\":\"medium\"},{\"id\":\"font-semibold\",\"value\":\"semiBold\"},{\"id\":\"font-bold\",\"value\":\"bold\"},{\"id\":\"font-extrabold\",\"value\":\"extraBold\"},{\"id\":\"font-black\",\"value\":\"black\"}]"
+  },
+  {
+    "description": "placeholder text",
+    "key": "placeholder",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "",
+    "valuePickerCategory": "General",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "inputType",
+    "key": "inputType",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "text",
+    "valuePickerCategory": "General",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"text\",\"value\":\"text\"}, {\"id\":\"password\",\"value\":\"password\"}, {\"id\":\"number\",\"value\":\"number\"}, {\"id\":\"email\",\"value\":\"email\"}, {\"id\":\"url\",\"value\":\"url\"}, {\"id\":\"tel\",\"value\":\"tel\"}]"
+  },
+  {
+    "description": "extra classes",
+    "key": "class",
+    "type": "STRING",
+    "valuePicker": "text-area-input",
+    "value": "",
+    "valuePickerCategory": "Extra",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  }
+]

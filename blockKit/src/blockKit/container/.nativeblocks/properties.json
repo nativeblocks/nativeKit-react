@@ -1,0 +1,202 @@
+[
+  {
+    "description": "0 or any number (rem)",
+    "key": "paddingTop",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "paddingStart",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "paddingEnd",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "paddingBottom",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "box shadow",
+    "key": "boxShadow",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "shadow-none",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"shadow-none\",\"value\":\"none\"},{\"id\":\"shadow-sm\",\"value\":\"sm\"},{\"id\":\"shadow\",\"value\":\"normal\"},{\"id\":\"shadow-md\",\"value\":\"md\"},{\"id\":\"shadow-lg\",\"value\":\"lg\"},{\"id\":\"shadow-xl\",\"value\":\"xl\"},{\"id\":\"shadow-2xl\",\"value\":\"2xl\"}]"
+  },
+  {
+    "description": "drop shadow",
+    "key": "dropShadow",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "drop-shadow-none",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"value\":\"none\"},{\"id\":\"drop-shadow-sm\",\"value\":\"sm\"},{\"id\":\"drop-shadow\",\"value\":\"normal\"},{\"id\":\"drop-shadow-md\",\"value\":\"md\"},{\"id\":\"drop-shadow-lg\",\"value\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"value\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"value\":\"2xl\"}]"
+  },
+  {
+    "description": "0 or any number",
+    "key": "shapeRadiusBottomEnd",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.25",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number",
+    "key": "shapeRadiusTopEnd",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.25",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number",
+    "key": "shapeRadiusTopStart",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.25",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number",
+    "key": "shapeRadiusBottomStart",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.25",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "layout orientation",
+    "key": "orientation",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "Y",
+    "valuePickerCategory": "Layout",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"X\",\"value\":\"(X) horizontal\"},{\"id\":\"Y\",\"value\":\"(Y) vertical\"}]"
+  },
+  {
+    "description": "layout direction",
+    "key": "direction",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "LTR",
+    "valuePickerCategory": "Layout",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{ \"id\": \"LTR\", \"value\": \"LTR\" }, { \"id\": \"RTL\", \"value\": \"RTL\" }]"
+  },
+  {
+    "description": "hex color",
+    "key": "backgroundColor",
+    "type": "STRING",
+    "valuePicker": "color-picker",
+    "value": "#fafafa",
+    "valuePickerCategory": "Color",
+    "valuePickerGroup": "backgroundColor",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "a number between 0 to 100",
+    "key": "backgroundColorOpacity",
+    "type": "INT",
+    "valuePicker": "slider",
+    "value": "100",
+    "valuePickerCategory": "Color",
+    "valuePickerGroup": "backgroundColor",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "height of the element",
+    "key": "height",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "h-auto",
+    "valuePickerCategory": "Size",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "width of the element",
+    "key": "width",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "w-full",
+    "valuePickerCategory": "Size",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "gap between items",
+    "key": "gap",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "gap-0",
+    "valuePickerCategory": "Arrangement",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "justify content",
+    "key": "justifyContent",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "justify-normal",
+    "valuePickerCategory": "Arrangement",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{ \"id\": \"justify-normal\", \"value\": \"normal\" },{ \"id\": \"justify-start\", \"value\": \"start\" },{ \"id\": \"justify-end\", \"value\": \"end\" },{ \"id\": \"justify-center\", \"value\": \"center\" },{ \"id\": \"justify-between\", \"value\": \"between\" },{ \"id\": \"justify-around\", \"value\": \"around\" },{ \"id\": \"justify-evenly\", \"value\": \"evenly\" },{ \"id\": \"justify-stretch\", \"value\": \"stretch\" }]"
+  },
+  {
+    "description": "align items",
+    "key": "alignItems",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "items-start",
+    "valuePickerCategory": "Alignment",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{ \"id\": \"items-start\", \"value\": \"start\" },{ \"id\": \"items-end\", \"value\": \"end\" },{ \"id\": \"items-center\", \"value\": \"center\" },{ \"id\": \"items-baseline\", \"value\": \"baseline\" },{ \"id\": \"items-stretch\", \"value\": \"stretch\" }]"
+  },
+  {
+    "description": "extra classes",
+    "key": "class",
+    "type": "STRING",
+    "valuePicker": "text-area-input",
+    "value": "",
+    "valuePickerCategory": "Extra",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  }
+]

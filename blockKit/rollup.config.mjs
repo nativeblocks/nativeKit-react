@@ -6,7 +6,7 @@ import { terser } from "rollup-plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import graphql from "@apollo-elements/rollup-plugin-graphql";
 
-const packageJson = require("../package.json");
+const packageJson = require("./package.json");
 
 export default [
   {

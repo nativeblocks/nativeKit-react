@@ -37,6 +37,7 @@
     "react-router-dom": "^6.5.0"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.16"
+    "@apollo/client": "^3.7.16",
+    "@emotion/css": "^11.11.2"
   }
 }

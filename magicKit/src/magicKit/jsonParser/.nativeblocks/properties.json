@@ -1,0 +1,42 @@
+[
+  {
+    "key": "json",
+    "description": "key of the variable",
+    "type": "STRING",
+    "valuePicker": "text-area-input",
+    "value": "",
+    "valuePickerCategory": "Input",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "jsonPath",
+    "description": "value of the variable",
+    "type": "STRING",
+    "valuePicker": "text-area-input",
+    "value": "",
+    "valuePickerCategory": "Input",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "variableKey",
+    "description": "key of the variable",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "",
+    "valuePickerCategory": "Result",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "variableType",
+    "description": "type of the variable",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "",
+    "valuePickerCategory": "Result",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"STRING\",\"value\":\"string\"},{\"id\":\"INT\",\"value\":\"int\"},{\"id\":\"LONG\",\"value\":\"long\"},{\"id\":\"DOUBLE\",\"value\":\"double\"},{\"id\":\"FLOAT\",\"value\":\"float\"},{\"id\":\"BOOLEAN\",\"value\":\"boolean\"}]"
+  }
+]

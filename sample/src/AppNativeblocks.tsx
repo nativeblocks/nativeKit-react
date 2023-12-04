@@ -3,8 +3,8 @@ import {
   NativeblocksManager,
   NativeblocksProvider,
 } from "@nativeblocks/nativeblocks-react";
-
-import { NativeblocksBlockHelper } from "@nativeblocks/block-kit-react"
+import { NativeblocksBlockHelper } from "@nativeblocks/block-kit-react";
+import { NativeblocksMagicHelper } from "@nativeblocks/magic-kit-react";
 
 function AppNativeblocks() {
   NativeblocksManager.initialize({
@@ -14,7 +14,8 @@ function AppNativeblocks() {
     developmentMode: true,
   });
 
-  NativeblocksBlockHelper.provideBlocks()
+  NativeblocksBlockHelper.provideBlocks();
+  NativeblocksMagicHelper.provideMagics();
 
   return (
     <>

@@ -1,0 +1,12 @@
+[
+  {
+    "key": "destinationUrl",
+    "description": "frame destination url or ../ for back",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "",
+    "valuePickerCategory": "General",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  }
+]

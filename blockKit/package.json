@@ -1,6 +1,6 @@
 {
   "name": "@nativeblocks/block-kit-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Nativeblocks blockKit SDK for react",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

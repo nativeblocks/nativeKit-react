@@ -103,6 +103,7 @@ const NativeTextFieldBlock: FC<BlockProps> = (blockProps: BlockProps) => {
 
   return (
     <input
+      id={blockKey}
       disabled={!enable}
       onChange={(event) => {
         textValue = event.target.value;

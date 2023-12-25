@@ -62,6 +62,7 @@ const NativeCheckboxBlock: FC<BlockProps> = (blockProps: BlockProps) => {
 
   return (
     <input
+      id={blockKey}
       // disabled={!enable}
       defaultChecked={result}
       key={blockKey}

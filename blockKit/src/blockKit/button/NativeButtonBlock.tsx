@@ -98,6 +98,7 @@ const NativeButtonBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   ]);
   return (
     <button
+      id={blockKey}
       disabled={!isEnableButton}
       className={classes}
       onClick={(e) => {

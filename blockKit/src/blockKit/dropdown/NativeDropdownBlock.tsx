@@ -108,6 +108,7 @@ const NativeDropdownBlock: FC<BlockProps> = (blockProps: BlockProps) => {
 
   return (
     <select
+      id={blockKey}
       disabled={!enable}
       key={blockKey}
       placeholder={placeholder}

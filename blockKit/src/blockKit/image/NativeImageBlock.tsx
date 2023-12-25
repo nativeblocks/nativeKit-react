@@ -63,6 +63,7 @@ const NativeImageBlock: FC<BlockProps> = (blockProps: BlockProps) => {
 
   return (
     <img
+      id={blockKey}
       className={classes}
       key={blockProps.block?.key}
       onClick={(e) => {

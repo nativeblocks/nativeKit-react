@@ -85,6 +85,7 @@ const NativeTextBlock: FC<BlockProps> = (blockProps: BlockProps) => {
 
   return (
     <p
+      id={blockKey}
       className={classes}
       key={blockKey}
       onClick={(e) => {

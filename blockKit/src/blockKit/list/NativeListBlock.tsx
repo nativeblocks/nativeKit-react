@@ -82,7 +82,7 @@ const NativeListBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   ]);
 
   return (
-    <div className={classes} key={blockProps.block?.key}>
+    <div id={blockKey} className={classes} key={blockKey}>
       {result?.map((item: any, index: number) => {
         return renderSubBlocks(blockProps, index);
       })}

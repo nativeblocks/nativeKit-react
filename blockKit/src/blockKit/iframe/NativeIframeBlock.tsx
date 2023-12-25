@@ -64,6 +64,7 @@ const NativeIframeBlock: FC<BlockProps> = (blockProps: BlockProps) => {
 
   return (
     <iframe
+      id={blockKey}
       className={classes}
       key={blockKey}
       src={result ?? ""}

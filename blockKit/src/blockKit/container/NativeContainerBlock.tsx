@@ -75,6 +75,7 @@ const NativeContainerBlock: FC<BlockProps> = (blockProps: BlockProps) => {
 
   return (
     <div
+      id={blockKey}
       className={classes}
       key={blockProps.block?.key}
       onClick={(e) => {

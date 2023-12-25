@@ -75,7 +75,10 @@ const NativeSwitchBlock: FC<BlockProps> = (blockProps: BlockProps) => {
 
   return (
     <>
-      <label className="relative inline-flex cursor-pointer select-none items-center rounded-full">
+      <label
+        id={blockKey}
+        className="relative inline-flex cursor-pointer select-none items-center rounded-full"
+      >
         <input
           // disabled={!enable}
           className={"hidden"}

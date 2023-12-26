@@ -10,7 +10,7 @@ type RestApiRequestModel = {
   url: string;
   method: RestApiMethod;
   headers: any;
-  bodyForm: any;
+  body: any;
 };
 
 export default class NativeRestApi implements INativeMagic {
@@ -70,7 +70,7 @@ export default class NativeRestApi implements INativeMagic {
       url: normalizeEndpointUrl,
       method: method.toUpperCase() as RestApiMethod,
       headers: normalizeHeaders ? JSON.parse(normalizeHeaders) : {},
-      bodyForm: normalizeBody ? JSON.parse(normalizeBody) : {},
+      body: normalizeBody ? JSON.parse(normalizeBody) : {},
     };
 
     const successResponseCodeKey =
@@ -114,58 +114,61 @@ export default class NativeRestApi implements INativeMagic {
         restApiRequestModel.method === "GET" ||
         restApiRequestModel.method === "DELETE"
           ? null
-          : restApiRequestModel.bodyForm,
-    })
-      .then((response) => response.json())
-      .then(function (response) {
-        if (magicProps.onVariableChange) {
+          : JSON.stringify(restApiRequestModel.body),
+    }).then((response) => {
+      if (magicProps.onVariableChange) {
+        if (response.status >= 200 && response.status <= 399) {
           if (successResponseCodeVariable) {
             const successCode = successResponseCodeVariable;
             successCode.value = response.status.toString();
             magicProps.onVariableChange(successCode);
-          }
-          if (successResponseBodyVariable) {
-            const successBody = successResponseBodyVariable;
-            successBody.value = JSON.stringify(response.data);
-            magicProps.onVariableChange(successBody);
           }
           if (successResponseHeaderVariable) {
             const successHeaders = successResponseHeaderVariable;
             successHeaders.value = JSON.stringify(response.headers);
             magicProps.onVariableChange(successHeaders);
           }
-        }
-
-        if (magicProps.nativeTrigger) {
-          if (magicProps.onHandleSuccessNextTrigger) {
-            magicProps.onHandleSuccessNextTrigger(magicProps.nativeTrigger);
+          if (successResponseBodyVariable) {
+            response.json().then((body) => {
+              const successBody = successResponseBodyVariable;
+              successBody.value = JSON.stringify(body);
+              if (magicProps.onVariableChange) {
+                magicProps.onVariableChange(successBody);
+              }
+            });
           }
-        }
-      })
-      .catch(function (error) {
-        if (magicProps.onVariableChange) {
+          if (magicProps.nativeTrigger) {
+            if (magicProps.onHandleSuccessNextTrigger) {
+              magicProps.onHandleSuccessNextTrigger(magicProps.nativeTrigger);
+            }
+          }
+        } else {
           if (failureResponseCodeVariable) {
             const failureCode = failureResponseCodeVariable;
-            failureCode.value = error.response.status.toString();
+            failureCode.value = response.status.toString();
             magicProps.onVariableChange(failureCode);
           }
           if (failureResponseBodyVariable) {
-            const failureBody = failureResponseBodyVariable;
-            failureBody.value = JSON.stringify(error.response.data);
-            magicProps.onVariableChange(failureBody);
+            response.json().then((body) => {
+              const failureBody = failureResponseBodyVariable;
+              failureBody.value = JSON.stringify(body);
+              if (magicProps.onVariableChange) {
+                magicProps.onVariableChange(failureBody);
+              }
+            });
           }
           if (failureResponseHeaderVariable) {
             const failureHeaders = failureResponseHeaderVariable;
-            failureHeaders.value = JSON.stringify(error.response.headers);
+            failureHeaders.value = JSON.stringify(response.headers);
             magicProps.onVariableChange(failureHeaders);
           }
-        }
-
-        if (magicProps.nativeTrigger) {
-          if (magicProps.onHandleFailureNextTrigger) {
-            magicProps.onHandleFailureNextTrigger(magicProps.nativeTrigger);
+          if (magicProps.nativeTrigger) {
+            if (magicProps.onHandleFailureNextTrigger) {
+              magicProps.onHandleFailureNextTrigger(magicProps.nativeTrigger);
+            }
           }
         }
-      });
+      }
+    });
   }
 }

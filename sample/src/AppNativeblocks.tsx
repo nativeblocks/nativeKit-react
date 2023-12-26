@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  INativeLogger,
   NativeblocksManager,
   NativeblocksProvider,
 } from "@nativeblocks/nativeblocks-react";
@@ -16,6 +17,10 @@ function AppNativeblocks() {
 
   NativeblocksBlockHelper.provideBlocks();
   NativeblocksMagicHelper.provideMagics();
+  NativeblocksManager.getInstance().provideEventLogger(
+    "AppLogger",
+    new AppLogger()
+  );
 
   return (
     <>
@@ -25,3 +30,9 @@ function AppNativeblocks() {
 }
 
 export default AppNativeblocks;
+
+class AppLogger implements INativeLogger {
+  log(eventName: string, parameters: Map<string, string>): void {
+    console.log(eventName, parameters);
+  }
+}

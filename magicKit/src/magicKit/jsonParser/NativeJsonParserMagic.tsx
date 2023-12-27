@@ -11,6 +11,11 @@ import {
 } from "../../utility/VariableUtil";
 
 export default class NativeJsonParserMagic implements INativeMagic {
+  
+  private isObject(item: any): boolean {
+    return typeof item === "object" && !Array.isArray(item) && item !== null;
+  }
+
   handle(magicProps: MagicProps): void {
     const latestState = nativeFrameStateService.getState();
 
@@ -34,9 +39,10 @@ export default class NativeJsonParserMagic implements INativeMagic {
     let jsonValue = latestState.variables?.get(json)?.value ?? "";
 
     if (magicProps.onVariableChange) {
+      const result = getJsonPathValue(jsonValue, jsonPathValue) ?? {};
       const chagedVariable = {
         key: variableKey,
-        value: JSON.stringify(getJsonPathValue(jsonValue, jsonPathValue) ?? {}),
+        value: this.isObject(result) ? JSON.stringify(result) : result,
         variableType: variableType,
       } as NativeVariableModel;
       magicProps.onVariableChange(chagedVariable);

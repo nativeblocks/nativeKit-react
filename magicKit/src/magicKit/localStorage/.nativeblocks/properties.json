@@ -1,0 +1,32 @@
+[
+  {
+    "key": "actionType",
+    "type": "STRING",
+    "value": "GET",
+    "description": "action on storage",
+    "valuePicker": "dropdown",
+    "valuePickerCategory": "General",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"GET\",\"text\":\"GET\"},{\"id\":\"ADD\",\"text\":\"ADD\"},{\"id\":\"UPDATE\",\"text\":\"UPDATE\"},{\"id\":\"DELETE\",\"text\":\"DELETE\"}]"
+  },
+  {
+    "key": "storageKey",
+    "description": "a unique key for identifying value from storage",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "",
+    "valuePickerCategory": "General",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "variableKey",
+    "description": "the variable will hold the input/output data of the action (no need for a delete action)",
+    "type": "STRING",
+    "valuePicker": "variable-picker",
+    "value": "",
+    "valuePickerCategory": "General",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  }
+]

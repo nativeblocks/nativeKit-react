@@ -3,6 +3,7 @@ import NativeNavigationMagic from "./navigation/NativeNavigationMagic";
 import NativeRestApi from "./restApi/NativeRestApi";
 import NativeChangeVariableMagic from "./variable/NativeChangeVariableMagic";
 import NativeJsonParserMagic from "./jsonParser/NativeJsonParserMagic";
+import NativeLocalStorageMagic from "./localStorage/NativeLocalStorageMagic";
 
 export const NativeblocksMagicHelper = {
   provideMagics() {
@@ -21,6 +22,10 @@ export const NativeblocksMagicHelper = {
     NativeblocksManager.getInstance().provideMagic(
       "NATIVE_JSON_PARSER",
       new NativeJsonParserMagic()
+    );
+    NativeblocksManager.getInstance().provideMagic(
+      "NATIVE_LOCAL_STORAGE_DATA_SOURCE",
+      new NativeLocalStorageMagic()
     );
   },
 };

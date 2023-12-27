@@ -4,6 +4,7 @@ import {
   NativeVariableModel,
   nativeFrameStateService,
 } from "@nativeblocks/nativeblocks-react";
+import { getVariableValue } from "../../utility/VariableUtil";
 
 export default class NativeChangeVariableMagic implements INativeMagic {
   handle(magicProps: MagicProps): void {
@@ -16,10 +17,9 @@ export default class NativeChangeVariableMagic implements INativeMagic {
     const variableValue = properties?.get("variableValue")?.value ?? "STRING";
 
     let value = variableValue;
-    latestState.variables?.forEach(
-      (variable) =>
-        (value = value?.replace(`{${variable.key}}`, variable.value ?? ""))
-    );
+    latestState.variables?.forEach((variable) => {
+      value = getVariableValue(value, variable.key ?? "", variable.value ?? "");
+    });
 
     if (magicProps.onVariableChange) {
       const chagedVariable = {

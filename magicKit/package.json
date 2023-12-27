@@ -1,6 +1,6 @@
 {
   "name": "@nativeblocks/magic-kit-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Nativeblocks magicKit SDK for react",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -37,7 +37,5 @@
     "react-dom": "18.2.0",
     "react-router-dom": "^6.5.0"
   },
-  "dependencies": {
-    "axios": "^1.6.2"
-  }
+  "dependencies": {}
 }

@@ -4,7 +4,11 @@ import {
   NativeVariableModel,
   nativeFrameStateService,
 } from "@nativeblocks/nativeblocks-react";
-import { getJsonPathValue, getVariableValue } from "../../utility/VariableUtil";
+import {
+  getIndexValue,
+  getJsonPathValue,
+  getVariableValue,
+} from "../../utility/VariableUtil";
 
 export default class NativeJsonParserMagic implements INativeMagic {
   handle(magicProps: MagicProps): void {
@@ -17,22 +21,22 @@ export default class NativeJsonParserMagic implements INativeMagic {
     const json = properties?.get("json")?.value ?? "";
     const jsonPath = properties?.get("jsonPath")?.value ?? "";
 
-    let jsonPathValue = jsonPath
+    let jsonPathValue = jsonPath;
     latestState.variables?.forEach((variable) => {
-      jsonPathValue = getVariableValue(jsonPathValue, variable.key ?? "", variable.value ?? "")
+      jsonPathValue = getVariableValue(
+        jsonPathValue,
+        variable.key ?? "",
+        variable.value ?? ""
+      );
     });
-    jsonPathValue = getVariableValue(jsonPathValue, "index", magicProps.index.toString())
+    jsonPathValue = getIndexValue(jsonPathValue, magicProps.index);
 
-    let jsonValue = json
-    latestState.variables?.forEach((variable) => {
-      jsonValue = getVariableValue(jsonValue, variable.key ?? "", variable.value ?? "")
-    });
-    jsonValue = getVariableValue(jsonValue, "index", magicProps.index.toString())
+    let jsonValue = latestState.variables?.get(json)?.value ?? "";
 
     if (magicProps.onVariableChange) {
       const chagedVariable = {
         key: variableKey,
-        value: getJsonPathValue(jsonValue, jsonPathValue),
+        value: JSON.stringify(getJsonPathValue(jsonValue, jsonPathValue) ?? {}),
         variableType: variableType,
       } as NativeVariableModel;
       magicProps.onVariableChange(chagedVariable);

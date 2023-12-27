@@ -2,7 +2,7 @@ import { NativeblocksManager } from "@nativeblocks/nativeblocks-react";
 import NativeNavigationMagic from "./navigation/NativeNavigationMagic";
 import NativeRestApi from "./restApi/NativeRestApi";
 import NativeChangeVariableMagic from "./variable/NativeChangeVariableMagic";
-import NativeJsonParserMagic from "./jsonParser/NativeChangeVariableMagic";
+import NativeJsonParserMagic from "./jsonParser/NativeJsonParserMagic";
 
 export const NativeblocksMagicHelper = {
   provideMagics() {

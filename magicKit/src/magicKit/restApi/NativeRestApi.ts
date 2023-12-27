@@ -3,7 +3,7 @@ import {
   MagicProps,
   nativeFrameStateService,
 } from "@nativeblocks/nativeblocks-react";
-import axios from "axios";
+import { getIndexValue, getVariableValue } from "../../utility/VariableUtil";
 
 type RestApiMethod = "GET" | "POST" | "PATCH" | "PUT" | "DELETE";
 type RestApiRequestModel = {
@@ -26,45 +26,39 @@ export default class NativeRestApi implements INativeMagic {
     const body = properties?.get("body")?.value ?? "";
 
     let normalizeEndpointUrl = endpointUrl;
-    if (normalizeEndpointUrl) {
-      latestState.variables?.forEach(
-        (variable) =>
-          (normalizeEndpointUrl = normalizeEndpointUrl?.replace(
-            `{${variable.key}}`,
-            variable.value ?? ""
-          ))
-      );
-    }
-
     let normalizeHeaders = headers;
-    if (normalizeHeaders) {
-      latestState.variables?.forEach(
-        (variable) =>
-          (normalizeHeaders = normalizeHeaders?.replace(
-            `{${variable.key}}`,
-            variable.value ?? ""
-          ))
-      );
-    }
-
     let normalizeBody = body;
-    if (normalizeBody) {
-      latestState.variables?.forEach(
-        (variable) =>
-          (normalizeBody = normalizeBody?.replace(
-            `{${variable.key}}`,
-            variable.value ?? ""
-          ))
-      );
-    }
 
-    normalizeEndpointUrl =
-      normalizeEndpointUrl?.replace("{index}", magicProps.index.toString()) ??
-      "";
-    normalizeHeaders =
-      normalizeHeaders?.replace("{index}", magicProps.index.toString()) ?? "";
-    normalizeBody =
-      normalizeBody?.replace("{index}", magicProps.index.toString()) ?? "";
+    latestState.variables?.forEach((variable) => {
+      if (normalizeEndpointUrl) {
+        normalizeEndpointUrl = getVariableValue(
+          normalizeEndpointUrl,
+          variable.key,
+          variable.value
+        );
+      }
+      if (normalizeHeaders) {
+        normalizeHeaders = getVariableValue(
+          normalizeHeaders,
+          variable.key,
+          variable.value
+        );
+      }
+      if (normalizeBody) {
+        normalizeBody = getVariableValue(
+          normalizeBody,
+          variable.key,
+          variable.value
+        );
+      }
+    });
+
+    normalizeEndpointUrl = getIndexValue(
+      normalizeEndpointUrl,
+      magicProps.index
+    );
+    normalizeHeaders = getIndexValue(normalizeHeaders, magicProps.index);
+    normalizeBody = getIndexValue(normalizeBody, magicProps.index);
 
     const restApiRequestModel: RestApiRequestModel = {
       url: normalizeEndpointUrl,
@@ -107,68 +101,73 @@ export default class NativeRestApi implements INativeMagic {
       failureResponseHeaderKey
     );
 
+    const prepearedBody =
+      restApiRequestModel.method === "GET" ||
+      restApiRequestModel.method === "DELETE"
+        ? null
+        : JSON.stringify(restApiRequestModel.body);
+
+    let responseStatus: number = 0;
+    let responseIsSuccessful: boolean = false;
+    let responseHeaders: any = undefined;
+
     fetch(restApiRequestModel.url, {
       method: restApiRequestModel.method,
       headers: restApiRequestModel.headers,
-      body:
-        restApiRequestModel.method === "GET" ||
-        restApiRequestModel.method === "DELETE"
-          ? null
-          : JSON.stringify(restApiRequestModel.body),
-    }).then((response) => {
-      if (magicProps.onVariableChange) {
-        if (response.status >= 200 && response.status <= 399) {
-          if (successResponseCodeVariable) {
-            const successCode = successResponseCodeVariable;
-            successCode.value = response.status.toString();
-            magicProps.onVariableChange(successCode);
-          }
-          if (successResponseHeaderVariable) {
-            const successHeaders = successResponseHeaderVariable;
-            successHeaders.value = JSON.stringify(response.headers);
-            magicProps.onVariableChange(successHeaders);
-          }
-          if (successResponseBodyVariable) {
-            response.json().then((body) => {
-              const successBody = successResponseBodyVariable;
-              successBody.value = JSON.stringify(body);
-              if (magicProps.onVariableChange) {
-                magicProps.onVariableChange(successBody);
-              }
-            });
-          }
-          if (magicProps.nativeTrigger) {
-            if (magicProps.onHandleSuccessNextTrigger) {
-              magicProps.onHandleSuccessNextTrigger(magicProps.nativeTrigger);
+      body: prepearedBody,
+    })
+      .then((response) => {
+        responseStatus = response.status;
+        responseIsSuccessful = response.status >= 200 && response.status <= 399;
+        responseHeaders = response.headers;
+        return response.json();
+      })
+      .then((result) => {
+        if (magicProps.onVariableChange) {
+          if (responseIsSuccessful) {
+            if (successResponseCodeVariable) {
+              const successCode = successResponseCodeVariable;
+              successCode.value = responseStatus.toString();
+              magicProps.onVariableChange(successCode);
             }
-          }
-        } else {
-          if (failureResponseCodeVariable) {
-            const failureCode = failureResponseCodeVariable;
-            failureCode.value = response.status.toString();
-            magicProps.onVariableChange(failureCode);
-          }
-          if (failureResponseBodyVariable) {
-            response.json().then((body) => {
-              const failureBody = failureResponseBodyVariable;
-              failureBody.value = JSON.stringify(body);
-              if (magicProps.onVariableChange) {
-                magicProps.onVariableChange(failureBody);
+            if (successResponseHeaderVariable) {
+              const successHeaders = successResponseHeaderVariable;
+              successHeaders.value = JSON.stringify(responseHeaders);
+              magicProps.onVariableChange(successHeaders);
+            }
+            if (successResponseBodyVariable) {
+              const successBody = successResponseBodyVariable;
+              successBody.value = JSON.stringify(result);
+              magicProps.onVariableChange(successBody);
+            }
+            if (magicProps.nativeTrigger && result) {
+              if (magicProps.onHandleSuccessNextTrigger) {
+                magicProps.onHandleSuccessNextTrigger(magicProps.nativeTrigger);
               }
-            });
-          }
-          if (failureResponseHeaderVariable) {
-            const failureHeaders = failureResponseHeaderVariable;
-            failureHeaders.value = JSON.stringify(response.headers);
-            magicProps.onVariableChange(failureHeaders);
-          }
-          if (magicProps.nativeTrigger) {
-            if (magicProps.onHandleFailureNextTrigger) {
-              magicProps.onHandleFailureNextTrigger(magicProps.nativeTrigger);
+            }
+          } else {
+            if (failureResponseCodeVariable) {
+              const failureCode = failureResponseCodeVariable;
+              failureCode.value = responseStatus.toString();
+              magicProps.onVariableChange(failureCode);
+            }
+            if (failureResponseHeaderVariable) {
+              const failureHeaders = failureResponseHeaderVariable;
+              failureHeaders.value = JSON.stringify(responseHeaders);
+              magicProps.onVariableChange(failureHeaders);
+            }
+            if (failureResponseBodyVariable) {
+              const failureBody = failureResponseBodyVariable;
+              failureBody.value = JSON.stringify(result);
+              magicProps.onVariableChange(failureBody);
+            }
+            if (magicProps.nativeTrigger && result) {
+              if (magicProps.onHandleFailureNextTrigger) {
+                magicProps.onHandleFailureNextTrigger(magicProps.nativeTrigger);
+              }
             }
           }
         }
-      }
-    });
+      });
   }
 }

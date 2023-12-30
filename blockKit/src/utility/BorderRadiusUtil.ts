@@ -2,14 +2,34 @@ import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
 import { getProperty } from "./BlockUtil";
 
 function paddingMapper(
-  borderRadiusMobile: { topStart: any; topEnd: any; bottomEnd: any; bottomStart: any; },
-  borderRadiusTablet: { topStart: any; topEnd: any; bottomEnd: any; bottomStart: any; },
-  borderRadiusDesktop: { topStart: any; topEnd: any; bottomEnd: any; bottomStart: any; }
+  borderRadiusMobile: {
+    topStart: any;
+    topEnd: any;
+    bottomEnd: any;
+    bottomStart: any;
+  },
+  borderRadiusTablet: {
+    topStart: any;
+    topEnd: any;
+    bottomEnd: any;
+    bottomStart: any;
+  },
+  borderRadiusDesktop: {
+    topStart: any;
+    topEnd: any;
+    bottomEnd: any;
+    bottomStart: any;
+  }
 ) {
   const mobileBreakpoint = 768;
   const tabletBreakpoint = 1024;
 
-  const formatBorderRadius = (borderRadius: { topStart: any; topEnd: any; bottomEnd: any; bottomStart: any; }) =>
+  const formatBorderRadius = (borderRadius: {
+    topStart: any;
+    topEnd: any;
+    bottomEnd: any;
+    bottomStart: any;
+  }) =>
     `${borderRadius.topStart}rem ${borderRadius.topEnd}rem ${borderRadius.bottomEnd}rem ${borderRadius.bottomStart}rem`;
 
   let style = `@media (max-width: ${
@@ -28,10 +48,22 @@ function paddingMapper(
 }
 
 export function generateBorderRadiusStyle(
-  shapeRadiusTopStart: { valueMobile: any; valueTablet: any; valueDesktop: any; },
-  shapeRadiusBottomStart: { valueMobile: any; valueTablet: any; valueDesktop: any; },
-  shapeRadiusTopEnd: { valueMobile: any; valueTablet: any; valueDesktop: any; },
-  shapeRadiusBottomEnd: { valueMobile: any; valueTablet: any; valueDesktop: any; }
+  shapeRadiusTopStart: {
+    valueMobile: any;
+    valueTablet: any;
+    valueDesktop: any;
+  },
+  shapeRadiusBottomStart: {
+    valueMobile: any;
+    valueTablet: any;
+    valueDesktop: any;
+  },
+  shapeRadiusTopEnd: { valueMobile: any; valueTablet: any; valueDesktop: any },
+  shapeRadiusBottomEnd: {
+    valueMobile: any;
+    valueTablet: any;
+    valueDesktop: any;
+  }
 ) {
   const mobileBorderRadius = {
     topStart: shapeRadiusTopStart.valueMobile,
@@ -70,5 +102,26 @@ export function getBorderRaduis(block: NativeBlockModel | null) {
     shapeRadiusBottomStart,
     shapeRadiusTopEnd,
     shapeRadiusBottomEnd
+  );
+}
+
+function generateTableBorderStyle(
+  tableBoarderMobile: string,
+  tableBoarderTablet: string,
+  tableBoarderDesktop: string
+): string {
+  const mobileClass = `${tableBoarderMobile}`;
+  const tabletClass = `md:${tableBoarderTablet}`;
+  const desktopClass = `lg:${tableBoarderDesktop}`;
+
+  return `${mobileClass} ${tabletClass} ${desktopClass}`;
+}
+
+export function getTableBorder(block: NativeBlockModel | null) {
+  const heightProperty = getProperty(block, "tableBorder");
+  return generateTableBorderStyle(
+    heightProperty.valueMobile,
+    heightProperty.valueTablet,
+    heightProperty.valueDesktop
   );
 }

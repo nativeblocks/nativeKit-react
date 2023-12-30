@@ -8,6 +8,7 @@ import React, { FC } from "react";
 import { getJsonPathValue, getVariableValue } from "../../utility/VariableUtil";
 import {
   generateExtraClass,
+  getDropdownItems,
   getPlaceholder,
   getProperty,
   isEnable,
@@ -78,7 +79,7 @@ const NativeDropdownBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const enable = isEnable(blockProps.block);
   const extraClass = generateExtraClass(blockProps.block);
 
-  const itemsKey = getItemsVariable(blockProps.block);
+  const itemsKey = getDropdownItems(blockProps.block);
   const itemsVariable = state.variables?.get(itemsKey);
   const items = JSON.parse(itemsVariable?.value ?? "[]") ?? [];
 

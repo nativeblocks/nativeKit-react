@@ -187,7 +187,7 @@ class Solver {
         loss: result.loss,
         filter: this.css(result.values, alpha),
       };
-      else return null
+    else return null;
   }
 
   solveWide() {
@@ -329,7 +329,7 @@ function colorToFilter(hex: string, opacity: string) {
   const solver = new Solver(color);
   const result = solver.solve(alpha);
   if (result) return result.filter;
-  else null
+  else null;
 }
 
 function toArgb(colorString: string, opacity: string): string {
@@ -453,6 +453,90 @@ export function getBackgroundColor(
   );
 }
 
+export function getTableHeaderBackgroundColor(
+  block: NativeBlockModel | null,
+  overrideColor: string | null = null,
+  overrideOpacity: string | null = null
+) {
+  const backgroundColorProperty = getProperty(block, "headerBackgroundColor");
+  const backgroundColorOpacityProperty = getProperty(
+    block,
+    "headerBackgroundColorOpacity"
+  );
+
+  return generateColorStyle(
+    {
+      color: overrideColor
+        ? overrideColor
+        : backgroundColorProperty.valueMobile,
+      alpha: overrideOpacity
+        ? overrideOpacity
+        : backgroundColorOpacityProperty.valueMobile,
+      type: "background",
+    },
+    {
+      color: overrideColor
+        ? overrideColor
+        : backgroundColorProperty.valueTablet,
+      alpha: overrideOpacity
+        ? overrideOpacity
+        : backgroundColorOpacityProperty.valueTablet,
+      type: "background",
+    },
+    {
+      color: overrideColor
+        ? overrideColor
+        : backgroundColorProperty.valueDesktop,
+      alpha: overrideOpacity
+        ? overrideOpacity
+        : backgroundColorOpacityProperty.valueDesktop,
+      type: "background",
+    }
+  );
+}
+
+export function getTableBodyBackgroundColor(
+  block: NativeBlockModel | null,
+  overrideColor: string | null = null,
+  overrideOpacity: string | null = null
+) {
+  const backgroundColorProperty = getProperty(block, "bodyBackgroundColor");
+  const backgroundColorOpacityProperty = getProperty(
+    block,
+    "bodyBackgroundColorOpacity"
+  );
+
+  return generateColorStyle(
+    {
+      color: overrideColor
+        ? overrideColor
+        : backgroundColorProperty.valueMobile,
+      alpha: overrideOpacity
+        ? overrideOpacity
+        : backgroundColorOpacityProperty.valueMobile,
+      type: "background",
+    },
+    {
+      color: overrideColor
+        ? overrideColor
+        : backgroundColorProperty.valueTablet,
+      alpha: overrideOpacity
+        ? overrideOpacity
+        : backgroundColorOpacityProperty.valueTablet,
+      type: "background",
+    },
+    {
+      color: overrideColor
+        ? overrideColor
+        : backgroundColorProperty.valueDesktop,
+      alpha: overrideOpacity
+        ? overrideOpacity
+        : backgroundColorOpacityProperty.valueDesktop,
+      type: "background",
+    }
+  );
+}
+
 export function getForegroundAsBackgroundColor(
   block: NativeBlockModel | null,
   overrideColor: string | null = null,
@@ -500,6 +584,58 @@ export function getForegroundColor(block: NativeBlockModel | null) {
   const foregroundColorOpacityProperty = getProperty(
     block,
     "foregroundColorOpacity"
+  );
+
+  return generateColorStyle(
+    {
+      color: foregroundColorProperty.valueMobile,
+      alpha: foregroundColorOpacityProperty.valueMobile,
+      type: "foreground",
+    },
+    {
+      color: foregroundColorProperty.valueTablet,
+      alpha: foregroundColorOpacityProperty.valueTablet,
+      type: "foreground",
+    },
+    {
+      color: foregroundColorProperty.valueDesktop,
+      alpha: foregroundColorOpacityProperty.valueDesktop,
+      type: "foreground",
+    }
+  );
+}
+
+export function getTableHeaderForegroundColor(block: NativeBlockModel | null) {
+  const foregroundColorProperty = getProperty(block, "headerForegroundColor");
+  const foregroundColorOpacityProperty = getProperty(
+    block,
+    "headerForegroundColorOpacity"
+  );
+
+  return generateColorStyle(
+    {
+      color: foregroundColorProperty.valueMobile,
+      alpha: foregroundColorOpacityProperty.valueMobile,
+      type: "foreground",
+    },
+    {
+      color: foregroundColorProperty.valueTablet,
+      alpha: foregroundColorOpacityProperty.valueTablet,
+      type: "foreground",
+    },
+    {
+      color: foregroundColorProperty.valueDesktop,
+      alpha: foregroundColorOpacityProperty.valueDesktop,
+      type: "foreground",
+    }
+  );
+}
+
+export function getTableBodyForegroundColor(block: NativeBlockModel | null) {
+  const foregroundColorProperty = getProperty(block, "bodyForegroundColor");
+  const foregroundColorOpacityProperty = getProperty(
+    block,
+    "bodyForegroundColorOpacity"
   );
 
   return generateColorStyle(

@@ -1,270 +1,277 @@
-// import {
-//   BlockProps,
-//   useNativeFrameState,
-// } from "@nativeblocks/nativeblocks-react";
-// import React, { FC } from "react";
-// import {
-//   directionMapper,
-//   spacingMapper,
-//   toArgb,
-// } from "../../utility/BlockUtil";
-// import { getJsonPathValue, getVariableValue } from "../../utility/VariableUtil";
+import {
+  BlockProps,
+  useNativeFrameState,
+} from "@nativeblocks/nativeblocks-react";
+import React, { FC } from "react";
+import { getJsonPathValue, getVariableValue } from "../../utility/VariableUtil";
+import { getBoxShadow, getDropShadow } from "../../utility/ShadowUtil";
+import { getDirection } from "../../utility/LayoutUtil";
+import { getHeight, getWidth } from "../../utility/SizeUtil";
+import {
+  getTableBodyBackgroundColor,
+  getTableBodyForegroundColor,
+  getTableHeaderBackgroundColor,
+  getTableHeaderForegroundColor,
+} from "../../utility/ColorUtil";
+import {
+  getTableBodyPadding,
+  getTableHeaderPadding,
+} from "../../utility/SpaceUtil";
+import {
+  generateTableBodyExtraClass,
+  generateTableHeaderExtraClass,
+  getTableHeaderItems,
+} from "../../utility/BlockUtil";
+import {
+  getTableBodyFontFamily,
+  getTableBodyFontSize,
+  getTableBodyFontWeight,
+  getTableBodyLetterSpacing,
+  getTableBodyTextAlign,
+  getTableBodyTextDecoration,
+  getTableHeaderFontFamily,
+  getTableHeaderFontSize,
+  getTableHeaderFontWeight,
+  getTableHeaderLetterSpacing,
+  getTableHeaderTextAlign,
+  getTableHeaderTextDecoration,
+} from "../../utility/FontUtil";
+import { mergeClasses, mergeStyles } from "../../utility/StyleUtil";
+import { css } from "@emotion/css";
+import {
+  getBorderRaduis,
+  getTableBorder,
+} from "../../utility/BorderRadiusUtil";
 
-// const headers = [
-//   {
-//     id: "h1",
-//     text: "Head 1",
-//   },
-//   {
-//     id: "h2",
-//     text: "Head 2",
-//   },
-//   {
-//     id: "h3",
-//     text: "Head 3",
-//   },
-//   {
-//     id: "h4",
-//     text: "Head 4",
-//   },
-//   {
-//     id: "h5",
-//     text: "Head 5",
-//   },
-// ];
+const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
+  // const headers = [
+  //   {
+  //     id: "h1",
+  //     text: "Head 1",
+  //   },
+  //   {
+  //     id: "h2",
+  //     text: "Head 2",
+  //   },
+  //   {
+  //     id: "h3",
+  //     text: "Head 3",
+  //   },
+  //   {
+  //     id: "h4",
+  //     text: "Head 4",
+  //   },
+  //   {
+  //     id: "h5",
+  //     text: "Head 5",
+  //   },
+  // ];
 
-// const items = [
-//   [
-//     {
-//       id: "row1",
-//       text: "row1-item 1",
-//     },
-//     {
-//       id: "row1",
-//       text: "row1-item 2",
-//     },
-//     {
-//       id: "row1",
-//       text: "row1-item 3",
-//     },
-//     {
-//       id: "row1",
-//       text: "row1-item 4",
-//     },
-//     {
-//       id: "row1",
-//       text: "row1-item 5",
-//     },
-//   ],
-//   [
-//     {
-//       id: "row2",
-//       text: "row2-item 1",
-//     },
-//     {
-//       id: "row2",
-//       text: "row2-item 2",
-//     },
-//     {
-//       id: "row2",
-//       text: "row2-item 3",
-//     },
-//     {
-//       id: "row2",
-//       text: "row2-item 4",
-//     },
-//     {
-//       id: "row2",
-//       text: "row2-item 5",
-//     },
-//   ],
-// ];
+  // const items = [
+  //   [
+  //     {
+  //       id: "row1",
+  //       text: "row1-item 1",
+  //     },
+  //     {
+  //       id: "row1",
+  //       text: "row1-item 2",
+  //     },
+  //     {
+  //       id: "row1",
+  //       text: "row1-item 3",
+  //     },
+  //     {
+  //       id: "row1",
+  //       text: "row1-item 4",
+  //     },
+  //     {
+  //       id: "row1",
+  //       text: "row1-item 5",
+  //     }
+  //   ],
+  //   [
+  //     {
+  //       id: "row2",
+  //       text: "row2-item 1",
+  //     },
+  //     {
+  //       id: "row2",
+  //       text: "row2-item 2",
+  //     },
+  //     {
+  //       id: "row2",
+  //       text: "row2-item 3",
+  //     },
+  //     {
+  //       id: "row2",
+  //       text: "row2-item 4",
+  //     },
+  //     {
+  //       id: "row2",
+  //       text: "row2-item 5",
+  //     }
+  //   ]
+  // ];
 
-// const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
-//   const { state } = useNativeFrameState();
+  const { state } = useNativeFrameState();
 
-//   const blockKey = blockProps.block?.key ?? "";
-//   const visibility = state.variables?.get(
-//     blockProps.block?.visibilityKey ?? ""
-//   );
-//   if (visibility && (visibility.value ?? "true") === "false") {
-//     return <></>;
-//   }
+  const blockKey = blockProps.block?.key ?? "";
+  const visibility = state.variables?.get(
+    blockProps.block?.visibilityKey ?? ""
+  );
+  if (visibility && (visibility.value ?? "true") === "false") {
+    return <></>;
+  }
 
-//   const variable = state.variables?.get(blockKey);
-//   let result = {} as any;
-//   if (blockProps.block?.jsonPath) {
-//     const query = getVariableValue(
-//       blockProps.block?.jsonPath,
-//       "index",
-//       blockProps.index.toString()
-//     );
-//     result = getJsonPathValue(variable?.value ?? "", query);
-//   } else {
-//     result = variable?.value ?? "";
-//   }
+  const variable = state.variables?.get(blockKey);
+  let result = {} as any;
+  if (blockProps.block?.jsonPath) {
+    const query = getVariableValue(
+      blockProps.block?.jsonPath,
+      "index",
+      blockProps.index.toString()
+    );
+    result = getJsonPathValue(variable?.value ?? "", query);
+  } else {
+    result = variable?.value ?? "";
+  }
 
-//   const magics = state.magics?.get(blockKey) ?? [];
+  const boxShadow = getBoxShadow(blockProps.block);
+  const dropShadow = getDropShadow(blockProps.block);
+  const direction = getDirection(blockProps.block);
 
-//   const properties = blockProps.block?.properties ?? new Map();
+  const height = getHeight(blockProps.block);
+  const width = getWidth(blockProps.block);
+  const shapeRadius = getBorderRaduis(blockProps.block);
+  const tableBorder = getTableBorder(blockProps.block);
 
-//   const boxShadow = properties.get("boxShadow")?.value ?? "";
-//   const dropShadow = properties.get("dropShadow")?.value ?? "";
+  const hforegroundColor = getTableHeaderForegroundColor(blockProps.block);
+  const hbackgroundColor = getTableHeaderBackgroundColor(blockProps.block);
+  const headerPadding = getTableHeaderPadding(blockProps.block);
+  const headerExtraClass = generateTableHeaderExtraClass(blockProps.block);
 
-//   const direction = properties.get("direction")?.value ?? "";
+  const headerFontFamily = getTableHeaderFontFamily(blockProps.block);
+  const headerLetterSpacing = getTableHeaderLetterSpacing(blockProps.block);
+  const headerFontSize = getTableHeaderFontSize(blockProps.block);
+  const headerTextAlign = getTableHeaderTextAlign(blockProps.block);
+  const headerFontWeight = getTableHeaderFontWeight(blockProps.block);
+  const headerTextDecoration = getTableHeaderTextDecoration(blockProps.block);
 
-//   const height = properties.get("height")?.value ?? "";
-//   const width = properties.get("width")?.value ?? "";
+  const bforegroundColor = getTableBodyForegroundColor(blockProps.block);
+  const bbackgroundColor = getTableBodyBackgroundColor(blockProps.block);
+  const bodyPadding = getTableBodyPadding(blockProps.block);
+  const bodyExtraClass = generateTableBodyExtraClass(blockProps.block);
 
-//   const headerPaddingTop = properties.get("headerPaddingTop")?.value ?? "";
-//   const headerPaddingBottom = properties.get("headerPaddingBottom")?.value ?? "";
-//   const headerPaddingStart = properties.get("headerPaddingStart")?.value ?? "";
-//   const headerPaddingEnd = properties.get("headerPaddingEnd")?.value ?? "";
+  const bodyFontFamily = getTableBodyFontFamily(blockProps.block);
+  const bodyLetterSpacing = getTableBodyLetterSpacing(blockProps.block);
+  const bodyFontSize = getTableBodyFontSize(blockProps.block);
+  const bodyTextAlign = getTableBodyTextAlign(blockProps.block);
+  const bodyFontWeight = getTableBodyFontWeight(blockProps.block);
+  const bodyTextDecoration = getTableBodyTextDecoration(blockProps.block);
 
-//   const headerPadding = spacingMapper(
-//     headerPaddingStart,
-//     headerPaddingTop,
-//     headerPaddingEnd,
-//     headerPaddingBottom
-//   );
+  const headerMergedStyle = mergeStyles([
+    headerPadding,
+    direction,
+    hforegroundColor,
+    hbackgroundColor,
+    // borderColor,
+    headerFontFamily,
+    headerLetterSpacing,
+    headerFontSize,
+  ]);
 
-//   const headerFontFamily = properties.get("headerFontFamily")?.value ?? "";
-//   const headerLetterSpacing = properties.get("headerLetterSpacing")?.value ?? "";
-//   const headerTextAlign = properties.get("headerTextAlign")?.value ?? "";
-//   const headerTextDecoration = properties.get("headerTextDecoration")?.value ?? "";
-//   const headerFontWeight = properties.get("headerFontWeight")?.value ?? "";
-//   const headerFontSize = properties.get("headerFontSize")?.value ?? "";
+  const bodyMergedStyle = mergeStyles([
+    bodyPadding,
+    direction,
+    bforegroundColor,
+    bbackgroundColor,
+    // borderColor,
+    bodyFontFamily,
+    bodyLetterSpacing,
+    bodyFontSize,
+  ]);
 
-//   const headerForegroundColor = properties.get("headerForegroundColor")?.value ?? "";
-//   const headerForegroundColorOpacity = properties.get("headerForegroundColorOpacity")?.value ?? "";
+  const mergedStyle = mergeStyles([shapeRadius]);
 
-//   const hforegroundColor = toArgb(
-//     headerForegroundColor,
-//     headerForegroundColorOpacity
-//   );
+  const classes = mergeClasses([
+    "overflow-hidden",
+    tableBorder,
+    css(mergedStyle),
+    dropShadow,
+    boxShadow,
+    height,
+    width,
+  ]);
 
-//   const headerExtraClass = properties.get("headerClass")?.value ?? "";
+  const headerClasses = mergeClasses([
+    css(headerMergedStyle),
+    headerExtraClass,
+    headerFontWeight,
+    headerTextAlign,
+    headerTextDecoration,
+  ]);
 
-//   const bodyPaddingTop = properties.get("bodyPaddingTop")?.value ?? "";
-//   const bodyPaddingBottom = properties.get("bodyPaddingBottom")?.value ?? "";
-//   const bodyPaddingStart = properties.get("bodyPaddingStart")?.value ?? "";
-//   const bodyPaddingEnd = properties.get("bodyPaddingEnd")?.value ?? "";
+  const bodyClasses = mergeClasses([
+    css(bodyMergedStyle),
+    bodyExtraClass,
+    bodyFontWeight,
+    bodyTextAlign,
+    bodyTextDecoration,
+  ]);
 
-//   const bodyPadding = spacingMapper(
-//     bodyPaddingStart,
-//     bodyPaddingTop,
-//     bodyPaddingEnd,
-//     bodyPaddingBottom
-//   );
+  const headersVariable = state.variables?.get(
+    getTableHeaderItems(blockProps.block)
+  );
+  const headers = JSON.parse(headersVariable?.value ?? "[]") ?? [];
 
-//   const bodyFontFamily = properties.get("bodyFontFamily")?.value ?? "";
-//   const bodyLetterSpacing = properties.get("bodyLetterSpacing")?.value ?? "";
-//   const bodyTextAlign = properties.get("bodyTextAlign")?.value ?? "";
-//   const bodyTextDecoration = properties.get("bodyTextDecoration")?.value ?? "";
-//   const bodyFontWeight = properties.get("bodyFontWeight")?.value ?? "";
-//   const bodyFontSize = properties.get("bodyFontSize")?.value ?? "";
+  const itemsVariable = state.variables?.get(blockKey);
+  const items = JSON.parse(itemsVariable?.value ?? "[]") ?? [];
 
-//   const bodyForegroundColor = properties.get("bodyForegroundColor")?.value ?? "";
-//   const bodyForegroundColorOpacity = properties.get("bodyForegroundColorOpacity")?.value ?? "";
+  return (
+    <>
+      <table className={classes}>
+        <thead>
+          <tr>
+            {headers ? (
+              headers?.map((item: any) => {
+                return (
+                  <th key={item.id} scope="col" className={headerClasses}>
+                    {item.text}
+                  </th>
+                );
+              })
+            ) : (
+              <></>
+            )}
+          </tr>
+        </thead>
+        <tbody>
+          {items
+            ? items?.map((row: any) => {
+                console.log("ROWOROWRW", row);
 
-//   const bBackgroundcolor = toArgb(
-//     bodyForegroundColor,
-//     bodyForegroundColorOpacity
-//   );
+                if (!row) {
+                  return <></>;
+                } else {
+                  return (
+                    <tr>
+                      {row?.map((cell: any) => {
+                        return (
+                          <td key={cell.id} className={bodyClasses}>
+                            {cell.text}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                }
+              })
+            : []}
+        </tbody>
+      </table>
+    </>
+  );
+};
 
-//   const bodyExtraClass = properties.get("bodyClass")?.value ?? "";
-
-//   // const headersKey = properties.get("headersVariable")?.value ?? "";
-//   // const headersVariable = state.variables?.get(headersKey);
-//   // const headers = JSON.parse(headersVariable?.value ?? "[]") ?? [];
-
-//   // const itemsKey = properties.get("itemsVariable")?.value ?? "";
-//   // const itemsVariable = state.variables?.get(itemsKey);
-//   // const items = JSON.parse(itemsVariable?.value ?? "[]") ?? [];
-
-//   return (
-//     <>
-//       {/* <div className="flex flex-col">
-//         <div className="overflow-x-auto">
-//           <div className="p-1.5 min-w-full inline-block align-middle">
-//             <div className="overflow-hidden">
-
-//             </div>
-//           </div>
-//         </div>
-//       </div> */}
-//       <table
-//         className={`
-//         ${dropShadow}
-//         ${boxShadow}
-//         ${height}
-//         ${width}`}
-//         style={{
-//           ...directionMapper(direction),
-//         }}
-//       >
-//         <thead>
-//           <tr>
-//             {headers ? (
-//               headers?.map((item) => {
-//                 return (
-//                   <th
-//                     scope="col"
-//                     style={{
-//                       ...directionMapper(direction),
-//                       ...headerPadding,
-//                       fontFamily: headerFontFamily,
-//                       fontSize: `${headerFontSize}rem`,
-//                       letterSpacing: `${headerLetterSpacing}rem`,
-//                       color: hforegroundColor,
-//                     }}
-//                     className={`
-//                             ${headerTextAlign}
-//                             ${headerTextDecoration}
-//                             ${headerFontWeight}
-//                             ${headerExtraClass}`}
-//                   >
-//                     {item.text}
-//                   </th>
-//                 );
-//               })
-//             ) : (
-//               <></>
-//             )}
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {items?.map((row) => {
-//             return (
-//               <tr>
-//                 {row?.map((cell) => {
-//                   return (
-//                     <td
-//                       style={{
-//                         ...directionMapper(direction),
-//                         ...bodyPadding,
-//                         fontFamily: bodyFontFamily,
-//                         fontSize: `${bodyFontSize}rem`,
-//                         letterSpacing: `${bodyLetterSpacing}rem`,
-//                         color: bBackgroundcolor,
-//                       }}
-//                       className={`
-//                             ${bodyTextAlign}
-//                             ${bodyTextDecoration}
-//                             ${bodyFontWeight}
-//                             ${bodyExtraClass}`}
-//                     >
-//                       {cell?.text}
-//                     </td>
-//                   );
-//                 })}
-//               </tr>
-//             );
-//           })}
-//         </tbody>
-//       </table>
-//     </>
-//   );
-// };
-
-// export default NativeTableBlock;
+export default NativeTableBlock;

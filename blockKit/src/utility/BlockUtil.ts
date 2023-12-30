@@ -59,6 +59,7 @@ export function getPlaceholder(block: NativeBlockModel | null) {
   if (placeholderProperty.valueTablet) return placeholderProperty.valueTablet;
   if (placeholderProperty.valueDesktop) return placeholderProperty.valueDesktop;
 }
+
 export function getAlt(block: NativeBlockModel | null) {
   const altProperty = getProperty(block, "alt");
   if (altProperty.valueMobile) return altProperty.valueMobile;
@@ -71,4 +72,36 @@ export function getInputType(block: NativeBlockModel | null) {
   if (inputTypeProperty.valueMobile) return inputTypeProperty.valueMobile;
   if (inputTypeProperty.valueTablet) return inputTypeProperty.valueTablet;
   if (inputTypeProperty.valueDesktop) return inputTypeProperty.valueDesktop;
+}
+
+export function getDropdownItems(block: NativeBlockModel | null) {
+  const itemsVariableProperty = getProperty(block, "itemsVariable");
+  if (itemsVariableProperty.valueMobile) return itemsVariableProperty.valueMobile;
+  if (itemsVariableProperty.valueTablet) return itemsVariableProperty.valueTablet;
+  if (itemsVariableProperty.valueDesktop) return itemsVariableProperty.valueDesktop;
+}
+
+export function getTableHeaderItems(block: NativeBlockModel | null) {
+  const headersVariableProperty = getProperty(block, "headersVariable");
+  if (headersVariableProperty.valueMobile) return headersVariableProperty.valueMobile;
+  if (headersVariableProperty.valueTablet) return headersVariableProperty.valueTablet;
+  if (headersVariableProperty.valueDesktop) return headersVariableProperty.valueDesktop;
+}
+
+export function generateTableHeaderExtraClass(block: NativeBlockModel | null) {
+  const extraClassProperty = getProperty(block, "headerClass");
+  return generateExtraClassStyle(
+    extraClassProperty.valueMobile,
+    extraClassProperty.valueTablet,
+    extraClassProperty.valueDesktop
+  );
+}
+
+export function generateTableBodyExtraClass(block: NativeBlockModel | null) {
+  const extraClassProperty = getProperty(block, "bodyClass");
+  return generateExtraClassStyle(
+    extraClassProperty.valueMobile,
+    extraClassProperty.valueTablet,
+    extraClassProperty.valueDesktop
+  );
 }

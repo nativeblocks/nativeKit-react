@@ -63,3 +63,29 @@ export function getPadding(block: NativeBlockModel | null) {
     paddingStart
   );
 }
+
+export function getTableHeaderPadding(block: NativeBlockModel | null) {
+  const paddingTop = getProperty(block, "headerPaddingTop");
+  const paddingStart = getProperty(block, "headerPaddingStart");
+  const paddingBottom = getProperty(block, "headerPaddingBottom");
+  const paddingEnd = getProperty(block, "headerPaddingEnd");
+  return generatePaddingStyle(
+    paddingTop,
+    paddingEnd,
+    paddingBottom,
+    paddingStart
+  );
+}
+
+export function getTableBodyPadding(block: NativeBlockModel | null) {
+  const paddingTop = getProperty(block, "bodyPaddingTop");
+  const paddingStart = getProperty(block, "bodyPaddingStart");
+  const paddingBottom = getProperty(block, "bodyPaddingBottom");
+  const paddingEnd = getProperty(block, "bodyPaddingEnd");
+  return generatePaddingStyle(
+    paddingTop,
+    paddingEnd,
+    paddingBottom,
+    paddingStart
+  );
+}

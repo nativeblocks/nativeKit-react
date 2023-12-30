@@ -1,41 +1,81 @@
 [
   {
     "description": "0 or any number (rem)",
-    "key": "paddingTop",
+    "key": "headerPaddingTop",
     "type": "FLOAT",
     "valuePicker": "number-input",
     "value": "0.5",
-    "valuePickerCategory": "Padding",
+    "valuePickerCategory": "Header padding",
     "valuePickerGroup": "",
     "valuePickerOption": "[]"
   },
   {
     "description": "0 or any number (rem)",
-    "key": "paddingStart",
+    "key": "headerPaddingStart",
     "type": "FLOAT",
     "valuePicker": "number-input",
     "value": "0.5",
-    "valuePickerCategory": "Padding",
+    "valuePickerCategory": "Header padding",
     "valuePickerGroup": "",
     "valuePickerOption": "[]"
   },
   {
     "description": "0 or any number (rem)",
-    "key": "paddingEnd",
+    "key": "headerPaddingEnd",
     "type": "FLOAT",
     "valuePicker": "number-input",
     "value": "0.5",
-    "valuePickerCategory": "Padding",
+    "valuePickerCategory": "Header padding",
     "valuePickerGroup": "",
     "valuePickerOption": "[]"
   },
   {
     "description": "0 or any number (rem)",
-    "key": "paddingBottom",
+    "key": "headerPaddingBottom",
     "type": "FLOAT",
     "valuePicker": "number-input",
     "value": "0.5",
-    "valuePickerCategory": "Padding",
+    "valuePickerCategory": "Header padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "bodyPaddingTop",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Body padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "bodyPaddingStart",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Body padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "bodyPaddingEnd",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Body padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "bodyPaddingBottom",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Body padding",
     "valuePickerGroup": "",
     "valuePickerOption": "[]"
   },
@@ -47,7 +87,7 @@
     "value": "shadow-none",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"shadow-none\",\"value\":\"none\"},{\"id\":\"shadow-sm\",\"value\":\"sm\"},{\"id\":\"shadow\",\"value\":\"normal\"},{\"id\":\"shadow-md\",\"value\":\"md\"},{\"id\":\"shadow-lg\",\"value\":\"lg\"},{\"id\":\"shadow-xl\",\"value\":\"xl\"},{\"id\":\"shadow-2xl\",\"value\":\"2xl\"}]"
+    "valuePickerOption": "[{\"id\":\"shadow-none\",\"text\":\"none\"},{\"id\":\"shadow-sm\",\"text\":\"sm\"},{\"id\":\"shadow\",\"text\":\"normal\"},{\"id\":\"shadow-md\",\"text\":\"md\"},{\"id\":\"shadow-lg\",\"text\":\"lg\"},{\"id\":\"shadow-xl\",\"text\":\"xl\"},{\"id\":\"shadow-2xl\",\"text\":\"2xl\"}]"
   },
   {
     "description": "drop shadow",
@@ -57,7 +97,7 @@
     "value": "drop-shadow-none",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"value\":\"none\"},{\"id\":\"drop-shadow-sm\",\"value\":\"sm\"},{\"id\":\"drop-shadow\",\"value\":\"normal\"},{\"id\":\"drop-shadow-md\",\"value\":\"md\"},{\"id\":\"drop-shadow-lg\",\"value\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"value\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"value\":\"2xl\"}]"
+    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"text\":\"none\"},{\"id\":\"drop-shadow-sm\",\"text\":\"sm\"},{\"id\":\"drop-shadow\",\"text\":\"normal\"},{\"id\":\"drop-shadow-md\",\"text\":\"md\"},{\"id\":\"drop-shadow-lg\",\"text\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"text\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"text\":\"2xl\"}]"
   },
   {
     "description": "layout direction",
@@ -67,27 +107,7 @@
     "value": "LTR",
     "valuePickerCategory": "Layout",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{ \"id\": \"LTR\", \"value\": \"LTR\" }, { \"id\": \"RTL\", \"value\": \"RTL\" }]"
-  },
-  {
-    "description": "hex color",
-    "key": "foregroundColor",
-    "type": "STRING",
-    "valuePicker": "color-picker",
-    "value": "#fafafa",
-    "valuePickerCategory": "Color",
-    "valuePickerGroup": "foregroundColor",
-    "valuePickerOption": "[]"
-  },
-  {
-    "description": "a number between 0 to 100",
-    "key": "foregroundColorOpacity",
-    "type": "INT",
-    "valuePicker": "slider",
-    "value": "100",
-    "valuePickerCategory": "Color",
-    "valuePickerGroup": "foregroundColor",
-    "valuePickerOption": "[]"
+    "valuePickerOption": "[{ \"id\": \"LTR\", \"text\": \"LTR\" }, { \"id\": \"RTL\", \"text\": \"RTL\" }]"
   },
   {
     "description": "height of the element",
@@ -110,72 +130,283 @@
     "valuePickerOption": "[]"
   },
   {
+    "description": "hex color",
+    "key": "headerForegroundColor",
+    "type": "STRING",
+    "valuePicker": "color-picker",
+    "value": "#fafafa",
+    "valuePickerCategory": "Header foregroundColor",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "a number between 0 to 100",
+    "key": "headerForegroundColorOpacity",
+    "type": "INT",
+    "valuePicker": "slider",
+    "value": "100",
+    "valuePickerCategory": "Header foregroundColor",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+
+  {
+    "description": "hex color",
+    "key": "headerBackgroundColor",
+    "type": "STRING",
+    "valuePicker": "color-picker",
+    "value": "#212121",
+    "valuePickerCategory": "Header backgroundColor",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "a number between 0 to 100",
+    "key": "headerBackgroundColorOpacity",
+    "type": "INT",
+    "valuePicker": "slider",
+    "value": "100",
+    "valuePickerCategory": "Header backgroundColor",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "hex color",
+    "key": "bodyBackgroundColor",
+    "type": "STRING",
+    "valuePicker": "color-picker",
+    "value": "#212121",
+    "valuePickerCategory": "Body backgroundColor",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "a number between 0 to 100",
+    "key": "bodyBackgroundColorOpacity",
+    "type": "INT",
+    "valuePicker": "slider",
+    "value": "100",
+    "valuePickerCategory": "Body backgroundColor",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
     "description": "0 or any number (rem)",
-    "key": "fontSize",
+    "key": "headerFontSize",
     "type": "FLOAT",
     "valuePicker": "number-input",
     "value": "1.5",
-    "valuePickerCategory": "Font",
+    "valuePickerCategory": "Header font",
     "valuePickerGroup": "",
     "valuePickerOption": "[]"
   },
   {
     "description": "font family name",
-    "key": "fontFamily",
+    "key": "headerFontFamily",
     "type": "STRING",
     "valuePicker": "combobox-input",
     "value": "default",
-    "valuePickerCategory": "Font",
+    "valuePickerCategory": "Header font",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"default\",\"value\":\"default\"}]"
+    "valuePickerOption": "[{\"id\":\"default\",\"text\":\"default\"}]"
   },
   {
     "description": "letter spacing (rem)",
-    "key": "letterSpacing",
+    "key": "headerLetterSpacing",
     "type": "STRING",
     "valuePicker": "number-input",
     "value": "",
-    "valuePickerCategory": "Font",
+    "valuePickerCategory": "Header font",
     "valuePickerGroup": "",
     "valuePickerOption": "[]"
   },
   {
     "description": "text alignment",
-    "key": "textAlign",
+    "key": "headerTextAlign",
     "type": "STRING",
     "valuePicker": "dropdown",
     "value": "text-start",
-    "valuePickerCategory": "Font",
+    "valuePickerCategory": "Header font",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"text-start\",\"value\":\"start\"},{\"id\":\"text-end\",\"value\":\"end\"},{\"id\":\"text-center\",\"value\":\"center\"},{\"id\":\"text-justify\",\"value\":\"justify\"}]"
+    "valuePickerOption": "[{\"id\":\"text-start\",\"text\":\"start\"},{\"id\":\"text-end\",\"text\":\"end\"},{\"id\":\"text-center\",\"text\":\"center\"},{\"id\":\"text-justify\",\"text\":\"justify\"}]"
   },
   {
     "description": "text decoration",
-    "key": "textDecoration",
+    "key": "headerTextDecoration",
     "type": "STRING",
     "valuePicker": "dropdown",
     "value": "none",
-    "valuePickerCategory": "Font",
+    "valuePickerCategory": "Header font",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"no-underline\",\"value\":\"none\"},{\"id\":\"underline\",\"value\":\"underline\"},{\"id\":\"line-through\",\"value\":\"lineThrough\"},{\"id\":\"overlinex\",\"value\":\"overline\"}]"
+    "valuePickerOption": "[{\"id\":\"no-underline\",\"text\":\"none\"},{\"id\":\"underline\",\"text\":\"underline\"},{\"id\":\"line-through\",\"text\":\"lineThrough\"},{\"id\":\"overlinex\",\"text\":\"overline\"}]"
   },
   {
     "description": "font weight",
-    "key": "fontWeight",
+    "key": "headerFontWeight",
     "type": "STRING",
     "valuePicker": "dropdown",
     "value": "normal",
-    "valuePickerCategory": "Font",
+    "valuePickerCategory": "Header font",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"font-thin\",\"value\":\"thin\"},{\"id\":\"font-extralight\",\"value\":\"extraLight\"},{\"id\":\"font-light\",\"value\":\"light\"},{\"id\":\"font-normal\",\"value\":\"normal\"},{\"id\":\"font-medium\",\"value\":\"medium\"},{\"id\":\"font-semibold\",\"value\":\"semiBold\"},{\"id\":\"font-bold\",\"value\":\"bold\"},{\"id\":\"font-extrabold\",\"value\":\"extraBold\"},{\"id\":\"font-black\",\"value\":\"black\"}]"
+    "valuePickerOption": "[{\"id\":\"font-thin\",\"text\":\"thin\"},{\"id\":\"font-extralight\",\"text\":\"extraLight\"},{\"id\":\"font-light\",\"text\":\"light\"},{\"id\":\"font-normal\",\"text\":\"normal\"},{\"id\":\"font-medium\",\"text\":\"medium\"},{\"id\":\"font-semibold\",\"text\":\"semiBold\"},{\"id\":\"font-bold\",\"text\":\"bold\"},{\"id\":\"font-extrabold\",\"text\":\"extraBold\"},{\"id\":\"font-black\",\"text\":\"black\"}]"
   },
   {
     "description": "extra classes",
-    "key": "class",
+    "key": "headerClass",
     "type": "STRING",
     "valuePicker": "text-area-input",
     "value": "",
-    "valuePickerCategory": "Extra",
+    "valuePickerCategory": "Header Extra",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "hex color",
+    "key": "bodyForegroundColor",
+    "type": "STRING",
+    "valuePicker": "color-picker",
+    "value": "#fafafa",
+    "valuePickerCategory": "Body foregroundColor",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "a number between 0 to 100",
+    "key": "bodyForegroundColorOpacity",
+    "type": "INT",
+    "valuePicker": "slider",
+    "value": "100",
+    "valuePickerCategory": "Body foregroundColor",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "bodyFontSize",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "1.5",
+    "valuePickerCategory": "Body font",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "font family name",
+    "key": "bodyFontFamily",
+    "type": "STRING",
+    "valuePicker": "combobox-input",
+    "value": "default",
+    "valuePickerCategory": "Body font",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"default\",\"text\":\"default\"}]"
+  },
+  {
+    "description": "letter spacing (rem)",
+    "key": "bodyLetterSpacing",
+    "type": "STRING",
+    "valuePicker": "number-input",
+    "value": "",
+    "valuePickerCategory": "Body font",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "text alignment",
+    "key": "bodyTextAlign",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "text-start",
+    "valuePickerCategory": "Body font",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"text-start\",\"text\":\"start\"},{\"id\":\"text-end\",\"text\":\"end\"},{\"id\":\"text-center\",\"text\":\"center\"},{\"id\":\"text-justify\",\"text\":\"justify\"}]"
+  },
+  {
+    "description": "text decoration",
+    "key": "bodyTextDecoration",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "none",
+    "valuePickerCategory": "Body font",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"no-underline\",\"text\":\"none\"},{\"id\":\"underline\",\"text\":\"underline\"},{\"id\":\"line-through\",\"text\":\"lineThrough\"},{\"id\":\"overlinex\",\"text\":\"overline\"}]"
+  },
+  {
+    "description": "font weight",
+    "key": "bodyFontWeight",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "normal",
+    "valuePickerCategory": "Body font",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"font-thin\",\"text\":\"thin\"},{\"id\":\"font-extralight\",\"text\":\"extraLight\"},{\"id\":\"font-light\",\"text\":\"light\"},{\"id\":\"font-normal\",\"text\":\"normal\"},{\"id\":\"font-medium\",\"text\":\"medium\"},{\"id\":\"font-semibold\",\"text\":\"semiBold\"},{\"id\":\"font-bold\",\"text\":\"bold\"},{\"id\":\"font-extrabold\",\"text\":\"extraBold\"},{\"id\":\"font-black\",\"text\":\"black\"}]"
+  },
+  {
+    "description": "extra classes",
+    "key": "bodyClass",
+    "type": "STRING",
+    "valuePicker": "text-area-input",
+    "value": "",
+    "valuePickerCategory": "Body extra",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number",
+    "key": "shapeRadiusBottomEnd",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.25",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number",
+    "key": "shapeRadiusTopEnd",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.25",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number",
+    "key": "shapeRadiusTopStart",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.25",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number",
+    "key": "shapeRadiusBottomStart",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.25",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "border-collapse or border-separate",
+    "key": "tableBorder",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "border-separate",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{ \"id\": \"border-separate\", \"text\": \"border-separate\" }, { \"id\": \"border-collapse\", \"text\": \"border-collapse\" }]"
+  },
+  {
+    "description": "list of string",
+    "key": "headersVariable",
+    "type": "STRING",
+    "valuePicker": "variable-picker",
+    "value": "",
+    "valuePickerCategory": "General",
     "valuePickerGroup": "",
     "valuePickerOption": "[]"
   }

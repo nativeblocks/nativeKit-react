@@ -21,6 +21,7 @@ import {
   generateTableBodyExtraClass,
   generateTableHeaderExtraClass,
   getTableHeaderItems,
+  getTableSelectedItemCell,
 } from "../../utility/BlockUtil";
 import {
   getTableBodyFontFamily,
@@ -42,7 +43,7 @@ import {
   getBorderRaduis,
   getTableBorder,
 } from "../../utility/BorderRadiusUtil";
-import { handleOnClick } from "../../utility/EventUtil";
+import { handleTableItemCellClick } from "../../utility/EventUtil";
 
 const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const { state } = useNativeFrameState();
@@ -160,6 +161,10 @@ const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const itemsVariable = state.variables?.get(blockKey);
   const items = JSON.parse(itemsVariable?.value ?? "[]") ?? [];
 
+  const selectedItemCell = state.variables?.get(
+    getTableSelectedItemCell(blockProps.block)
+  );
+
   return (
     <>
       <table key={blockKey} className={classes}>
@@ -189,11 +194,18 @@ const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
                       {row?.map((cell: any) => {
                         return (
                           <td
-                            onClick={(e) => {
-                              handleOnClick(blockProps, magics);
-                            }}
                             key={cell.id}
                             className={bodyClasses}
+                            onClick={(e) => {
+                              if (selectedItemCell) {
+                                blockProps.onVariableChange?.({
+                                  key: selectedItemCell.key,
+                                  value: JSON.stringify(cell),
+                                  type: "STRING",
+                                });
+                              }
+                              handleTableItemCellClick(blockProps, magics);
+                            }}
                           >
                             {cell.text}
                           </td>

@@ -409,5 +409,15 @@
     "valuePickerCategory": "General",
     "valuePickerGroup": "",
     "valuePickerOption": "[]"
+  },
+  {
+    "description": "result of selected row",
+    "key": "selectedItemCell",
+    "type": "STRING",
+    "valuePicker": "variable-picker",
+    "value": "",
+    "valuePickerCategory": "General",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
   }
 ]

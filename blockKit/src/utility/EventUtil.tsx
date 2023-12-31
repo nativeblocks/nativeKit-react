@@ -20,6 +20,22 @@ export function handleOnClick(
   }
 }
 
+export function handleTableItemCellClick(
+  blockProps: BlockProps,
+  magics: NativeMagicModel[]
+) {
+  if (!magics) return;
+  const onClickEvent = magics.find((magic: any) => magic.event === "onItemCellClick");
+
+  if (onClickEvent) {
+    blockProps.onHandleMagic?.(
+      blockProps.index ?? NONE_INDEX,
+      onClickEvent,
+      "onItemCellClick"
+    );
+  }
+}
+
 export function onTextChange(
   blockProps: BlockProps,
   magics: NativeMagicModel[]

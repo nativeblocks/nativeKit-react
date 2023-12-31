@@ -94,6 +94,16 @@ export function getTableHeaderItems(block: NativeBlockModel | null) {
     return headersVariableProperty.valueDesktop;
 }
 
+export function getTableSelectedItemCell(block: NativeBlockModel | null) {
+  const headersVariableProperty = getProperty(block, "selectedItemCell");
+  if (headersVariableProperty.valueMobile)
+    return headersVariableProperty.valueMobile;
+  if (headersVariableProperty.valueTablet)
+    return headersVariableProperty.valueTablet;
+  if (headersVariableProperty.valueDesktop)
+    return headersVariableProperty.valueDesktop;
+}
+
 export function generateTableHeaderExtraClass(block: NativeBlockModel | null) {
   const extraClassProperty = getProperty(block, "headerClass");
   return generateExtraClassStyle(

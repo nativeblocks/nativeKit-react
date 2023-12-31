@@ -1,0 +1,142 @@
+[
+  {
+    "description": "0 or any number (rem)",
+    "key": "paddingTop",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "paddingStart",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "paddingEnd",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "0 or any number (rem)",
+    "key": "paddingBottom",
+    "type": "FLOAT",
+    "valuePicker": "number-input",
+    "value": "0.5",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "box shadow",
+    "key": "boxShadow",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "shadow-none",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"shadow-none\",\"text\":\"none\"},{\"id\":\"shadow-sm\",\"text\":\"sm\"},{\"id\":\"shadow\",\"text\":\"normal\"},{\"id\":\"shadow-md\",\"text\":\"md\"},{\"id\":\"shadow-lg\",\"text\":\"lg\"},{\"id\":\"shadow-xl\",\"text\":\"xl\"},{\"id\":\"shadow-2xl\",\"text\":\"2xl\"}]"
+  },
+  {
+    "description": "drop shadow",
+    "key": "dropShadow",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "drop-shadow-none",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"text\":\"none\"},{\"id\":\"drop-shadow-sm\",\"text\":\"sm\"},{\"id\":\"drop-shadow\",\"text\":\"normal\"},{\"id\":\"drop-shadow-md\",\"text\":\"md\"},{\"id\":\"drop-shadow-lg\",\"text\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"text\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"text\":\"2xl\"}]"
+  },
+  {
+    "description": "layout direction",
+    "key": "direction",
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "value": "LTR",
+    "valuePickerCategory": "Layout",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{ \"id\": \"LTR\", \"text\": \"LTR\" }, { \"id\": \"RTL\", \"text\": \"RTL\" }]"
+  },
+  {
+    "description": "hex color",
+    "key": "foregroundColor",
+    "type": "STRING",
+    "valuePicker": "color-picker",
+    "value": "#212121",
+    "valuePickerCategory": "Color",
+    "valuePickerGroup": "foregroundColor",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "a number between 0 to 100",
+    "key": "foregroundColorOpacity",
+    "type": "INT",
+    "valuePicker": "slider",
+    "value": "100",
+    "valuePickerCategory": "Color",
+    "valuePickerGroup": "foregroundColor",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "height of the element",
+    "key": "height",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "h-auto",
+    "valuePickerCategory": "Size",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "width of the element",
+    "key": "width",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "w-full",
+    "valuePickerCategory": "Size",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "on icon url",
+    "key": "onIcon",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "",
+    "valuePickerCategory": "Icon",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "off icon url",
+    "key": "offIcon",
+    "type": "STRING",
+    "valuePicker": "text-input",
+    "value": "",
+    "valuePickerCategory": "Icon",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "description": "extra classes",
+    "key": "class",
+    "type": "STRING",
+    "valuePicker": "text-area-input",
+    "value": "",
+    "valuePickerCategory": "Extra",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  }
+]

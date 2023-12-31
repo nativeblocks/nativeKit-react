@@ -42,78 +42,9 @@ import {
   getBorderRaduis,
   getTableBorder,
 } from "../../utility/BorderRadiusUtil";
+import { handleOnClick } from "../../utility/EventUtil";
 
 const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
-  // const headers = [
-  //   {
-  //     id: "h1",
-  //     text: "Head 1",
-  //   },
-  //   {
-  //     id: "h2",
-  //     text: "Head 2",
-  //   },
-  //   {
-  //     id: "h3",
-  //     text: "Head 3",
-  //   },
-  //   {
-  //     id: "h4",
-  //     text: "Head 4",
-  //   },
-  //   {
-  //     id: "h5",
-  //     text: "Head 5",
-  //   },
-  // ];
-
-  // const items = [
-  //   [
-  //     {
-  //       id: "row1",
-  //       text: "row1-item 1",
-  //     },
-  //     {
-  //       id: "row1",
-  //       text: "row1-item 2",
-  //     },
-  //     {
-  //       id: "row1",
-  //       text: "row1-item 3",
-  //     },
-  //     {
-  //       id: "row1",
-  //       text: "row1-item 4",
-  //     },
-  //     {
-  //       id: "row1",
-  //       text: "row1-item 5",
-  //     }
-  //   ],
-  //   [
-  //     {
-  //       id: "row2",
-  //       text: "row2-item 1",
-  //     },
-  //     {
-  //       id: "row2",
-  //       text: "row2-item 2",
-  //     },
-  //     {
-  //       id: "row2",
-  //       text: "row2-item 3",
-  //     },
-  //     {
-  //       id: "row2",
-  //       text: "row2-item 4",
-  //     },
-  //     {
-  //       id: "row2",
-  //       text: "row2-item 5",
-  //     }
-  //   ]
-  // ];
-
   const { state } = useNativeFrameState();
 
   const blockKey = blockProps.block?.key ?? "";
@@ -124,6 +55,7 @@ const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
     return <></>;
   }
 
+  const magics = state.magics?.get(blockKey) ?? [];
   const variable = state.variables?.get(blockKey);
   let result = {} as any;
   if (blockProps.block?.jsonPath) {
@@ -230,7 +162,7 @@ const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
 
   return (
     <>
-      <table className={classes}>
+      <table key={blockKey} className={classes}>
         <thead>
           <tr>
             {headers ? (
@@ -248,17 +180,21 @@ const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
         </thead>
         <tbody>
           {items
-            ? items?.map((row: any) => {
-                console.log("ROWOROWRW", row);
-
+            ? items?.map((row: any, index: number) => {
                 if (!row) {
                   return <></>;
                 } else {
                   return (
-                    <tr>
+                    <tr key={row + index}>
                       {row?.map((cell: any) => {
                         return (
-                          <td key={cell.id} className={bodyClasses}>
+                          <td
+                            onClick={(e) => {
+                              handleOnClick(blockProps, magics);
+                            }}
+                            key={cell.id}
+                            className={bodyClasses}
+                          >
                             {cell.text}
                           </td>
                         );

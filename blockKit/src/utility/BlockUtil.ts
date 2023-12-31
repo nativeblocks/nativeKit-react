@@ -76,16 +76,22 @@ export function getInputType(block: NativeBlockModel | null) {
 
 export function getDropdownItems(block: NativeBlockModel | null) {
   const itemsVariableProperty = getProperty(block, "itemsVariable");
-  if (itemsVariableProperty.valueMobile) return itemsVariableProperty.valueMobile;
-  if (itemsVariableProperty.valueTablet) return itemsVariableProperty.valueTablet;
-  if (itemsVariableProperty.valueDesktop) return itemsVariableProperty.valueDesktop;
+  if (itemsVariableProperty.valueMobile)
+    return itemsVariableProperty.valueMobile;
+  if (itemsVariableProperty.valueTablet)
+    return itemsVariableProperty.valueTablet;
+  if (itemsVariableProperty.valueDesktop)
+    return itemsVariableProperty.valueDesktop;
 }
 
 export function getTableHeaderItems(block: NativeBlockModel | null) {
   const headersVariableProperty = getProperty(block, "headersVariable");
-  if (headersVariableProperty.valueMobile) return headersVariableProperty.valueMobile;
-  if (headersVariableProperty.valueTablet) return headersVariableProperty.valueTablet;
-  if (headersVariableProperty.valueDesktop) return headersVariableProperty.valueDesktop;
+  if (headersVariableProperty.valueMobile)
+    return headersVariableProperty.valueMobile;
+  if (headersVariableProperty.valueTablet)
+    return headersVariableProperty.valueTablet;
+  if (headersVariableProperty.valueDesktop)
+    return headersVariableProperty.valueDesktop;
 }
 
 export function generateTableHeaderExtraClass(block: NativeBlockModel | null) {
@@ -104,4 +110,18 @@ export function generateTableBodyExtraClass(block: NativeBlockModel | null) {
     extraClassProperty.valueTablet,
     extraClassProperty.valueDesktop
   );
+}
+
+export function getToggleOnIcon(block: NativeBlockModel | null) {
+  const onIconProperty = getProperty(block, "onIcon");
+  if (onIconProperty.valueMobile) return onIconProperty.valueMobile;
+  if (onIconProperty.valueTablet) return onIconProperty.valueTablet;
+  if (onIconProperty.valueDesktop) return onIconProperty.valueDesktop;
+}
+
+export function getToggleOffIcon(block: NativeBlockModel | null) {
+  const offIconProperty = getProperty(block, "offIcon");
+  if (offIconProperty.valueMobile) return offIconProperty.valueMobile;
+  if (offIconProperty.valueTablet) return offIconProperty.valueTablet;
+  if (offIconProperty.valueDesktop) return offIconProperty.valueDesktop;
 }

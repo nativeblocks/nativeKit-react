@@ -8,13 +8,18 @@ import { getJsonPathValue, getVariableValue } from "../../utility/VariableUtil";
 import { getPadding } from "../../utility/SpaceUtil";
 import { getBoxShadow, getDropShadow } from "../../utility/ShadowUtil";
 import { getDirection } from "../../utility/LayoutUtil";
-import { getAccentColor } from "../../utility/ColorUtil";
 import { getHeight, getWidth } from "../../utility/SizeUtil";
-import { generateExtraClass, isEnable } from "../../utility/BlockUtil";
+import {
+  generateExtraClass,
+  getToggleOffIcon,
+  getToggleOnIcon,
+  isEnable,
+} from "../../utility/BlockUtil";
 import { mergeClasses, mergeStyles } from "../../utility/StyleUtil";
 import { css } from "@emotion/css";
+import { getTinitColor } from "../../utility/ColorUtil";
 
-const NativeCheckboxBlock: FC<BlockProps> = (blockProps: BlockProps) => {
+const NativeToggleBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const { state } = useNativeFrameState();
 
   const blockKey = blockProps.block?.key ?? "";
@@ -47,10 +52,12 @@ const NativeCheckboxBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const height = getHeight(blockProps.block);
   const width = getWidth(blockProps.block);
   const extraClass = generateExtraClass(blockProps.block);
+  const onIcon = getToggleOnIcon(blockProps.block);
+  const offIcon = getToggleOffIcon(blockProps.block);
+  const tintColor = getTinitColor(blockProps.block);
   const enable = isEnable(blockProps.block);
-  const foregroundColor = getAccentColor(blockProps.block);
 
-  const mergedStyle = mergeStyles([padding, direction, foregroundColor]);
+  const mergedStyle = mergeStyles([padding, direction]);
   const classes = mergeClasses([
     css(mergedStyle),
     dropShadow,
@@ -61,34 +68,41 @@ const NativeCheckboxBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   ]);
 
   return (
-    <input
-      id={blockKey}
-      // disabled={!enable}
-      defaultChecked={result}
-      key={blockKey}
-      onChange={(event) => {
-        result = event.target.checked;
-        if (variable) {
-          variable.value = result;
-          blockProps.onVariableChange?.(variable);
-        }
+    <label key={blockKey}>
+      <input
+        className={"hidden"}
+        defaultChecked={result}
+        type="checkbox"
+        key={blockKey}
+        onChange={(event) => {
+          result = event.target.checked;
+          if (variable) {
+            variable.value = result;
+            blockProps.onVariableChange?.(variable);
+          }
 
-        if (!magics) return;
-        const onChangeEvent = magics.find(
-          (magic: any) => magic.event === "onCheckChange"
-        );
-        if (onChangeEvent) {
-          blockProps.onHandleMagic?.(
-            blockProps.index ?? NONE_INDEX,
-            onChangeEvent,
-            "onCheckChange"
+          if (!magics) return;
+          const onChangeEvent = magics.find(
+            (magic: any) => magic.event === "onCheckChange"
           );
-        }
-      }}
-      className={classes}
-      type="checkbox"
-    />
+          if (onChangeEvent) {
+            blockProps.onHandleMagic?.(
+              blockProps.index ?? NONE_INDEX,
+              onChangeEvent,
+              "onCheckChange"
+            );
+          }
+        }}
+      />
+      <span className={classes}>
+        {result ? (
+          <img className={css(tintColor)} key={Math.random()} src={onIcon} />
+        ) : (
+          <img className={css(tintColor)} key={Math.random()} src={offIcon} />
+        )}
+      </span>
+    </label>
   );
 };
 
-export default NativeCheckboxBlock;
+export default NativeToggleBlock;

@@ -11,6 +11,7 @@ import NativeCheckboxBlock from "./checkbox/NativeCheckboxBlock";
 import NativeSwitchBlock from "./switch/NativeSwitchBlock";
 import NativeIframeBlock from "./iframe/NativeIframeBlock";
 import NativeTableBlock from "./table/NativeTableBlock";
+import NativeToggleBlock from "./toggle/NativeToggleBlock";
 
 export const NativeblocksBlockHelper = {
   provideBlocks() {
@@ -57,6 +58,10 @@ export const NativeblocksBlockHelper = {
     NativeblocksManager.getInstance().provideBlock(
       "NATIVE_TABLE",
       NativeTableBlock
+    );
+    NativeblocksManager.getInstance().provideBlock(
+      "NATIVE_TOGGLE",
+      NativeToggleBlock
     );
   },
 };

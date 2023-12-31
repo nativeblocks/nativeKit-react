@@ -24,7 +24,7 @@ export default class NativeLocalStorageMagic implements INativeMagic {
           const chagedVariable = {
             key: variableKey,
             value: localStorageValue,
-            type: variable?.variableType,
+            type: variable?.type,
           } as NativeVariableModel;
           magicProps.onVariableChange(chagedVariable);
         }

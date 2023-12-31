@@ -43,7 +43,7 @@ export default class NativeJsonParserMagic implements INativeMagic {
       const chagedVariable = {
         key: variableKey,
         value: this.isObject(result) ? JSON.stringify(result) : result,
-        variableType: variableType,
+        type: variableType,
       } as NativeVariableModel;
       magicProps.onVariableChange(chagedVariable);
     }

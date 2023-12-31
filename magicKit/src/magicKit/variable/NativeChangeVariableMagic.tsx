@@ -25,7 +25,7 @@ export default class NativeChangeVariableMagic implements INativeMagic {
       const chagedVariable = {
         key: variableKey,
         value: value,
-        variableType: variableType,
+        type: variableType,
       } as NativeVariableModel;
       magicProps.onVariableChange(chagedVariable);
     }

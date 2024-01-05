@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   INativeLogger,
+  NativeblocksLoading,
   NativeblocksManager,
   NativeblocksProvider,
 } from "@nativeblocks/nativeblocks-react";
@@ -21,10 +22,23 @@ function AppNativeblocks() {
     "AppLogger",
     new AppLogger()
   );
-
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <>
-      <NativeblocksProvider frameRoute={null} />
+      <NativeblocksProvider
+        onLoading={() => {
+          setIsLoading(true);
+        }}
+        onError={(error: string) => {
+          console.log("ERROR", error);
+
+          setIsLoading(false);
+        }}
+        onSuccess={() => {
+          setIsLoading(false);
+        }}
+      />
+      {isLoading ? <NativeblocksLoading /> : <></>}
     </>
   );
 }

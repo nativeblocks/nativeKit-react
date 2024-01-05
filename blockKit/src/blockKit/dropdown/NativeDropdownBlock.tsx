@@ -112,7 +112,6 @@ const NativeDropdownBlock: FC<BlockProps> = (blockProps: BlockProps) => {
       id={blockKey}
       disabled={!enable}
       key={blockKey}
-      placeholder={placeholder}
       value={currentValue}
       onChange={(event) => {
         currentValue = event.target.value;

@@ -4,6 +4,7 @@ import NativeRestApi from "./restApi/NativeRestApi";
 import NativeChangeVariableMagic from "./variable/NativeChangeVariableMagic";
 import NativeJsonParserMagic from "./jsonParser/NativeJsonParserMagic";
 import NativeLocalStorageMagic from "./localStorage/NativeLocalStorageMagic";
+import NativeFunctionMagic from "./code/NativeFunctionMagic";
 
 export const NativeblocksMagicHelper = {
   provideMagics() {
@@ -26,6 +27,10 @@ export const NativeblocksMagicHelper = {
     NativeblocksManager.getInstance().provideMagic(
       "NATIVE_LOCAL_STORAGE_DATA_SOURCE",
       new NativeLocalStorageMagic()
+    );
+    NativeblocksManager.getInstance().provideMagic(
+      "NATIVE_FUNCTION",
+      new NativeFunctionMagic()
     );
   },
 };

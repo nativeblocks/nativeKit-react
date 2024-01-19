@@ -145,11 +145,4 @@ const NativeDropdownBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   );
 };
 
-function getItemsVariable(block: NativeBlockModel | null) {
-  const itemsKey = getProperty(block, "itemsVariable");
-  if (itemsKey.valueMobile) return itemsKey.valueMobile;
-  if (itemsKey.valueTablet) return itemsKey.valueTablet;
-  if (itemsKey.valueDesktop) return itemsKey.valueDesktop;
-}
-
 export default NativeDropdownBlock;

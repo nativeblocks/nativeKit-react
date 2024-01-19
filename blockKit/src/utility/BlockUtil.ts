@@ -74,6 +74,15 @@ export function getInputType(block: NativeBlockModel | null) {
   if (inputTypeProperty.valueDesktop) return inputTypeProperty.valueDesktop;
 }
 
+export function getRadioOptions(block: NativeBlockModel | null) {
+  const optionsVariableProperty = getProperty(block, "optionsVariable");
+  if (optionsVariableProperty.valueMobile)
+    return optionsVariableProperty.valueMobile;
+  if (optionsVariableProperty.valueTablet)
+    return optionsVariableProperty.valueTablet;
+  if (optionsVariableProperty.valueDesktop)
+    return optionsVariableProperty.valueDesktop;
+}
 export function getDropdownItems(block: NativeBlockModel | null) {
   const itemsVariableProperty = getProperty(block, "itemsVariable");
   if (itemsVariableProperty.valueMobile)

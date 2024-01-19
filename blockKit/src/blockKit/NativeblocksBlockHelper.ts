@@ -12,6 +12,7 @@ import NativeSwitchBlock from "./switch/NativeSwitchBlock";
 import NativeIframeBlock from "./iframe/NativeIframeBlock";
 import NativeTableBlock from "./table/NativeTableBlock";
 import NativeToggleBlock from "./toggle/NativeToggleBlock";
+import NativeRadioGroup from "./radioGroup/NativeRadioGroupBlock";
 
 export const NativeblocksBlockHelper = {
   provideBlocks() {
@@ -62,6 +63,10 @@ export const NativeblocksBlockHelper = {
     NativeblocksManager.getInstance().provideBlock(
       "NATIVE_TOGGLE",
       NativeToggleBlock
+    );
+    NativeblocksManager.getInstance().provideBlock(
+      "NATIVE_RADIO_GROUP",
+      NativeRadioGroup
     );
   },
 };

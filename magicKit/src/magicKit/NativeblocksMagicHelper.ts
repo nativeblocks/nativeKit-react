@@ -5,6 +5,7 @@ import NativeChangeVariableMagic from "./variable/NativeChangeVariableMagic";
 import NativeJsonParserMagic from "./jsonParser/NativeJsonParserMagic";
 import NativeLocalStorageMagic from "./localStorage/NativeLocalStorageMagic";
 import NativeFunctionMagic from "./code/NativeFunctionMagic";
+import NativeDelayMagic from "./delay/NativeDelayMagic";
 
 export const NativeblocksMagicHelper = {
   provideMagics() {
@@ -31,6 +32,10 @@ export const NativeblocksMagicHelper = {
     NativeblocksManager.getInstance().provideMagic(
       "NATIVE_FUNCTION",
       new NativeFunctionMagic()
+    );
+    NativeblocksManager.getInstance().provideMagic(
+      "NATIVE_DELAY",
+      new NativeDelayMagic()
     );
   },
 };

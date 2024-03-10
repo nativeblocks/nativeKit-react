@@ -1,15 +1,9 @@
-import {
-  BlockProps,
-  useNativeFrameState,
-} from "@nativeblocks/nativeblocks-react";
+import { css } from "@emotion/css";
+import { BlockProps, useNativeFrameState } from "@nativeblocks/nativeblocks-react";
 import React, { FC } from "react";
-import { getJsonPathValue, getVariableValue } from "../../utility/VariableUtil";
-import { handleOnClick } from "../../utility/EventUtil";
-import { getPadding } from "../../utility/SpaceUtil";
-import { getBoxShadow, getDropShadow } from "../../utility/ShadowUtil";
-import { getDirection } from "../../utility/LayoutUtil";
+import { generateExtraClass } from "../../utility/BlockUtil";
 import { getForegroundColor } from "../../utility/ColorUtil";
-import { getHeight, getWidth } from "../../utility/SizeUtil";
+import { handleOnClick } from "../../utility/EventUtil";
 import {
   getFontFamily,
   getFontSize,
@@ -18,35 +12,25 @@ import {
   getTextAlign,
   getTextDecoration,
 } from "../../utility/FontUtil";
-import { generateExtraClass } from "../../utility/BlockUtil";
+import { getDirection } from "../../utility/LayoutUtil";
+import { getBoxShadow, getDropShadow } from "../../utility/ShadowUtil";
+import { getHeight, getWidth } from "../../utility/SizeUtil";
+import { getPadding } from "../../utility/SpaceUtil";
 import { mergeClasses, mergeStyles } from "../../utility/StyleUtil";
-import { css } from "@emotion/css";
 
 const NativeTextBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const { state } = useNativeFrameState();
 
-  const blockKey = blockProps.block?.key ?? "";
-  const visibility = state.variables?.get(
-    blockProps.block?.visibilityKey ?? ""
-  );
+  const visibility = state.variables?.get(blockProps.block?.visibilityKey ?? "");
   if (visibility && (visibility.value ?? "true") === "false") {
     return <></>;
   }
 
-  const variable = state.variables?.get(blockKey);
-  let result = {} as any;
-  if (blockProps.block?.jsonPath) {
-    const query = getVariableValue(
-      blockProps.block?.jsonPath,
-      "index",
-      blockProps.index.toString()
-    );
-    result = getJsonPathValue(variable?.value ?? "", query);
-  } else {
-    result = variable?.value ?? "";
-  }
-
+  const blockKey = blockProps.block?.key ?? "";
   const magics = state.magics?.get(blockKey) ?? [];
+
+  const data = blockProps.block?.data ?? new Map();
+  const text = state.variables?.get(data.get("text")?.value ?? "")?.value ?? "";
 
   const padding = getPadding(blockProps.block);
   const boxShadow = getBoxShadow(blockProps.block);
@@ -63,14 +47,7 @@ const NativeTextBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const textDecoration = getTextDecoration(blockProps.block);
   const extraClass = generateExtraClass(blockProps.block);
 
-  const mergedStyle = mergeStyles([
-    padding,
-    direction,
-    foregroundColor,
-    fontFamily,
-    letterSpacing,
-    fontSize,
-  ]);
+  const mergedStyle = mergeStyles([padding, direction, foregroundColor, fontFamily, letterSpacing, fontSize]);
   const classes = mergeClasses([
     css(mergedStyle),
     dropShadow,
@@ -92,7 +69,7 @@ const NativeTextBlock: FC<BlockProps> = (blockProps: BlockProps) => {
         handleOnClick(blockProps, magics);
       }}
     >
-      {result ?? ""}
+      {text}
     </p>
   );
 };

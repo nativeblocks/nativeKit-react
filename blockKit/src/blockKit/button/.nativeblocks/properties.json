@@ -1,35 +1,5 @@
 [
   {
-    "description": "leading icon url",
-    "key": "leadingIcon",
-    "type": "STRING",
-    "valuePicker": "text-input",
-    "value": "",
-    "valuePickerCategory": "Icon",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
-  },
-  {
-    "description": "trailing icon url",
-    "key": "trailingIcon",
-    "type": "STRING",
-    "valuePicker": "text-input",
-    "value": "",
-    "valuePickerCategory": "Icon",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
-  },
-  {
-    "description": "enable",
-    "key": "enable",
-    "type": "BOOLEAN",
-    "valuePicker": "toggle",
-    "value": "true",
-    "valuePickerCategory": "General",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
-  },
-  {
     "description": "0 or any number (rem)",
     "key": "paddingTop",
     "type": "FLOAT",

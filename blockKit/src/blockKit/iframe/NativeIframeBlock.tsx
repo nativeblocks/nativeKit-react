@@ -1,46 +1,26 @@
-import {
-  BlockProps,
-  NativeBlockModel,
-  useNativeFrameState,
-} from "@nativeblocks/nativeblocks-react";
+import { css } from "@emotion/css";
+import { BlockProps, useNativeFrameState } from "@nativeblocks/nativeblocks-react";
 import React, { FC } from "react";
-import { getJsonPathValue, getVariableValue } from "../../utility/VariableUtil";
-import { getPadding } from "../../utility/SpaceUtil";
-import { getBoxShadow, getDropShadow } from "../../utility/ShadowUtil";
+import { generateExtraClass } from "../../utility/BlockUtil";
 import { getBorderRaduis } from "../../utility/BorderRadiusUtil";
 import { getDirection } from "../../utility/LayoutUtil";
-import {
-  convertTailwindToPixels,
-  getHeight,
-  getWidth,
-} from "../../utility/SizeUtil";
-import { generateExtraClass, getProperty } from "../../utility/BlockUtil";
+import { getBoxShadow, getDropShadow } from "../../utility/ShadowUtil";
+import { getHeight, getWidth } from "../../utility/SizeUtil";
+import { getPadding } from "../../utility/SpaceUtil";
 import { mergeClasses, mergeStyles } from "../../utility/StyleUtil";
-import { css } from "@emotion/css";
 
 const NativeIframeBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const { state } = useNativeFrameState();
 
-  const blockKey = blockProps.block?.key ?? "";
-  const visibility = state.variables?.get(
-    blockProps.block?.visibilityKey ?? ""
-  );
+  const visibility = state.variables?.get(blockProps.block?.visibilityKey ?? "");
   if (visibility && (visibility.value ?? "true") === "false") {
     return <></>;
   }
+  const blockKey = blockProps.block?.key ?? "";
 
-  const variable = state.variables?.get(blockKey);
-  let result = {} as any;
-  if (blockProps.block?.jsonPath) {
-    const query = getVariableValue(
-      blockProps.block?.jsonPath,
-      "index",
-      blockProps.index.toString()
-    );
-    result = getJsonPathValue(variable?.value ?? "", query);
-  } else {
-    result = variable?.value ?? "";
-  }
+  const data = blockProps.block?.data ?? new Map();
+  const title = state.variables?.get(data.get("title")?.value ?? "")?.value ?? "";
+  const url = state.variables?.get(data.get("url")?.value ?? "")?.value ?? "";
 
   const padding = getPadding(blockProps.block);
   const boxShadow = getBoxShadow(blockProps.block);
@@ -49,35 +29,12 @@ const NativeIframeBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const direction = getDirection(blockProps.block);
   const height = getHeight(blockProps.block);
   const width = getWidth(blockProps.block);
-  const title = getIframeTitle(blockProps.block);
   const extraClass = generateExtraClass(blockProps.block);
 
   const mergedStyle = mergeStyles([padding, shapeRadius, direction]);
-  const classes = mergeClasses([
-    css(mergedStyle),
-    dropShadow,
-    boxShadow,
-    height,
-    width,
-    extraClass,
-  ]);
+  const classes = mergeClasses([css(mergedStyle), dropShadow, boxShadow, height, width, extraClass]);
 
-  return (
-    <iframe
-      id={blockKey}
-      className={classes}
-      key={blockKey}
-      src={result ?? ""}
-      title={title}
-    ></iframe>
-  );
+  return <iframe id={blockKey} className={classes} key={blockKey} src={url} title={title}></iframe>;
 };
-
-function getIframeTitle(block: NativeBlockModel | null) {
-  const inputTypeProperty = getProperty(block, "title");
-  if (inputTypeProperty.valueMobile) return inputTypeProperty.valueMobile;
-  if (inputTypeProperty.valueTablet) return inputTypeProperty.valueTablet;
-  if (inputTypeProperty.valueDesktop) return inputTypeProperty.valueDesktop;
-}
 
 export default NativeIframeBlock;

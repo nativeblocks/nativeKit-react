@@ -1,60 +1,33 @@
-import {
-  BlockProps,
-  NONE_INDEX,
-  useNativeFrameState,
-} from "@nativeblocks/nativeblocks-react";
-import React, { FC } from "react";
-import { getJsonPathValue, getVariableValue } from "../../utility/VariableUtil";
-import {
-  getBackgroundColor,
-  getForegroundAsBackgroundColor,
-} from "../../utility/ColorUtil";
-import { getBoxShadow, getDropShadow } from "../../utility/ShadowUtil";
-import { getDirection } from "../../utility/LayoutUtil";
-import { generateExtraClass, isEnable } from "../../utility/BlockUtil";
-import { mergeClasses, mergeStyles } from "../../utility/StyleUtil";
 import { css } from "@emotion/css";
+import { BlockProps, NONE_INDEX, useNativeFrameState } from "@nativeblocks/nativeblocks-react";
+import React, { FC } from "react";
+import { generateExtraClass } from "../../utility/BlockUtil";
+import { getBackgroundColor, getForegroundAsBackgroundColor } from "../../utility/ColorUtil";
+import { getDirection } from "../../utility/LayoutUtil";
+import { getBoxShadow, getDropShadow } from "../../utility/ShadowUtil";
+import { mergeClasses, mergeStyles } from "../../utility/StyleUtil";
 
 const NativeSwitchBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const { state } = useNativeFrameState();
 
-  const blockKey = blockProps.block?.key ?? "";
-  const visibility = state.variables?.get(
-    blockProps.block?.visibilityKey ?? ""
-  );
+  const visibility = state.variables?.get(blockProps.block?.visibilityKey ?? "");
   if (visibility && (visibility.value ?? "true") === "false") {
     return <></>;
   }
 
-  const variable = state.variables?.get(blockKey);
-  let result = {} as any;
-  if (blockProps.block?.jsonPath) {
-    const query = getVariableValue(
-      blockProps.block?.jsonPath,
-      "index",
-      blockProps.index.toString()
-    );
-    result = getJsonPathValue(variable?.value ?? "", query);
-  } else {
-    result = variable?.value ?? false;
-  }
+  const blockKey = blockProps.block?.key ?? "";
+  const magics = state.magics?.get(blockKey) ?? [];
 
-  const magics = state?.magics?.get(blockKey) ?? [];
+  const data = blockProps.block?.data ?? new Map();
+  const check = state.variables?.get(data.get("checkValue")?.value ?? "");
+  let checkValue = check?.value === "true";
+  const enable = state.variables?.get(data.get("enable")?.value ?? "")?.value === "true";
 
   const boxShadow = getBoxShadow(blockProps.block);
   const dropShadow = getDropShadow(blockProps.block);
   const direction = getDirection(blockProps.block);
-  const foregroundColor = getForegroundAsBackgroundColor(
-    blockProps.block,
-    null,
-    result ? "100" : "60"
-  );
-  const backgroundColor = getBackgroundColor(
-    blockProps.block,
-    null,
-    result ? "100" : "60"
-  );
-  const enable = isEnable(blockProps.block);
+  const foregroundColor = getForegroundAsBackgroundColor(blockProps.block, null, checkValue ? "100" : "60");
+  const backgroundColor = getBackgroundColor(blockProps.block, null, checkValue ? "100" : "60");
   const extraClass = generateExtraClass(blockProps.block);
 
   const mergedStyle = mergeStyles([direction, backgroundColor]);
@@ -67,7 +40,7 @@ const NativeSwitchBlock: FC<BlockProps> = (blockProps: BlockProps) => {
     "items-center",
     "rounded-full",
     "duration-200",
-    `${result ? "p-0" : "p-1"}`,
+    `${checkValue ? "p-0" : "p-1"}`,
     dropShadow,
     boxShadow,
     extraClass,
@@ -75,41 +48,30 @@ const NativeSwitchBlock: FC<BlockProps> = (blockProps: BlockProps) => {
 
   return (
     <>
-      <label
-        id={blockKey}
-        className="relative inline-flex cursor-pointer select-none items-center rounded-full"
-      >
+      <label id={blockKey} className="relative inline-flex cursor-pointer select-none items-center rounded-full">
         <input
           // disabled={!enable}
           className={"hidden"}
-          defaultChecked={result}
+          defaultChecked={checkValue}
           type="checkbox"
           key={blockKey}
           onChange={(event) => {
-            result = event.target.checked;
-            if (variable) {
-              variable.value = result;
-              blockProps.onVariableChange?.(variable);
+            checkValue = event.target.checked;
+            if (check) {
+              check.value = `${checkValue}`;
+              blockProps.onVariableChange?.(check);
             }
 
             if (!magics) return;
-            const onChangeEvent = magics.find(
-              (magic: any) => magic.event === "onCheckChange"
-            );
+            const onChangeEvent = magics.find((magic: any) => magic.event === "onCheckChange");
             if (onChangeEvent) {
-              blockProps.onHandleMagic?.(
-                blockProps.index ?? NONE_INDEX,
-                onChangeEvent,
-                "onCheckChange"
-              );
+              blockProps.onHandleMagic?.(blockProps.index ?? NONE_INDEX, onChangeEvent, "onCheckChange");
             }
           }}
         />
         <span className={classes}>
           <span
-            className={`h-5 w-5 ${css(
-              foregroundColor
-            )} rounded-full duration-200 ${result ? "translate-x-8" : ""}`}
+            className={`h-5 w-5 ${css(foregroundColor)} rounded-full duration-200 ${checkValue ? "translate-x-8" : ""}`}
           ></span>
         </span>
       </label>

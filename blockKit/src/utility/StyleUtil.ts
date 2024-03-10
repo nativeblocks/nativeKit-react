@@ -12,10 +12,7 @@ export function mergeStyles(styleStrings: string[]): string {
 
   styleStrings.forEach((styleString) => {
     breakpoints.forEach((breakpoint) => {
-      const regex = new RegExp(
-        `@media \\(${breakpoint.query}\\) {([^}]+)}`,
-        "g"
-      );
+      const regex = new RegExp(`@media \\(${breakpoint.query}\\) {([^}]+)}`, "g");
       const match = regex.exec(styleString);
       if (match && match[1]) {
         breakpoint.styles.push(match[1].trim());
@@ -25,12 +22,7 @@ export function mergeStyles(styleStrings: string[]): string {
     });
   });
 
-  return breakpoints
-    .map(
-      (breakpoint) =>
-        `@media (${breakpoint.query}) { ${breakpoint.styles.join(" ")} }`
-    )
-    .join(" ");
+  return breakpoints.map((breakpoint) => `@media (${breakpoint.query}) { ${breakpoint.styles.join(" ")} }`).join(" ");
 }
 
 export function mergeClasses(classStrings: string[]): string {

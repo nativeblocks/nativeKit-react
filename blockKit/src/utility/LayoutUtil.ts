@@ -1,28 +1,18 @@
 import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
 import { getProperty } from "./BlockUtil";
 
-function generateDirectionStyle(
-  directionMobile: any,
-  directionTablet: any,
-  directionDesktop: any
-) {
+function generateDirectionStyle(directionMobile: any, directionTablet: any, directionDesktop: any) {
   const mobileBreakpoint = 768;
   const tabletBreakpoint = 1024;
 
-  let style = `@media (max-width: ${
-    mobileBreakpoint - 1
-  }px) { direction: ${directionMobile}; } `;
+  let style = `@media (max-width: ${mobileBreakpoint - 1}px) { direction: ${directionMobile}; } `;
   style += `@media (min-width: ${mobileBreakpoint}px) { direction: ${directionTablet}; } `;
   style += `@media (min-width: ${tabletBreakpoint}px) { direction: ${directionDesktop}; }`;
 
   return style;
 }
 
-function generateOrientationStyle(
-  orientationMobile: string,
-  orientationTablet: string,
-  orientationDesktop: string
-) {
+function generateOrientationStyle(orientationMobile: string, orientationTablet: string, orientationDesktop: string) {
   const getLayoutClass = (orientation: string) => {
     if (orientation === "X") {
       return "flex-row";
@@ -66,29 +56,17 @@ function generateGapStyle(gapMobile: any, gapTablet: any, gapDesktop: any) {
 
 export function getGap(block: NativeBlockModel | null) {
   const gapProperty = getProperty(block, "gap");
-  return generateGapStyle(
-    gapProperty.valueMobile,
-    gapProperty.valueTablet,
-    gapProperty.valueDesktop
-  );
+  return generateGapStyle(gapProperty.valueMobile, gapProperty.valueTablet, gapProperty.valueDesktop);
 }
 
-function generateJustifyContentStyle(
-  justifyContentMobile: any,
-  justifyContentTablet: any,
-  justifyContentDesktop: any
-) {
+function generateJustifyContentStyle(justifyContentMobile: any, justifyContentTablet: any, justifyContentDesktop: any) {
   const mobileJustifyContent = `${justifyContentMobile}`;
   const tabletJustifyContent = `md:${justifyContentTablet}`;
   const desktopJustifyContent = `lg:${justifyContentDesktop}`;
   return `${mobileJustifyContent} ${tabletJustifyContent} ${desktopJustifyContent}`;
 }
 
-function generateAlignItemsStyle(
-  alignItemsMobile: any,
-  alignItemsTablet: any,
-  alignItemsDesktop: any
-) {
+function generateAlignItemsStyle(alignItemsMobile: any, alignItemsTablet: any, alignItemsDesktop: any) {
   const mobileAlignItems = `${alignItemsMobile}`;
   const tabletAlignItems = `md:${alignItemsTablet}`;
   const desktopAlignItems = `lg:${alignItemsDesktop}`;

@@ -1,17 +1,11 @@
 import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
 import { getProperty } from "./BlockUtil";
 
-function fontFamilyMapper(
-  fontFamilyMobile: any,
-  fontFamilyTablet: any,
-  fontFamilyDesktop: any
-) {
+function fontFamilyMapper(fontFamilyMobile: any, fontFamilyTablet: any, fontFamilyDesktop: any) {
   const mobileBreakpoint = 768;
   const tabletBreakpoint = 1024;
 
-  let style = `@media (max-width: ${
-    mobileBreakpoint - 1
-  }px) { border-radius: ${fontFamilyMobile}; } `;
+  let style = `@media (max-width: ${mobileBreakpoint - 1}px) { border-radius: ${fontFamilyMobile}; } `;
   style += `@media (min-width: ${mobileBreakpoint}px) { border-radius: ${fontFamilyTablet}; } `;
   style += `@media (min-width: ${tabletBreakpoint}px) { border-radius: ${fontFamilyDesktop}; }`;
   return style;
@@ -52,9 +46,7 @@ function letterSpacingMapper(
   const mobileBreakpoint = 768;
   const tabletBreakpoint = 1024;
 
-  let style = `@media (max-width: ${
-    mobileBreakpoint - 1
-  }px) { letter-spacing: ${letterSpacingMobile}rem; } `;
+  let style = `@media (max-width: ${mobileBreakpoint - 1}px) { letter-spacing: ${letterSpacingMobile}rem; } `;
   style += `@media (min-width: ${mobileBreakpoint}px) { letter-spacing: ${letterSpacingTablet}rem; } `;
   style += `@media (min-width: ${tabletBreakpoint}px) { letter-spacing: ${letterSpacingDesktop}rem; }`;
 
@@ -88,17 +80,11 @@ export function getTableBodyLetterSpacing(block: NativeBlockModel | null) {
   );
 }
 
-function fontSizeMapper(
-  fontSizeMobile: string,
-  fontSizeTablet: string,
-  fontSizeDesktop: string
-): string {
+function fontSizeMapper(fontSizeMobile: string, fontSizeTablet: string, fontSizeDesktop: string): string {
   const mobileBreakpoint = 768;
   const tabletBreakpoint = 1024;
 
-  let style = `@media (max-width: ${
-    mobileBreakpoint - 1
-  }px) { font-size: ${fontSizeMobile}rem; } `;
+  let style = `@media (max-width: ${mobileBreakpoint - 1}px) { font-size: ${fontSizeMobile}rem; } `;
   style += `@media (min-width: ${mobileBreakpoint}px) { font-size: ${fontSizeTablet}rem; } `;
   style += `@media (min-width: ${tabletBreakpoint}px) { font-size: ${fontSizeDesktop}rem; }`;
 
@@ -107,36 +93,20 @@ function fontSizeMapper(
 
 export function getFontSize(block: NativeBlockModel | null) {
   const fontSizeProperty = getProperty(block, "fontSize");
-  return fontSizeMapper(
-    fontSizeProperty.valueMobile,
-    fontSizeProperty.valueTablet,
-    fontSizeProperty.valueDesktop
-  );
+  return fontSizeMapper(fontSizeProperty.valueMobile, fontSizeProperty.valueTablet, fontSizeProperty.valueDesktop);
 }
 
 export function getTableHeaderFontSize(block: NativeBlockModel | null) {
   const fontSizeProperty = getProperty(block, "headerFontSize");
-  return fontSizeMapper(
-    fontSizeProperty.valueMobile,
-    fontSizeProperty.valueTablet,
-    fontSizeProperty.valueDesktop
-  );
+  return fontSizeMapper(fontSizeProperty.valueMobile, fontSizeProperty.valueTablet, fontSizeProperty.valueDesktop);
 }
 
 export function getTableBodyFontSize(block: NativeBlockModel | null) {
   const fontSizeProperty = getProperty(block, "bodyFontSize");
-  return fontSizeMapper(
-    fontSizeProperty.valueMobile,
-    fontSizeProperty.valueTablet,
-    fontSizeProperty.valueDesktop
-  );
+  return fontSizeMapper(fontSizeProperty.valueMobile, fontSizeProperty.valueTablet, fontSizeProperty.valueDesktop);
 }
 
-function generateTextAlignStyle(
-  textAlignMobile: string,
-  textAlignTablet: string,
-  textAlignDesktop: string
-): string {
+function generateTextAlignStyle(textAlignMobile: string, textAlignTablet: string, textAlignDesktop: string): string {
   const mobileClass = `${textAlignMobile}`;
   const tabletClass = `md:${textAlignTablet}`;
   const desktopClass = `lg:${textAlignDesktop}`;
@@ -217,9 +187,7 @@ function generateTextDecorationStyle(
 ): string {
   const mobileClass = textDecorationMobile ? `${textDecorationMobile}` : "";
   const tabletClass = textDecorationTablet ? `md:${textDecorationTablet}` : "";
-  const desktopClass = textDecorationDesktop
-    ? `lg:${textDecorationDesktop}`
-    : "";
+  const desktopClass = textDecorationDesktop ? `lg:${textDecorationDesktop}` : "";
 
   return `${mobileClass} ${tabletClass} ${desktopClass}`.trim();
 }

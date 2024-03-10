@@ -14,9 +14,7 @@ class Color {
   }
 
   toString() {
-    return `rgb(${Math.round(this.r)}, ${Math.round(this.g)}, ${Math.round(
-      this.b
-    )})`;
+    return `rgb(${Math.round(this.r)}, ${Math.round(this.g)}, ${Math.round(this.b)})`;
   }
 
   set(r: number, g: number, b: number) {
@@ -86,15 +84,9 @@ class Color {
   }
 
   multiply(matrix: number[]) {
-    const newR = this.clamp(
-      this.r * matrix[0] + this.g * matrix[1] + this.b * matrix[2]
-    );
-    const newG = this.clamp(
-      this.r * matrix[3] + this.g * matrix[4] + this.b * matrix[5]
-    );
-    const newB = this.clamp(
-      this.r * matrix[6] + this.g * matrix[7] + this.b * matrix[8]
-    );
+    const newR = this.clamp(this.r * matrix[0] + this.g * matrix[1] + this.b * matrix[2]);
+    const newG = this.clamp(this.r * matrix[3] + this.g * matrix[4] + this.b * matrix[5]);
+    const newB = this.clamp(this.r * matrix[6] + this.g * matrix[7] + this.b * matrix[8]);
     this.r = newR;
     this.g = newG;
     this.b = newB;
@@ -297,11 +289,10 @@ class Solver {
     function fmt(idx: number, multiplier = 1) {
       return Math.round(filters[idx] * multiplier);
     }
-    return `opacity(${alpha}) invert(${fmt(0)}%) sepia(${fmt(
-      1
-    )}%) saturate(${fmt(2)}%) hue-rotate(${fmt(3, 3.6)}deg) brightness(${fmt(
-      4
-    )}%) contrast(${fmt(5)}%)`;
+    return `opacity(${alpha}) invert(${fmt(0)}%) sepia(${fmt(1)}%) saturate(${fmt(2)}%) hue-rotate(${fmt(
+      3,
+      3.6
+    )}deg) brightness(${fmt(4)}%) contrast(${fmt(5)}%)`;
   }
 }
 
@@ -313,13 +304,7 @@ function hexToRgb(hex: string) {
   });
 
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result
-    ? [
-        parseInt(result[1], 16),
-        parseInt(result[2], 16),
-        parseInt(result[3], 16),
-      ]
-    : null;
+  return result ? [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)] : null;
 }
 
 function colorToFilter(hex: string, opacity: string) {
@@ -356,24 +341,14 @@ function toArgb(colorString: string, opacity: string): string {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
   }
 }
-type ColorType =
-  | "foreground"
-  | "background"
-  | "border"
-  | "outline"
-  | "tint"
-  | "accent";
+type ColorType = "foreground" | "background" | "border" | "outline" | "tint" | "accent";
 type ColorStyle = {
   type: ColorType;
   color: string;
   alpha: string;
 };
 
-function generateColorStyle(
-  colorMobile: ColorStyle,
-  colorTablet: ColorStyle,
-  colorDesktop: ColorStyle
-): string {
+function generateColorStyle(colorMobile: ColorStyle, colorTablet: ColorStyle, colorDesktop: ColorStyle): string {
   const mobileBreakpoint = 768;
   const tabletBreakpoint = 1024;
 
@@ -398,15 +373,9 @@ function generateColorStyle(
   }
 
   // Generate combined color styles for each breakpoint
-  let style = `@media (max-width: ${mobileBreakpoint - 1}px) { ${typeResolver(
-    colorMobile
-  )} } `;
-  style += `@media (min-width: ${mobileBreakpoint}px) { ${typeResolver(
-    colorTablet
-  )} } `;
-  style += `@media (min-width: ${tabletBreakpoint}px) { ${typeResolver(
-    colorDesktop
-  )} }`;
+  let style = `@media (max-width: ${mobileBreakpoint - 1}px) { ${typeResolver(colorMobile)} } `;
+  style += `@media (min-width: ${mobileBreakpoint}px) { ${typeResolver(colorTablet)} } `;
+  style += `@media (min-width: ${tabletBreakpoint}px) { ${typeResolver(colorDesktop)} }`;
 
   return style;
 }
@@ -417,37 +386,22 @@ export function getBackgroundColor(
   overrideOpacity: string | null = null
 ) {
   const backgroundColorProperty = getProperty(block, "backgroundColor");
-  const backgroundColorOpacityProperty = getProperty(
-    block,
-    "backgroundColorOpacity"
-  );
+  const backgroundColorOpacityProperty = getProperty(block, "backgroundColorOpacity");
 
   return generateColorStyle(
     {
-      color: overrideColor
-        ? overrideColor
-        : backgroundColorProperty.valueMobile,
-      alpha: overrideOpacity
-        ? overrideOpacity
-        : backgroundColorOpacityProperty.valueMobile,
+      color: overrideColor ? overrideColor : backgroundColorProperty.valueMobile,
+      alpha: overrideOpacity ? overrideOpacity : backgroundColorOpacityProperty.valueMobile,
       type: "background",
     },
     {
-      color: overrideColor
-        ? overrideColor
-        : backgroundColorProperty.valueTablet,
-      alpha: overrideOpacity
-        ? overrideOpacity
-        : backgroundColorOpacityProperty.valueTablet,
+      color: overrideColor ? overrideColor : backgroundColorProperty.valueTablet,
+      alpha: overrideOpacity ? overrideOpacity : backgroundColorOpacityProperty.valueTablet,
       type: "background",
     },
     {
-      color: overrideColor
-        ? overrideColor
-        : backgroundColorProperty.valueDesktop,
-      alpha: overrideOpacity
-        ? overrideOpacity
-        : backgroundColorOpacityProperty.valueDesktop,
+      color: overrideColor ? overrideColor : backgroundColorProperty.valueDesktop,
+      alpha: overrideOpacity ? overrideOpacity : backgroundColorOpacityProperty.valueDesktop,
       type: "background",
     }
   );
@@ -459,37 +413,22 @@ export function getTableHeaderBackgroundColor(
   overrideOpacity: string | null = null
 ) {
   const backgroundColorProperty = getProperty(block, "headerBackgroundColor");
-  const backgroundColorOpacityProperty = getProperty(
-    block,
-    "headerBackgroundColorOpacity"
-  );
+  const backgroundColorOpacityProperty = getProperty(block, "headerBackgroundColorOpacity");
 
   return generateColorStyle(
     {
-      color: overrideColor
-        ? overrideColor
-        : backgroundColorProperty.valueMobile,
-      alpha: overrideOpacity
-        ? overrideOpacity
-        : backgroundColorOpacityProperty.valueMobile,
+      color: overrideColor ? overrideColor : backgroundColorProperty.valueMobile,
+      alpha: overrideOpacity ? overrideOpacity : backgroundColorOpacityProperty.valueMobile,
       type: "background",
     },
     {
-      color: overrideColor
-        ? overrideColor
-        : backgroundColorProperty.valueTablet,
-      alpha: overrideOpacity
-        ? overrideOpacity
-        : backgroundColorOpacityProperty.valueTablet,
+      color: overrideColor ? overrideColor : backgroundColorProperty.valueTablet,
+      alpha: overrideOpacity ? overrideOpacity : backgroundColorOpacityProperty.valueTablet,
       type: "background",
     },
     {
-      color: overrideColor
-        ? overrideColor
-        : backgroundColorProperty.valueDesktop,
-      alpha: overrideOpacity
-        ? overrideOpacity
-        : backgroundColorOpacityProperty.valueDesktop,
+      color: overrideColor ? overrideColor : backgroundColorProperty.valueDesktop,
+      alpha: overrideOpacity ? overrideOpacity : backgroundColorOpacityProperty.valueDesktop,
       type: "background",
     }
   );
@@ -501,37 +440,22 @@ export function getTableBodyBackgroundColor(
   overrideOpacity: string | null = null
 ) {
   const backgroundColorProperty = getProperty(block, "bodyBackgroundColor");
-  const backgroundColorOpacityProperty = getProperty(
-    block,
-    "bodyBackgroundColorOpacity"
-  );
+  const backgroundColorOpacityProperty = getProperty(block, "bodyBackgroundColorOpacity");
 
   return generateColorStyle(
     {
-      color: overrideColor
-        ? overrideColor
-        : backgroundColorProperty.valueMobile,
-      alpha: overrideOpacity
-        ? overrideOpacity
-        : backgroundColorOpacityProperty.valueMobile,
+      color: overrideColor ? overrideColor : backgroundColorProperty.valueMobile,
+      alpha: overrideOpacity ? overrideOpacity : backgroundColorOpacityProperty.valueMobile,
       type: "background",
     },
     {
-      color: overrideColor
-        ? overrideColor
-        : backgroundColorProperty.valueTablet,
-      alpha: overrideOpacity
-        ? overrideOpacity
-        : backgroundColorOpacityProperty.valueTablet,
+      color: overrideColor ? overrideColor : backgroundColorProperty.valueTablet,
+      alpha: overrideOpacity ? overrideOpacity : backgroundColorOpacityProperty.valueTablet,
       type: "background",
     },
     {
-      color: overrideColor
-        ? overrideColor
-        : backgroundColorProperty.valueDesktop,
-      alpha: overrideOpacity
-        ? overrideOpacity
-        : backgroundColorOpacityProperty.valueDesktop,
+      color: overrideColor ? overrideColor : backgroundColorProperty.valueDesktop,
+      alpha: overrideOpacity ? overrideOpacity : backgroundColorOpacityProperty.valueDesktop,
       type: "background",
     }
   );
@@ -543,37 +467,22 @@ export function getForegroundAsBackgroundColor(
   overrideOpacity: string | null = null
 ) {
   const foregroundColorProperty = getProperty(block, "foregroundColor");
-  const foregroundColorOpacityProperty = getProperty(
-    block,
-    "foregroundColorOpacity"
-  );
+  const foregroundColorOpacityProperty = getProperty(block, "foregroundColorOpacity");
 
   return generateColorStyle(
     {
-      color: overrideColor
-        ? overrideColor
-        : foregroundColorProperty.valueMobile,
-      alpha: overrideOpacity
-        ? overrideOpacity
-        : foregroundColorOpacityProperty.valueMobile,
+      color: overrideColor ? overrideColor : foregroundColorProperty.valueMobile,
+      alpha: overrideOpacity ? overrideOpacity : foregroundColorOpacityProperty.valueMobile,
       type: "background",
     },
     {
-      color: overrideColor
-        ? overrideColor
-        : foregroundColorProperty.valueTablet,
-      alpha: overrideOpacity
-        ? overrideOpacity
-        : foregroundColorOpacityProperty.valueTablet,
+      color: overrideColor ? overrideColor : foregroundColorProperty.valueTablet,
+      alpha: overrideOpacity ? overrideOpacity : foregroundColorOpacityProperty.valueTablet,
       type: "background",
     },
     {
-      color: overrideColor
-        ? overrideColor
-        : foregroundColorProperty.valueDesktop,
-      alpha: overrideOpacity
-        ? overrideOpacity
-        : foregroundColorOpacityProperty.valueDesktop,
+      color: overrideColor ? overrideColor : foregroundColorProperty.valueDesktop,
+      alpha: overrideOpacity ? overrideOpacity : foregroundColorOpacityProperty.valueDesktop,
       type: "background",
     }
   );
@@ -581,10 +490,7 @@ export function getForegroundAsBackgroundColor(
 
 export function getForegroundColor(block: NativeBlockModel | null) {
   const foregroundColorProperty = getProperty(block, "foregroundColor");
-  const foregroundColorOpacityProperty = getProperty(
-    block,
-    "foregroundColorOpacity"
-  );
+  const foregroundColorOpacityProperty = getProperty(block, "foregroundColorOpacity");
 
   return generateColorStyle(
     {
@@ -607,10 +513,7 @@ export function getForegroundColor(block: NativeBlockModel | null) {
 
 export function getTableHeaderForegroundColor(block: NativeBlockModel | null) {
   const foregroundColorProperty = getProperty(block, "headerForegroundColor");
-  const foregroundColorOpacityProperty = getProperty(
-    block,
-    "headerForegroundColorOpacity"
-  );
+  const foregroundColorOpacityProperty = getProperty(block, "headerForegroundColorOpacity");
 
   return generateColorStyle(
     {
@@ -633,10 +536,7 @@ export function getTableHeaderForegroundColor(block: NativeBlockModel | null) {
 
 export function getTableBodyForegroundColor(block: NativeBlockModel | null) {
   const foregroundColorProperty = getProperty(block, "bodyForegroundColor");
-  const foregroundColorOpacityProperty = getProperty(
-    block,
-    "bodyForegroundColorOpacity"
-  );
+  const foregroundColorOpacityProperty = getProperty(block, "bodyForegroundColorOpacity");
 
   return generateColorStyle(
     {
@@ -682,10 +582,7 @@ export function getBorderColor(block: NativeBlockModel | null) {
 
 export function getAccentColor(block: NativeBlockModel | null) {
   const foregroundColorProperty = getProperty(block, "foregroundColor");
-  const foregroundColorOpacityProperty = getProperty(
-    block,
-    "foregroundColorOpacity"
-  );
+  const foregroundColorOpacityProperty = getProperty(block, "foregroundColorOpacity");
 
   return generateColorStyle(
     {
@@ -708,10 +605,7 @@ export function getAccentColor(block: NativeBlockModel | null) {
 
 export function getTinitColor(block: NativeBlockModel | null) {
   const foregroundColorProperty = getProperty(block, "foregroundColor");
-  const foregroundColorOpacityProperty = getProperty(
-    block,
-    "foregroundColorOpacity"
-  );
+  const foregroundColorOpacityProperty = getProperty(block, "foregroundColorOpacity");
 
   return generateColorStyle(
     {

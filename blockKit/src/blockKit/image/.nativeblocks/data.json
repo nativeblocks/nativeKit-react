@@ -1,0 +1,4 @@
+[
+  { "key": "url", "type": "STRING" },
+  { "key": "alt", "type": "STRING" }
+]

@@ -21,8 +21,8 @@ const NativeImageBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const magics = state.magics?.get(blockKey) ?? [];
 
   const data = blockProps.block?.data ?? new Map();
-  const alt = state.variables?.get(data.get("alt")?.value ?? "")?.value ?? "";
   const url = state.variables?.get(data.get("url")?.value ?? "")?.value ?? "";
+  const alt = state.variables?.get(data.get("alt")?.value ?? "")?.value ?? "";
 
   const padding = getPadding(blockProps.block);
   const boxShadow = getBoxShadow(blockProps.block);

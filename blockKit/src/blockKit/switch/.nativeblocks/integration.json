@@ -1,0 +1,11 @@
+{
+  "name": "Native switch",
+  "description": "This is switch",
+  "documentation": "",
+  "imageIcon": "",
+  "keyType": "NATIVE_SWITCH",
+  "kind": "BLOCK",
+  "platformSupport": "REACT",
+  "price": 0,
+  "public": true
+}

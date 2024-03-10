@@ -7,7 +7,6 @@
     "valuePicker": "number-input",
     "valuePickerCategory": "Padding",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[]"
   },
   {
@@ -18,7 +17,6 @@
     "valuePicker": "number-input",
     "valuePickerCategory": "Padding",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[]"
   },
   {
@@ -29,7 +27,6 @@
     "valuePicker": "number-input",
     "valuePickerCategory": "Padding",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[]"
   },
   {
@@ -40,7 +37,6 @@
     "valuePicker": "number-input",
     "valuePickerCategory": "Padding",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[]"
   },
   {
@@ -51,7 +47,6 @@
     "valuePicker": "number-input",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[]"
   },
   {
@@ -62,7 +57,6 @@
     "valuePicker": "number-input",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[]"
   },
   {
@@ -73,7 +67,6 @@
     "valuePicker": "number-input",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[]"
   },
   {
@@ -84,7 +77,6 @@
     "valuePicker": "number-input",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[]"
   },
   {
@@ -95,7 +87,6 @@
     "valuePicker": "dropdown",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[{\"id\":\"shadow-none\",\"value\":\"none\"},{\"id\":\"shadow-sm\",\"value\":\"sm\"},{\"id\":\"shadow\",\"value\":\"normal\"},{\"id\":\"shadow-md\",\"value\":\"md\"},{\"id\":\"shadow-lg\",\"value\":\"lg\"},{\"id\":\"shadow-xl\",\"value\":\"xl\"},{\"id\":\"shadow-2xl\",\"value\":\"2xl\"}]"
   },
   {
@@ -106,7 +97,6 @@
     "valuePicker": "dropdown",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"value\":\"none\"},{\"id\":\"drop-shadow-sm\",\"value\":\"sm\"},{\"id\":\"drop-shadow\",\"value\":\"normal\"},{\"id\":\"drop-shadow-md\",\"value\":\"md\"},{\"id\":\"drop-shadow-lg\",\"value\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"value\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"value\":\"2xl\"}]"
   },
   {
@@ -117,7 +107,6 @@
     "valuePicker": "dropdown",
     "valuePickerCategory": "Layout",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[{ \"id\": \"LTR\", \"value\": \"LTR\" }, { \"id\": \"RTL\", \"value\": \"RTL\" }]"
   },
   {
@@ -128,7 +117,6 @@
     "valuePicker": "text-input",
     "valuePickerCategory": "Size",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[]"
   },
   {
@@ -139,7 +127,6 @@
     "valuePicker": "text-input",
     "valuePickerCategory": "Size",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[]"
   },
   {
@@ -150,7 +137,6 @@
     "valuePicker": "text-area-input",
     "valuePickerCategory": "Extra",
     "valuePickerGroup": "",
-    "integrationId": "",
     "valuePickerOption": "[]"
   }
 ]

@@ -1,0 +1,11 @@
+{
+  "name": "Native checkbox",
+  "description": "This is checkbox",
+  "documentation": "",
+  "imageIcon": "",
+  "keyType": "NATIVE_CHECKBOX",
+  "kind": "BLOCK",
+  "platformSupport": "REACT",
+  "price": 0,
+  "public": true
+}

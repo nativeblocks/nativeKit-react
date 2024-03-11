@@ -1,58 +1,33 @@
-import {
-  BlockProps,
-  useNativeFrameState,
-} from "@nativeblocks/nativeblocks-react";
-import React, { FC } from "react";
-import { generateExtraClass, isEnable } from "../../utility/BlockUtil";
-import { getJsonPathValue, getVariableValue } from "../../utility/VariableUtil";
-import { handleOnClick } from "../../utility/EventUtil";
-import {
-  getBackgroundColor,
-  getBorderColor,
-  getForegroundColor,
-  getTinitColor,
-} from "../../utility/ColorUtil";
-import { mergeClasses, mergeStyles } from "../../utility/StyleUtil";
 import { css } from "@emotion/css";
-import { getPadding } from "../../utility/SpaceUtil";
+import { BlockProps, useNativeFrameState } from "@nativeblocks/nativeblocks-react";
+import React, { FC } from "react";
+import { generateExtraClass } from "../../utility/BlockUtil";
 import { getBorderRaduis } from "../../utility/BorderRadiusUtil";
-import { getBoxShadow, getDropShadow } from "../../utility/ShadowUtil";
+import { getBackgroundColor, getBorderColor, getForegroundColor, getTinitColor } from "../../utility/ColorUtil";
+import { handleOnClick } from "../../utility/EventUtil";
+import { getFontFamily, getFontSize, getFontWeight, getLetterSpacing, getTextAlign } from "../../utility/FontUtil";
 import { getDirection } from "../../utility/LayoutUtil";
+import { getBoxShadow, getDropShadow } from "../../utility/ShadowUtil";
 import { getHeight, getWidth } from "../../utility/SizeUtil";
-import {
-  getFontFamily,
-  getFontSize,
-  getFontWeight,
-  getLetterSpacing,
-  getTextAlign,
-} from "../../utility/FontUtil";
-import { getLeadingIcon, getTrailingIcon } from "../../utility/IconUtil";
+import { getPadding } from "../../utility/SpaceUtil";
+import { mergeClasses, mergeStyles } from "../../utility/StyleUtil";
 
 const NativeButtonBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const { state } = useNativeFrameState();
 
-  const blockKey = blockProps.block?.key ?? "";
-  const visibility = state.variables?.get(
-    blockProps.block?.visibilityKey ?? ""
-  );
+  const visibility = state.variables?.get(blockProps.block?.visibilityKey ?? "");
   if (visibility && (visibility.value ?? "true") === "false") {
     return <></>;
   }
 
-  const variable = state.variables?.get(blockKey);
-  let result = {} as any;
-  if (blockProps.block?.jsonPath) {
-    const query = getVariableValue(
-      blockProps.block?.jsonPath,
-      "index",
-      blockProps.index.toString()
-    );
-    result = getJsonPathValue(variable?.value ?? "", query);
-  } else {
-    result = variable?.value ?? "";
-  }
-
+  const blockKey = blockProps.block?.key ?? "";
   const magics = state.magics?.get(blockKey) ?? [];
+
+  const data = blockProps.block?.data ?? new Map();
+  const text = state.variables?.get(data.get("text")?.value ?? "")?.value ?? "";
+  const isEnableButton = state.variables?.get(data.get("enable")?.value ?? "")?.value === "true";
+  const leadingIcon = state.variables?.get(data.get("leadingIcon")?.value ?? "")?.value ?? "";
+  const trailingIcon = state.variables?.get(data.get("trailingIcon")?.value ?? "")?.value ?? "";
 
   const padding = getPadding(blockProps.block);
   const shapeRadius = getBorderRaduis(blockProps.block);
@@ -71,9 +46,6 @@ const NativeButtonBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const fontSize = getFontSize(blockProps.block);
   const textAlign = getTextAlign(blockProps.block);
   const fontWeight = getFontWeight(blockProps.block);
-  const leadingIcon = getLeadingIcon(blockProps.block);
-  const trailingIcon = getTrailingIcon(blockProps.block);
-  const isEnableButton = isEnable(blockProps.block);
 
   const mergedStyle = mergeStyles([
     padding,
@@ -108,7 +80,7 @@ const NativeButtonBlock: FC<BlockProps> = (blockProps: BlockProps) => {
       <ButtonContent
         tintColor={tintColor}
         leadingIcon={leadingIcon}
-        text={result}
+        text={text}
         trailingIcon={trailingIcon}
         textAlign={textAlign}
       />
@@ -116,26 +88,12 @@ const NativeButtonBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   );
 };
 
-const ButtonContent: FC<any> = ({
-  leadingIcon,
-  text,
-  trailingIcon,
-  tintColor,
-  textAlign,
-}) => {
+const ButtonContent: FC<any> = ({ leadingIcon, text, trailingIcon, tintColor, textAlign }) => {
   return (
     <div className={`flex flex-row w-auto items-center`}>
-      {leadingIcon ? (
-        <img src={leadingIcon} className={`h-5 w5 ${css(tintColor)}`} alt="" />
-      ) : (
-        <></>
-      )}
+      {leadingIcon ? <img src={leadingIcon} className={`h-5 w5 ${css(tintColor)}`} alt="" /> : <></>}
       <p className={`w-full px-2 ${textAlign}`}>{text}</p>
-      {trailingIcon ? (
-        <img src={trailingIcon} className={`h-5 w5 ${css(tintColor)}`} alt="" />
-      ) : (
-        <></>
-      )}
+      {trailingIcon ? <img src={trailingIcon} className={`h-5 w5 ${css(tintColor)}`} alt="" /> : <></>}
     </div>
   );
 };

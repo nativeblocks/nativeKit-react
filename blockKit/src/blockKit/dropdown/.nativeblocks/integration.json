@@ -1,0 +1,11 @@
+{
+  "name": "Native dropdown",
+  "description": "This is dropdown",
+  "documentation": "",
+  "imageIcon": "",
+  "keyType": "NATIVE_DROPDOWN",
+  "kind": "BLOCK",
+  "platformSupport": "REACT",
+  "price": 0,
+  "public": true
+}

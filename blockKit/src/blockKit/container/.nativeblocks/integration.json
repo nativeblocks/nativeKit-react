@@ -1,0 +1,11 @@
+{
+  "name": "Native container",
+  "description": "This is container",
+  "documentation": "",
+  "imageIcon": "",
+  "keyType": "NATIVE_CONTAINER",
+  "kind": "BLOCK",
+  "platformSupport": "REACT",
+  "price": 0,
+  "public": true
+}

@@ -1,0 +1,6 @@
+[
+  { "key": "enable", "type": "BOOLEAN" },
+  { "key": "text", "type": "STRING" },
+  { "key": "leadingIcon", "type": "STRING" },
+  { "key": "trailingIcon", "type": "STRING" }
+]

@@ -1,0 +1,4 @@
+[
+  { "key": "selectValue", "type": "BOOLEAN" },
+  { "key": "items", "type": "STRING" }
+]

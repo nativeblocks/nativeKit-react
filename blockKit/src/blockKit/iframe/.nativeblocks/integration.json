@@ -1,0 +1,11 @@
+{
+  "name": "Native iframe",
+  "description": "This is iframe",
+  "documentation": "",
+  "imageIcon": "",
+  "keyType": "NATIVE_IFRAME",
+  "kind": "BLOCK",
+  "platformSupport": "REACT",
+  "price": 0,
+  "public": true
+}

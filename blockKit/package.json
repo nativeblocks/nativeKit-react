@@ -1,6 +1,6 @@
 {
   "name": "@nativeblocks/block-kit-react",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Nativeblocks blockKit SDK for react",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -31,7 +31,7 @@
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
-    "@nativeblocks/nativeblocks-react": "^0.3.0",
+    "@nativeblocks/nativeblocks-react": "^0.3.3",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.5.0"

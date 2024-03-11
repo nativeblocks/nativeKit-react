@@ -1,0 +1,5 @@
+[
+  { "key": "checkValue", "type": "BOOLEAN" },
+  { "key": "onIcon", "type": "STRING" },
+  { "key": "offIcon", "type": "STRING" }
+]

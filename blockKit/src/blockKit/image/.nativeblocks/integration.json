@@ -1,0 +1,11 @@
+{
+  "name": "Native image",
+  "description": "This is image",
+  "documentation": "",
+  "imageIcon": "",
+  "keyType": "NATIVE_IMAGE",
+  "kind": "BLOCK",
+  "platformSupport": "REACT",
+  "price": 0,
+  "public": true
+}

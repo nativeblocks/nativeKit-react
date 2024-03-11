@@ -47,7 +47,7 @@
     "valuePicker": "dropdown",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"shadow-none\",\"text\":\"none\"},{\"id\":\"shadow-sm\",\"text\":\"sm\"},{\"id\":\"shadow\",\"text\":\"normal\"},{\"id\":\"shadow-md\",\"text\":\"md\"},{\"id\":\"shadow-lg\",\"text\":\"lg\"},{\"id\":\"shadow-xl\",\"text\":\"xl\"},{\"id\":\"shadow-2xl\",\"text\":\"2xl\"}]"
+    "valuePickerOption": "[{\"id\": \"shadow-none\", \"text\": \"none\"}, {\"id\": \"shadow-sm\", \"text\": \"sm\"}, {\"id\": \"shadow\", \"text\": \"normal\"}, {\"id\": \"shadow-md\", \"text\": \"md\"}, {\"id\": \"shadow-lg\", \"text\": \"lg\"}, {\"id\": \"shadow-xl\", \"text\": \"xl\"}, {\"id\": \"shadow-2xl\", \"text\": \"2xl\"}]"
   },
   {
     "key": "dropShadow",
@@ -57,7 +57,7 @@
     "valuePicker": "dropdown",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"text\":\"none\"},{\"id\":\"drop-shadow-sm\",\"text\":\"sm\"},{\"id\":\"drop-shadow\",\"text\":\"normal\"},{\"id\":\"drop-shadow-md\",\"text\":\"md\"},{\"id\":\"drop-shadow-lg\",\"text\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"text\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"text\":\"2xl\"}]"
+    "valuePickerOption": "[{\"id\": \"drop-shadow-none\", \"text\": \"none\"}, {\"id\": \"drop-shadow-sm\", \"text\": \"sm\"}, {\"id\": \"drop-shadow\", \"text\": \"normal\"}, {\"id\": \"drop-shadow-md\", \"text\": \"md\"}, {\"id\": \"drop-shadow-lg\", \"text\": \"lg\"}, {\"id\": \"drop-shadow-xl\", \"text\": \"xl\"}, {\"id\": \"drop-shadow-2xl\", \"text\": \"2xl\"}]"
   },
   {
     "key": "shapeRadiusBottomEnd",
@@ -107,7 +107,7 @@
     "valuePicker": "dropdown",
     "valuePickerCategory": "Layout",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{ \"id\": \"LTR\", \"text\": \"LTR\" }, { \"id\": \"RTL\", \"text\": \"RTL\" }]"
+    "valuePickerOption": "[{\"id\": \"LTR\", \"text\": \"LTR\"}, {\"id\": \"RTL\", \"text\": \"RTL\"}]"
   },
   {
     "key": "backgroundColor",
@@ -207,7 +207,7 @@
     "valuePicker": "combobox-input",
     "valuePickerCategory": "Font",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"default\",\"text\":\"default\"}]"
+    "valuePickerOption": "[{\"id\": \"default\", \"text\": \"default\"}]"
   },
   {
     "key": "letterSpacing",
@@ -227,7 +227,7 @@
     "valuePicker": "dropdown",
     "valuePickerCategory": "Font",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"text-start\",\"text\":\"start\"},{\"id\":\"text-end\",\"text\":\"end\"},{\"id\":\"text-center\",\"text\":\"center\"},{\"id\":\"text-justify\",\"text\":\"justify\"}]"
+    "valuePickerOption": "[{\"id\": \"text-start\", \"text\": \"start\"}, {\"id\": \"text-end\", \"text\": \"end\"}, {\"id\": \"text-center\", \"text\": \"center\"}, {\"id\": \"text-justify\", \"text\": \"justify\"}]"
   },
   {
     "key": "fontWeight",
@@ -237,19 +237,12 @@
     "valuePicker": "dropdown",
     "valuePickerCategory": "Font",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"font-thin\",\"text\":\"thin\"},{\"id\":\"font-extralight\",\"text\":\"extraLight\"},{\"id\":\"font-light\",\"text\":\"light\"},{\"id\":\"font-normal\",\"text\":\"normal\"},{\"id\":\"font-medium\",\"text\":\"medium\"},{\"id\":\"font-semibold\",\"text\":\"semiBold\"},{\"id\":\"font-bold\",\"text\":\"bold\"},{\"id\":\"font-extrabold\",\"text\":\"extraBold\"},{\"id\":\"font-black\",\"text\":\"black\"}]"
+    "valuePickerOption": "[{\"id\": \"font-thin\", \"text\": \"thin\"}, {\"id\": \"font-extralight\", \"text\": \"extraLight\"}, {\"id\": \"font-light\", \"text\": \"light\"}, {\"id\": \"font-normal\", \"text\": \"normal\"}, {\"id\": \"font-medium\", \"text\": \"medium\"}, {\"id\": \"font-semibold\", \"text\": \"semiBold\"}, {\"id\": \"font-bold\", \"text\": \"bold\"}, {\"id\": \"font-extrabold\", \"text\": \"extraBold\"}, {\"id\": \"font-black\", \"text\": \"black\"}]"
   },
   {
     "key": "class",
     "value": "",
     "type": "STRING",
-    "valuePicker": "dropdown",
-    "value": "text",
-    "valuePickerCategory": "General",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"text\",\"text\":\"text\"}, {\"id\":\"password\",\"text\":\"password\"}, {\"id\":\"number\",\"text\":\"number\"}, {\"id\":\"email\",\"text\":\"email\"}, {\"id\":\"url\",\"text\":\"url\"}, {\"id\":\"tel\",\"text\":\"tel\"}]"
-  },
-  {
     "description": "extra classes",
     "valuePicker": "text-area-input",
     "valuePickerCategory": "Extra",

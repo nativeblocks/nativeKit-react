@@ -40,6 +40,46 @@
     "valuePickerOption": "[]"
   },
   {
+    "key": "shapeRadiusBottomEnd",
+    "value": "0.25",
+    "type": "FLOAT",
+    "description": "0 or any number",
+    "valuePicker": "number-input",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "shapeRadiusTopEnd",
+    "value": "0.25",
+    "type": "FLOAT",
+    "description": "0 or any number",
+    "valuePicker": "number-input",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "shapeRadiusTopStart",
+    "value": "0.25",
+    "type": "FLOAT",
+    "description": "0 or any number",
+    "valuePicker": "number-input",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "shapeRadiusBottomStart",
+    "value": "0.25",
+    "type": "FLOAT",
+    "description": "0 or any number",
+    "valuePicker": "number-input",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
     "key": "boxShadow",
     "value": "shadow-none",
     "type": "STRING",
@@ -70,36 +110,6 @@
     "valuePickerOption": "[{ \"id\": \"LTR\", \"text\": \"LTR\" }, { \"id\": \"RTL\", \"text\": \"RTL\" }]"
   },
   {
-    "key": "orientation",
-    "value": "Y",
-    "type": "STRING",
-    "description": "layout orientation",
-    "valuePicker": "dropdown",
-    "valuePickerCategory": "Layout",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"X\",:\"(X) horizontal\"},{\"id\":\"Y\",:\"(Y) vertical\"}]"
-  },
-  {
-    "key": "foregroundColor",
-    "value": "#212121",
-    "type": "STRING",
-    "description": "hex color",
-    "valuePicker": "color-picker",
-    "valuePickerCategory": "ForegroundColor",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
-  },
-  {
-    "key": "foregroundColorOpacity",
-    "value": "100",
-    "type": "INT",
-    "description": "a number between 0 to 100",
-    "valuePicker": "slider",
-    "valuePickerCategory": "ForegroundColor",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
-  },
-  {
     "key": "height",
     "value": "h-auto",
     "type": "STRING",
@@ -116,16 +126,6 @@
     "description": "width of the element",
     "valuePicker": "text-input",
     "valuePickerCategory": "Size",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
-  },
-  {
-    "key": "gap",
-    "value": "gap-0",
-    "type": "STRING",
-    "description": "gap between options",
-    "valuePicker": "text-input",
-    "valuePickerCategory": "Arrangement",
     "valuePickerGroup": "",
     "valuePickerOption": "[]"
   },

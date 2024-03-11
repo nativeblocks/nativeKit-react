@@ -13,6 +13,7 @@ import NativeIframeBlock from "./iframe/NativeIframeBlock";
 import NativeTableBlock from "./table/NativeTableBlock";
 import NativeToggleBlock from "./toggle/NativeToggleBlock";
 import NativeRadioGroup from "./radioGroup/NativeRadioGroupBlock";
+import NativeHtmlBlock from "./html/NativeHtmlBlock";
 
 export const NativeblocksBlockHelper = {
   provideBlocks() {
@@ -67,6 +68,10 @@ export const NativeblocksBlockHelper = {
     NativeblocksManager.getInstance().provideBlock(
       "NATIVE_RADIO_GROUP",
       NativeRadioGroup
+    );
+    NativeblocksManager.getInstance().provideBlock(
+      "NATIVE_HTML",
+      NativeHtmlBlock
     );
   },
 };

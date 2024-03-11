@@ -1,0 +1,11 @@
+{
+  "name": "Native HTML",
+  "description": "This is html",
+  "documentation": "",
+  "imageIcon": "",
+  "keyType": "NATIVE_HTML",
+  "kind": "BLOCK",
+  "platformSupport": "REACT",
+  "price": 0,
+  "public": true
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Native text",
+  "description": "This is text",
+  "documentation": "",
+  "imageIcon": "",
+  "keyType": "NATIVE_TEXT",
+  "kind": "BLOCK",
+  "platformSupport": "REACT",
+  "price": 0,
+  "public": true
+}

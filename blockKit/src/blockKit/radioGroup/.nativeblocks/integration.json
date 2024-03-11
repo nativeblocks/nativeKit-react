@@ -1,0 +1,11 @@
+{
+  "name": "Native radio group",
+  "description": "This is switch",
+  "documentation": "",
+  "imageIcon": "",
+  "keyType": "NATIVE_RADIO_GROUP",
+  "kind": "BLOCK",
+  "platformSupport": "REACT",
+  "price": 0,
+  "public": true
+}

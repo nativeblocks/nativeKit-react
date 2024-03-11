@@ -1,0 +1,6 @@
+[
+  { "key": "text", "type": "STRING" },
+  { "key": "enable", "type": "BOOLEAN" },
+  { "key": "placeholder", "type": "STRING" },
+  { "key": "inputType", "type": "STRING" }
+]

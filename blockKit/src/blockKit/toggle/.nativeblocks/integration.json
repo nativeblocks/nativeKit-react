@@ -1,0 +1,11 @@
+{
+  "name": "Native toggle",
+  "description": "This is toggle",
+  "documentation": "",
+  "imageIcon": "",
+  "keyType": "NATIVE_TOGGLE",
+  "kind": "BLOCK",
+  "platformSupport": "REACT",
+  "price": 0,
+  "public": true
+}

@@ -1,0 +1,4 @@
+[
+  { "key": "checkValue", "type": "BOOLEAN" },
+  { "key": "enable", "type": "BOOLEAN" }
+]

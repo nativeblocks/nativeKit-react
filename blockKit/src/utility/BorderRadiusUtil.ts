@@ -24,25 +24,16 @@ function paddingMapper(
   const mobileBreakpoint = 768;
   const tabletBreakpoint = 1024;
 
-  const formatBorderRadius = (borderRadius: {
-    topStart: any;
-    topEnd: any;
-    bottomEnd: any;
-    bottomStart: any;
-  }) =>
+  const formatBorderRadius = (borderRadius: { topStart: any; topEnd: any; bottomEnd: any; bottomStart: any }) =>
     `${borderRadius.topStart}rem ${borderRadius.topEnd}rem ${borderRadius.bottomEnd}rem ${borderRadius.bottomStart}rem`;
 
-  let style = `@media (max-width: ${
-    mobileBreakpoint - 1
-  }px) { border-radius: ${formatBorderRadius(borderRadiusMobile)}; } `;
-
-  style += `@media (min-width: ${mobileBreakpoint}px) { border-radius: ${formatBorderRadius(
-    borderRadiusTablet
+  let style = `@media (max-width: ${mobileBreakpoint - 1}px) { border-radius: ${formatBorderRadius(
+    borderRadiusMobile
   )}; } `;
 
-  style += `@media (min-width: ${tabletBreakpoint}px) { border-radius: ${formatBorderRadius(
-    borderRadiusDesktop
-  )}; }`;
+  style += `@media (min-width: ${mobileBreakpoint}px) { border-radius: ${formatBorderRadius(borderRadiusTablet)}; } `;
+
+  style += `@media (min-width: ${tabletBreakpoint}px) { border-radius: ${formatBorderRadius(borderRadiusDesktop)}; }`;
 
   return style;
 }
@@ -84,11 +75,7 @@ export function generateBorderRadiusStyle(
     bottomStart: shapeRadiusBottomStart.valueDesktop,
   };
 
-  return paddingMapper(
-    mobileBorderRadius,
-    tabletBorderRadius,
-    desktopBorderRadius
-  );
+  return paddingMapper(mobileBorderRadius, tabletBorderRadius, desktopBorderRadius);
 }
 
 export function getBorderRaduis(block: NativeBlockModel | null) {
@@ -119,9 +106,5 @@ function generateTableBorderStyle(
 
 export function getTableBorder(block: NativeBlockModel | null) {
   const heightProperty = getProperty(block, "tableBorder");
-  return generateTableBorderStyle(
-    heightProperty.valueMobile,
-    heightProperty.valueTablet,
-    heightProperty.valueDesktop
-  );
+  return generateTableBorderStyle(heightProperty.valueMobile, heightProperty.valueTablet, heightProperty.valueDesktop);
 }

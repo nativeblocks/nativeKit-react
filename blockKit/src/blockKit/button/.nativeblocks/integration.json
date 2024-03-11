@@ -1,0 +1,11 @@
+{
+  "name": "Native button",
+  "description": "This is button",
+  "documentation": "",
+  "imageIcon": "",
+  "keyType": "NATIVE_BUTTON",
+  "kind": "BLOCK",
+  "platformSupport": "REACT",
+  "price": 0,
+  "public": true
+}

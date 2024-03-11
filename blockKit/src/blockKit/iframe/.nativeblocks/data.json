@@ -1,0 +1,4 @@
+[
+  { "key": "url", "type": "STRING" },
+  { "key": "title", "type": "STRING" }
+]

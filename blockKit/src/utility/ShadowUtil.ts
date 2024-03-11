@@ -1,11 +1,7 @@
 import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
 import { getProperty } from "./BlockUtil";
 
-function generateBoxShadowStyle(
-  boxShadowMobile: any,
-  boxShadowTablet: any,
-  boxShadowDesktop: any
-) {
+function generateBoxShadowStyle(boxShadowMobile: any, boxShadowTablet: any, boxShadowDesktop: any) {
   const mobileClass = `${boxShadowMobile}`;
   const tabletClass = `md:${boxShadowTablet}`;
   const desktopClass = `lg:${boxShadowDesktop}`;
@@ -13,11 +9,7 @@ function generateBoxShadowStyle(
   return `${mobileClass} ${tabletClass} ${desktopClass}`;
 }
 
-function generateDropShadowStyle(
-  dropShadowMobile: any,
-  dropShadowTablet: any,
-  dropShadowDesktop: any
-) {
+function generateDropShadowStyle(dropShadowMobile: any, dropShadowTablet: any, dropShadowDesktop: any) {
   const mobileClass = `${dropShadowMobile}`;
   const tabletClass = `md:${dropShadowTablet}`;
   const desktopClass = `lg:${dropShadowDesktop}`;

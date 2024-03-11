@@ -7,7 +7,7 @@
     "value": "shadow-none",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"shadow-none\",\"value\":\"none\"},{\"id\":\"shadow-sm\",\"value\":\"sm\"},{\"id\":\"shadow\",\"value\":\"normal\"},{\"id\":\"shadow-md\",\"value\":\"md\"},{\"id\":\"shadow-lg\",\"value\":\"lg\"},{\"id\":\"shadow-xl\",\"value\":\"xl\"},{\"id\":\"shadow-2xl\",\"value\":\"2xl\"}]"
+    "valuePickerOption": "[{\"id\":\"shadow-none\",\"text\":\"none\"},{\"id\":\"shadow-sm\",\"text\":\"sm\"},{\"id\":\"shadow\",\"text\":\"normal\"},{\"id\":\"shadow-md\",\"text\":\"md\"},{\"id\":\"shadow-lg\",\"text\":\"lg\"},{\"id\":\"shadow-xl\",\"text\":\"xl\"},{\"id\":\"shadow-2xl\",\"text\":\"2xl\"}]"
   },
   {
     "description": "drop shadow",
@@ -17,7 +17,7 @@
     "value": "drop-shadow-none",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"value\":\"none\"},{\"id\":\"drop-shadow-sm\",\"value\":\"sm\"},{\"id\":\"drop-shadow\",\"value\":\"normal\"},{\"id\":\"drop-shadow-md\",\"value\":\"md\"},{\"id\":\"drop-shadow-lg\",\"value\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"value\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"value\":\"2xl\"}]"
+    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"text\":\"none\"},{\"id\":\"drop-shadow-sm\",\"text\":\"sm\"},{\"id\":\"drop-shadow\",\"text\":\"normal\"},{\"id\":\"drop-shadow-md\",\"text\":\"md\"},{\"id\":\"drop-shadow-lg\",\"text\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"text\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"text\":\"2xl\"}]"
   },
   {
     "description": "layout direction",
@@ -27,7 +27,7 @@
     "value": "LTR",
     "valuePickerCategory": "Layout",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{ \"id\": \"LTR\", \"value\": \"LTR\" }, { \"id\": \"RTL\", \"value\": \"RTL\" }]"
+    "valuePickerOption": "[{ \"id\": \"LTR\", \"text\": \"LTR\" }, { \"id\": \"RTL\", \"text\": \"RTL\" }]"
   },
   {
     "description": "hex color",

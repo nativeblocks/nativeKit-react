@@ -77,7 +77,7 @@
     "value": "shadow-none",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"shadow-none\",\"value\":\"none\"},{\"id\":\"shadow-sm\",\"value\":\"sm\"},{\"id\":\"shadow\",\"value\":\"normal\"},{\"id\":\"shadow-md\",\"value\":\"md\"},{\"id\":\"shadow-lg\",\"value\":\"lg\"},{\"id\":\"shadow-xl\",\"value\":\"xl\"},{\"id\":\"shadow-2xl\",\"value\":\"2xl\"}]"
+    "valuePickerOption": "[{\"id\":\"shadow-none\",\"text\":\"none\"},{\"id\":\"shadow-sm\",\"text\":\"sm\"},{\"id\":\"shadow\",\"text\":\"normal\"},{\"id\":\"shadow-md\",\"text\":\"md\"},{\"id\":\"shadow-lg\",\"text\":\"lg\"},{\"id\":\"shadow-xl\",\"text\":\"xl\"},{\"id\":\"shadow-2xl\",\"text\":\"2xl\"}]"
   },
   {
     "description": "drop shadow",
@@ -87,7 +87,7 @@
     "value": "drop-shadow-none",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"value\":\"none\"},{\"id\":\"drop-shadow-sm\",\"value\":\"sm\"},{\"id\":\"drop-shadow\",\"value\":\"normal\"},{\"id\":\"drop-shadow-md\",\"value\":\"md\"},{\"id\":\"drop-shadow-lg\",\"value\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"value\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"value\":\"2xl\"}]"
+    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"text\":\"none\"},{\"id\":\"drop-shadow-sm\",\"text\":\"sm\"},{\"id\":\"drop-shadow\",\"text\":\"normal\"},{\"id\":\"drop-shadow-md\",\"text\":\"md\"},{\"id\":\"drop-shadow-lg\",\"text\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"text\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"text\":\"2xl\"}]"
   },
   {
     "description": "0 or any number",
@@ -137,7 +137,7 @@
     "value": "LTR",
     "valuePickerCategory": "Layout",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{ \"id\": \"LTR\", \"value\": \"LTR\" }, { \"id\": \"RTL\", \"value\": \"RTL\" }]"
+    "valuePickerOption": "[{ \"id\": \"LTR\", \"text\": \"LTR\" }, { \"id\": \"RTL\", \"text\": \"RTL\" }]"
   },
   {
     "description": "hex color",
@@ -237,7 +237,7 @@
     "value": "default",
     "valuePickerCategory": "Font",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"default\",\"value\":\"default\"}]"
+    "valuePickerOption": "[{\"id\":\"default\",\"text\":\"default\"}]"
   },
   {
     "description": "letter spacing (rem)",
@@ -257,7 +257,7 @@
     "value": "text-start",
     "valuePickerCategory": "Font",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"text-start\",\"value\":\"start\"},{\"id\":\"text-end\",\"value\":\"end\"},{\"id\":\"text-center\",\"value\":\"center\"},{\"id\":\"text-justify\",\"value\":\"justify\"}]"
+    "valuePickerOption": "[{\"id\":\"text-start\",\"text\":\"start\"},{\"id\":\"text-end\",\"text\":\"end\"},{\"id\":\"text-center\",\"text\":\"center\"},{\"id\":\"text-justify\",\"text\":\"justify\"}]"
   },
   {
     "description": "font weight",
@@ -267,7 +267,7 @@
     "value": "normal",
     "valuePickerCategory": "Font",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"font-thin\",\"value\":\"thin\"},{\"id\":\"font-extralight\",\"value\":\"extraLight\"},{\"id\":\"font-light\",\"value\":\"light\"},{\"id\":\"font-normal\",\"value\":\"normal\"},{\"id\":\"font-medium\",\"value\":\"medium\"},{\"id\":\"font-semibold\",\"value\":\"semiBold\"},{\"id\":\"font-bold\",\"value\":\"bold\"},{\"id\":\"font-extrabold\",\"value\":\"extraBold\"},{\"id\":\"font-black\",\"value\":\"black\"}]"
+    "valuePickerOption": "[{\"id\":\"font-thin\",\"text\":\"thin\"},{\"id\":\"font-extralight\",\"text\":\"extraLight\"},{\"id\":\"font-light\",\"text\":\"light\"},{\"id\":\"font-normal\",\"text\":\"normal\"},{\"id\":\"font-medium\",\"text\":\"medium\"},{\"id\":\"font-semibold\",\"text\":\"semiBold\"},{\"id\":\"font-bold\",\"text\":\"bold\"},{\"id\":\"font-extrabold\",\"text\":\"extraBold\"},{\"id\":\"font-black\",\"text\":\"black\"}]"
   },
   {
     "description": "extra classes",

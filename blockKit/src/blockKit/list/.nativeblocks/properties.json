@@ -47,7 +47,7 @@
     "value": "none",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"shadow-none\",\"value\":\"none\"},{\"id\":\"shadow-sm\",\"value\":\"sm\"},{\"id\":\"shadow\",\"value\":\"normal\"},{\"id\":\"shadow-md\",\"value\":\"md\"},{\"id\":\"shadow-lg\",\"value\":\"lg\"},{\"id\":\"shadow-xl\",\"value\":\"xl\"},{\"id\":\"shadow-2xl\",\"value\":\"2xl\"}]"
+    "valuePickerOption": "[{\"id\":\"shadow-none\",\"text\":\"none\"},{\"id\":\"shadow-sm\",\"text\":\"sm\"},{\"id\":\"shadow\",\"text\":\"normal\"},{\"id\":\"shadow-md\",\"text\":\"md\"},{\"id\":\"shadow-lg\",\"text\":\"lg\"},{\"id\":\"shadow-xl\",\"text\":\"xl\"},{\"id\":\"shadow-2xl\",\"text\":\"2xl\"}]"
   },
   {
     "description": "drop shadow",
@@ -57,7 +57,7 @@
     "value": "none",
     "valuePickerCategory": "Clip",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"value\":\"none\"},{\"id\":\"drop-shadow-sm\",\"value\":\"sm\"},{\"id\":\"drop-shadow\",\"value\":\"normal\"},{\"id\":\"drop-shadow-md\",\"value\":\"md\"},{\"id\":\"drop-shadow-lg\",\"value\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"value\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"value\":\"2xl\"}]"
+    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"text\":\"none\"},{\"id\":\"drop-shadow-sm\",\"text\":\"sm\"},{\"id\":\"drop-shadow\",\"text\":\"normal\"},{\"id\":\"drop-shadow-md\",\"text\":\"md\"},{\"id\":\"drop-shadow-lg\",\"text\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"text\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"text\":\"2xl\"}]"
   },
   {
     "description": "0 or any number",
@@ -107,7 +107,7 @@
     "value": "Y",
     "valuePickerCategory": "Layout",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"X\",\"value\":\"(X) horizontal\"},{\"id\":\"Y\",\"value\":\"(Y) vertical\"}]"
+    "valuePickerOption": "[{\"id\":\"X\",\"text\":\"(X) horizontal\"},{\"id\":\"Y\",\"text\":\"(Y) vertical\"}]"
   },
   {
     "description": "layout direction",
@@ -117,7 +117,7 @@
     "value": "LTR",
     "valuePickerCategory": "Layout",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{ \"id\": \"LTR\", \"value\": \"LTR\" }, { \"id\": \"RTL\", \"value\": \"RTL\" }]"
+    "valuePickerOption": "[{ \"id\": \"LTR\", \"text\": \"LTR\" }, { \"id\": \"RTL\", \"text\": \"RTL\" }]"
   },
   {
     "description": "hex color",
@@ -177,7 +177,7 @@
     "value": "justify-normal",
     "valuePickerCategory": "Arrangement",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{ \"id\": \"justify-normal\", \"value\": \"normal\" },{ \"id\": \"justify-start\", \"value\": \"start\" },{ \"id\": \"justify-end\", \"value\": \"end\" },{ \"id\": \"justify-center\", \"value\": \"center\" },{ \"id\": \"justify-between\", \"value\": \"between\" },{ \"id\": \"justify-around\", \"value\": \"around\" },{ \"id\": \"justify-evenly\", \"value\": \"evenly\" },{ \"id\": \"justify-stretch\", \"value\": \"stretch\" }]"
+    "valuePickerOption": "[{ \"id\": \"justify-normal\", \"text\": \"normal\" },{ \"id\": \"justify-start\", \"text\": \"start\" },{ \"id\": \"justify-end\", \"text\": \"end\" },{ \"id\": \"justify-center\", \"text\": \"center\" },{ \"id\": \"justify-between\", \"text\": \"between\" },{ \"id\": \"justify-around\", \"text\": \"around\" },{ \"id\": \"justify-evenly\", \"text\": \"evenly\" },{ \"id\": \"justify-stretch\", \"text\": \"stretch\" }]"
   },
   {
     "description": "align items",
@@ -187,7 +187,7 @@
     "value": "items-start",
     "valuePickerCategory": "Alignment",
     "valuePickerGroup": "",
-    "valuePickerOption": "[{ \"id\": \"items-start\", \"value\": \"start\" },{ \"id\": \"items-end\", \"value\": \"end\" },{ \"id\": \"items-center\", \"value\": \"center\" },{ \"id\": \"items-baseline\", \"value\": \"baseline\" },{ \"id\": \"items-stretch\", \"value\": \"stretch\" }]"
+    "valuePickerOption": "[{ \"id\": \"items-start\", \"text\": \"start\" },{ \"id\": \"items-end\", \"text\": \"end\" },{ \"id\": \"items-center\", \"text\": \"center\" },{ \"id\": \"items-baseline\", \"text\": \"baseline\" },{ \"id\": \"items-stretch\", \"text\": \"stretch\" }]"
   },
   {
     "description": "extra classes",

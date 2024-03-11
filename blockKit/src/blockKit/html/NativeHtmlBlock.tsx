@@ -19,7 +19,7 @@ const NativeHtmlBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   }
   const blockKey = blockProps.block?.key ?? "";
   const data = blockProps.block?.data ?? new Map();
-  const html = state.variables?.get(data.get("checkValue")?.value ?? "")?.value ?? "";
+  const html = state.variables?.get(data.get("html")?.value ?? "")?.value ?? "";
 
   const padding = getPadding(blockProps.block);
   const boxShadow = getBoxShadow(blockProps.block);

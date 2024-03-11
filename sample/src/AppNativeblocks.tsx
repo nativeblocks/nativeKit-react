@@ -12,7 +12,7 @@ function AppNativeblocks() {
   NativeblocksManager.initialize({
     endpoint: "http://localhost:8585/graphql",
     apiKey:
-      "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5OTU4YjIyNC04MmJiLTRmMGUtOWU1MS0wNjE4Mjg3MGE3NjIiLCJvcmciOiJhYmIxYWU5Yy02NzZjLTRhOWMtOTY3OC1jZTRkYTllYjI4OGQiLCJpYXQiOjE3MDA0MDQ4NDIsImV4cCI6MTczMTk0MDg0Mn0.t4aW58C_R4xUg_2FqDfQlpX8V4KkCQh0ZR1EIvovmbs",
+      "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmNzc4ZTQ2OS1hZGMzLTRjMjItYjFlNy03NzE2MDlhNDllN2MiLCJvcmciOiJmM2Y4MmM5ZS0xZmFhLTRlZmEtOTA2NS1jN2RkYTdkZmJlNDYiLCJpYXQiOjE3MDk2MzgxMjgsImV4cCI6MTc0MTE3NDEyOH0.bm3Y1hSfd8L3JYWUdBjdUYiMgEgPDW2mIm-J2_6p934",
     developmentMode: true,
   });
 

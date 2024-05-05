@@ -1,0 +1,11 @@
+{
+  "name": "Native markdown",
+  "description": "This is a Native markdown block",
+  "documentation": "",
+  "imageIcon": "",
+  "keyType": "NATIVE_MARKDOWN",
+  "kind": "BLOCK",
+  "platformSupport": "REACT",
+  "price": 0,
+  "public": true
+}

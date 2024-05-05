@@ -1,0 +1,102 @@
+[
+  {
+    "key": "paddingTop",
+    "value": "0.5",
+    "type": "FLOAT",
+    "description": "0 or any number (rem)",
+    "valuePicker": "number-input",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "paddingStart",
+    "value": "0.5",
+    "type": "FLOAT",
+    "description": "0 or any number (rem)",
+    "valuePicker": "number-input",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "paddingEnd",
+    "value": "0.5",
+    "type": "FLOAT",
+    "description": "0 or any number (rem)",
+    "valuePicker": "number-input",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "paddingBottom",
+    "value": "0.5",
+    "type": "FLOAT",
+    "description": "0 or any number (rem)",
+    "valuePicker": "number-input",
+    "valuePickerCategory": "Padding",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "boxShadow",
+    "value": "shadow-none",
+    "type": "STRING",
+    "description": "box shadow",
+    "valuePicker": "dropdown",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"shadow-none\",\"text\":\"none\"},{\"id\":\"shadow-sm\",\"text\":\"sm\"},{\"id\":\"shadow\",\"text\":\"normal\"},{\"id\":\"shadow-md\",\"text\":\"md\"},{\"id\":\"shadow-lg\",\"text\":\"lg\"},{\"id\":\"shadow-xl\",\"text\":\"xl\"},{\"id\":\"shadow-2xl\",\"text\":\"2xl\"}]"
+  },
+  {
+    "key": "dropShadow",
+    "value": "drop-shadow-none",
+    "type": "STRING",
+    "description": "drop shadow",
+    "valuePicker": "dropdown",
+    "valuePickerCategory": "Clip",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"text\":\"none\"},{\"id\":\"drop-shadow-sm\",\"text\":\"sm\"},{\"id\":\"drop-shadow\",\"text\":\"normal\"},{\"id\":\"drop-shadow-md\",\"text\":\"md\"},{\"id\":\"drop-shadow-lg\",\"text\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"text\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"text\":\"2xl\"}]"
+  },
+  {
+    "key": "direction",
+    "value": "LTR",
+    "type": "STRING",
+    "description": "layout direction",
+    "valuePicker": "dropdown",
+    "valuePickerCategory": "Layout",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[{ \"id\": \"LTR\", \"text\": \"LTR\" }, { \"id\": \"RTL\", \"text\": \"RTL\" }]"
+  },
+  {
+    "key": "height",
+    "value": "h-auto",
+    "type": "STRING",
+    "description": "height of the element",
+    "valuePicker": "text-input",
+    "valuePickerCategory": "Size",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "width",
+    "value": "w-full",
+    "type": "STRING",
+    "description": "width of the element",
+    "valuePicker": "text-input",
+    "valuePickerCategory": "Size",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  },
+  {
+    "key": "class",
+    "value": "",
+    "type": "STRING",
+    "description": "extra classes",
+    "valuePicker": "text-area-input",
+    "valuePickerCategory": "Extra",
+    "valuePickerGroup": "",
+    "valuePickerOption": "[]"
+  }
+]

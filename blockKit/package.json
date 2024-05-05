@@ -1,6 +1,6 @@
 {
   "name": "@nativeblocks/block-kit-react",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Nativeblocks blockKit SDK for react",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -18,6 +18,7 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.5",
     "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-typescript": "^11.1.0",
     "@types/react": "^18.2.2",

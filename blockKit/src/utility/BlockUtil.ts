@@ -68,3 +68,10 @@ export function generateTableBodyExtraClass(block: NativeBlockModel | null) {
     extraClassProperty.valueDesktop
   );
 }
+
+export function getInputType(block: NativeBlockModel | null) {
+  const inputTypeProperty = getProperty(block, "inputType");
+  if (inputTypeProperty.valueMobile) return inputTypeProperty.valueMobile;
+  if (inputTypeProperty.valueTablet) return inputTypeProperty.valueTablet;
+  if (inputTypeProperty.valueDesktop) return inputTypeProperty.valueDesktop;
+}

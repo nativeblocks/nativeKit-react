@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
 import { BlockProps, useNativeFrameState } from "@nativeblocks/nativeblocks-react";
 import React, { FC } from "react";
-import { generateExtraClass } from "../../utility/BlockUtil";
+import { generateExtraClass, getInputType } from "../../utility/BlockUtil";
 import { getBorderRaduis } from "../../utility/BorderRadiusUtil";
 import { getBackgroundColor, getBorderColor, getForegroundColor } from "../../utility/ColorUtil";
 import { onTextChange } from "../../utility/EventUtil";
@@ -27,7 +27,6 @@ const NativeTextFieldBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const text = state.variables?.get(data.get("text")?.value ?? "");
   let textValue = text?.value ?? "";
   const placeholder = state.variables?.get(data.get("placeholder")?.value ?? "")?.value ?? "";
-  const inputType = state.variables?.get(data.get("inputType")?.value ?? "")?.value ?? "";
   const enable = state.variables?.get(data.get("enable")?.value ?? "")?.value === "true";
 
   const padding = getPadding(blockProps.block);
@@ -46,6 +45,7 @@ const NativeTextFieldBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const fontWeight = getFontWeight(blockProps.block);
   const fontSize = getFontSize(blockProps.block);
   const extraClass = generateExtraClass(blockProps.block);
+  const inputType = getInputType(blockProps.block);
 
   const mergedStyle = mergeStyles([
     padding,

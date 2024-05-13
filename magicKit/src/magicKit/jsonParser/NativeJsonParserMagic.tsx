@@ -39,7 +39,7 @@ export default class NativeJsonParserMagic implements INativeMagic {
     let jsonValue = latestState.variables?.get(json)?.value ?? "";
 
     if (magicProps.onVariableChange) {
-      const result = getJsonPathValue(jsonValue, jsonPathValue) ?? {};
+      const result = JSON.stringify(getJsonPathValue(jsonValue, jsonPathValue) ?? {});
       const chagedVariable = {
         key: variableKey,
         value: this.isObject(result) ? JSON.stringify(result) : result,

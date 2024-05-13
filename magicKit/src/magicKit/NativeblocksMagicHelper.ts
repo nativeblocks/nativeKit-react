@@ -9,33 +9,12 @@ import NativeDelayMagic from "./delay/NativeDelayMagic";
 
 export const NativeblocksMagicHelper = {
   provideMagics() {
-    NativeblocksManager.getInstance().provideMagic(
-      "NATIVE_NAVIGATION",
-      new NativeNavigationMagic()
-    );
-    NativeblocksManager.getInstance().provideMagic(
-      "NATIVE_REST_API",
-      new NativeRestApi()
-    );
-    NativeblocksManager.getInstance().provideMagic(
-      "NATIVE_CHANGE_VARIABLE",
-      new NativeChangeVariableMagic()
-    );
-    NativeblocksManager.getInstance().provideMagic(
-      "NATIVE_JSON_PARSER",
-      new NativeJsonParserMagic()
-    );
-    NativeblocksManager.getInstance().provideMagic(
-      "NATIVE_LOCAL_STORAGE_DATA_SOURCE",
-      new NativeLocalStorageMagic()
-    );
-    NativeblocksManager.getInstance().provideMagic(
-      "NATIVE_FUNCTION",
-      new NativeFunctionMagic()
-    );
-    NativeblocksManager.getInstance().provideMagic(
-      "NATIVE_DELAY",
-      new NativeDelayMagic()
-    );
+    NativeblocksManager.getInstance().provideMagic("NATIVE_NAVIGATION", new NativeNavigationMagic());
+    NativeblocksManager.getInstance().provideMagic("NATIVE_REST_API", new NativeRestApi());
+    NativeblocksManager.getInstance().provideMagic("NATIVE_CHANGE_VARIABLE", new NativeChangeVariableMagic());
+    NativeblocksManager.getInstance().provideMagic("NATIVE_JSON_PARSER", new NativeJsonParserMagic());
+    NativeblocksManager.getInstance().provideMagic("NATIVE_LOCAL_STORAGE_DATA_SOURCE", new NativeLocalStorageMagic());
+    NativeblocksManager.getInstance().provideMagic("NATIVE_FUNCTION", new NativeFunctionMagic());
+    NativeblocksManager.getInstance().provideMagic("NATIVE_DELAY", new NativeDelayMagic());
   },
 };

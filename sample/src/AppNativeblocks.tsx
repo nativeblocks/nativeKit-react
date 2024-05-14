@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { NativeblocksBlockHelper } from "@nativeblocks/block-kit-react";
+import { NativeblocksMagicHelper } from "@nativeblocks/magic-kit-react";
 import {
   INativeLogger,
   NativeblocksLoading,
   NativeblocksManager,
   NativeblocksProvider,
 } from "@nativeblocks/nativeblocks-react";
-import { NativeblocksBlockHelper } from "@nativeblocks/block-kit-react";
-import { NativeblocksMagicHelper } from "@nativeblocks/magic-kit-react";
+import React, { useState } from "react";
 
 function AppNativeblocks() {
   NativeblocksManager.initialize({
@@ -18,11 +18,10 @@ function AppNativeblocks() {
 
   NativeblocksBlockHelper.provideBlocks();
   NativeblocksMagicHelper.provideMagics();
-  NativeblocksManager.getInstance().provideEventLogger(
-    "AppLogger",
-    new AppLogger()
-  );
+  NativeblocksManager.getInstance().provideEventLogger("AppLogger", new AppLogger());
+
   const [isLoading, setIsLoading] = useState(false);
+  
   return (
     <>
       <NativeblocksProvider

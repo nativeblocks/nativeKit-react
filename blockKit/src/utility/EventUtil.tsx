@@ -1,6 +1,6 @@
-import { BlockProps, NONE_INDEX, NativeMagicModel } from "@nativeblocks/nativeblocks-react";
+import { BlockProps, MagicModel, NONE_INDEX } from "@nativeblocks/nativeblocks-react";
 
-export function handleOnClick(blockProps: BlockProps, magics: NativeMagicModel[]) {
+export function handleOnClick(blockProps: BlockProps, magics: MagicModel[]) {
   if (!magics) return;
   const onClickEvent = magics.find((magic: any) => magic.event === "onClick");
 
@@ -9,7 +9,7 @@ export function handleOnClick(blockProps: BlockProps, magics: NativeMagicModel[]
   }
 }
 
-export function handleTableItemCellClick(blockProps: BlockProps, magics: NativeMagicModel[]) {
+export function handleTableItemCellClick(blockProps: BlockProps, magics: MagicModel[]) {
   if (!magics) return;
   const onClickEvent = magics.find((magic: any) => magic.event === "onItemCellClick");
 
@@ -18,7 +18,7 @@ export function handleTableItemCellClick(blockProps: BlockProps, magics: NativeM
   }
 }
 
-export function onTextChange(blockProps: BlockProps, magics: NativeMagicModel[]) {
+export function onTextChange(blockProps: BlockProps, magics: MagicModel[]) {
   if (!magics) return;
   const onChangeEvent = magics.find((magic: any) => magic.event === "onTextChange");
   if (onChangeEvent) {

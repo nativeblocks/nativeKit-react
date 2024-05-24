@@ -1,4 +1,4 @@
-import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
+import { BlockModel } from "@nativeblocks/nativeblocks-react";
 import { getProperty } from "./BlockUtil";
 
 function generateDirectionStyle(directionMobile: any, directionTablet: any, directionDesktop: any) {
@@ -29,7 +29,7 @@ function generateOrientationStyle(orientationMobile: string, orientationTablet: 
   return `${mobileClass} ${tabletClass} ${desktopClass}`;
 }
 
-export function getDirection(block: NativeBlockModel | null) {
+export function getDirection(block: BlockModel | null) {
   const directionProperty = getProperty(block, "direction");
   return generateDirectionStyle(
     directionProperty.valueMobile,
@@ -38,7 +38,7 @@ export function getDirection(block: NativeBlockModel | null) {
   );
 }
 
-export function getOrientation(block: NativeBlockModel | null) {
+export function getOrientation(block: BlockModel | null) {
   const orientationProperty = getProperty(block, "orientation");
   return generateOrientationStyle(
     orientationProperty.valueMobile,
@@ -54,7 +54,7 @@ function generateGapStyle(gapMobile: any, gapTablet: any, gapDesktop: any) {
   return `${mobileGap} ${tabletGap} ${desktopGap}`;
 }
 
-export function getGap(block: NativeBlockModel | null) {
+export function getGap(block: BlockModel | null) {
   const gapProperty = getProperty(block, "gap");
   return generateGapStyle(gapProperty.valueMobile, gapProperty.valueTablet, gapProperty.valueDesktop);
 }
@@ -73,7 +73,7 @@ function generateAlignItemsStyle(alignItemsMobile: any, alignItemsTablet: any, a
   return `${mobileAlignItems} ${tabletAlignItems} ${desktopAlignItems}`;
 }
 
-export function getJustifyContent(block: NativeBlockModel | null) {
+export function getJustifyContent(block: BlockModel | null) {
   const justifyContentProperty = getProperty(block, "justifyContent");
   return generateJustifyContentStyle(
     justifyContentProperty.valueMobile,
@@ -82,7 +82,7 @@ export function getJustifyContent(block: NativeBlockModel | null) {
   );
 }
 
-export function getAlignItems(block: NativeBlockModel | null) {
+export function getAlignItems(block: BlockModel | null) {
   const alignItemsProperty = getProperty(block, "alignItems");
   return generateAlignItemsStyle(
     alignItemsProperty.valueMobile,

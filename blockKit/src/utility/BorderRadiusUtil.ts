@@ -1,4 +1,4 @@
-import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
+import { BlockModel } from "@nativeblocks/nativeblocks-react";
 import { getProperty } from "./BlockUtil";
 
 function paddingMapper(
@@ -78,7 +78,7 @@ export function generateBorderRadiusStyle(
   return paddingMapper(mobileBorderRadius, tabletBorderRadius, desktopBorderRadius);
 }
 
-export function getBorderRaduis(block: NativeBlockModel | null) {
+export function getBorderRaduis(block: BlockModel | null) {
   const shapeRadiusTopStart = getProperty(block, "shapeRadiusTopStart");
   const shapeRadiusBottomStart = getProperty(block, "shapeRadiusBottomStart");
   const shapeRadiusTopEnd = getProperty(block, "shapeRadiusTopEnd");
@@ -104,7 +104,7 @@ function generateTableBorderStyle(
   return `${mobileClass} ${tabletClass} ${desktopClass}`;
 }
 
-export function getTableBorder(block: NativeBlockModel | null) {
+export function getTableBorder(block: BlockModel | null) {
   const heightProperty = getProperty(block, "tableBorder");
   return generateTableBorderStyle(heightProperty.valueMobile, heightProperty.valueTablet, heightProperty.valueDesktop);
 }

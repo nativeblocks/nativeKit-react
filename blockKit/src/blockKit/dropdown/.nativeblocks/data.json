@@ -1,5 +1,6 @@
 [
   { "key": "enable", "type": "BOOLEAN" },
   { "key": "selectValue", "type": "STRING" },
-  { "key": "items", "type": "STRING" }
+  { "key": "items", "type": "STRING" },
+  { "key": "placeholder", "type": "STRING" }
 ]

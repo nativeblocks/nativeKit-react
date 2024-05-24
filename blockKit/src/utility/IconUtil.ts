@@ -1,4 +1,4 @@
-import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
+import { BlockModel } from "@nativeblocks/nativeblocks-react";
 import { getProperty } from "./BlockUtil";
 
 function generateObjectTypeStyle(
@@ -13,7 +13,7 @@ function generateObjectTypeStyle(
   return `${mobileClass} ${tabletClass} ${desktopClass}`.trim();
 }
 
-export function getObjectType(block: NativeBlockModel | null) {
+export function getObjectType(block: BlockModel | null) {
   const objectTypeProperty = getProperty(block, "objectType");
   return generateObjectTypeStyle(
     objectTypeProperty.valueMobile,

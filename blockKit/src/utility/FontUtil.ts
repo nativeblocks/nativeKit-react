@@ -1,4 +1,4 @@
-import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
+import { BlockModel } from "@nativeblocks/nativeblocks-react";
 import { getProperty } from "./BlockUtil";
 
 function fontFamilyMapper(fontFamilyMobile: any, fontFamilyTablet: any, fontFamilyDesktop: any) {
@@ -11,7 +11,7 @@ function fontFamilyMapper(fontFamilyMobile: any, fontFamilyTablet: any, fontFami
   return style;
 }
 
-export function getFontFamily(block: NativeBlockModel | null) {
+export function getFontFamily(block: BlockModel | null) {
   const fontFamilyProperty = getProperty(block, "fontFamily");
   return fontFamilyMapper(
     fontFamilyProperty.valueMobile,
@@ -20,7 +20,7 @@ export function getFontFamily(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableHeaderFontFamily(block: NativeBlockModel | null) {
+export function getTableHeaderFontFamily(block: BlockModel | null) {
   const fontFamilyProperty = getProperty(block, "headerFontFamily");
   return fontFamilyMapper(
     fontFamilyProperty.valueMobile,
@@ -29,7 +29,7 @@ export function getTableHeaderFontFamily(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableBodyFontFamily(block: NativeBlockModel | null) {
+export function getTableBodyFontFamily(block: BlockModel | null) {
   const fontFamilyProperty = getProperty(block, "bodyFontFamily");
   return fontFamilyMapper(
     fontFamilyProperty.valueMobile,
@@ -53,7 +53,7 @@ function letterSpacingMapper(
   return style;
 }
 
-export function getLetterSpacing(block: NativeBlockModel | null) {
+export function getLetterSpacing(block: BlockModel | null) {
   const letterSpacingProperty = getProperty(block, "letterSpacing");
   return letterSpacingMapper(
     letterSpacingProperty.valueMobile,
@@ -62,7 +62,7 @@ export function getLetterSpacing(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableHeaderLetterSpacing(block: NativeBlockModel | null) {
+export function getTableHeaderLetterSpacing(block: BlockModel | null) {
   const letterSpacingProperty = getProperty(block, "headerLetterSpacing");
   return letterSpacingMapper(
     letterSpacingProperty.valueMobile,
@@ -71,7 +71,7 @@ export function getTableHeaderLetterSpacing(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableBodyLetterSpacing(block: NativeBlockModel | null) {
+export function getTableBodyLetterSpacing(block: BlockModel | null) {
   const letterSpacingProperty = getProperty(block, "bodyLetterSpacing");
   return letterSpacingMapper(
     letterSpacingProperty.valueMobile,
@@ -91,17 +91,17 @@ function fontSizeMapper(fontSizeMobile: string, fontSizeTablet: string, fontSize
   return style;
 }
 
-export function getFontSize(block: NativeBlockModel | null) {
+export function getFontSize(block: BlockModel | null) {
   const fontSizeProperty = getProperty(block, "fontSize");
   return fontSizeMapper(fontSizeProperty.valueMobile, fontSizeProperty.valueTablet, fontSizeProperty.valueDesktop);
 }
 
-export function getTableHeaderFontSize(block: NativeBlockModel | null) {
+export function getTableHeaderFontSize(block: BlockModel | null) {
   const fontSizeProperty = getProperty(block, "headerFontSize");
   return fontSizeMapper(fontSizeProperty.valueMobile, fontSizeProperty.valueTablet, fontSizeProperty.valueDesktop);
 }
 
-export function getTableBodyFontSize(block: NativeBlockModel | null) {
+export function getTableBodyFontSize(block: BlockModel | null) {
   const fontSizeProperty = getProperty(block, "bodyFontSize");
   return fontSizeMapper(fontSizeProperty.valueMobile, fontSizeProperty.valueTablet, fontSizeProperty.valueDesktop);
 }
@@ -114,7 +114,7 @@ function generateTextAlignStyle(textAlignMobile: string, textAlignTablet: string
   return `${mobileClass} ${tabletClass} ${desktopClass}`;
 }
 
-export function getTextAlign(block: NativeBlockModel | null) {
+export function getTextAlign(block: BlockModel | null) {
   const textAlignProperty = getProperty(block, "textAlign");
   return generateTextAlignStyle(
     textAlignProperty.valueMobile,
@@ -123,7 +123,7 @@ export function getTextAlign(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableHeaderTextAlign(block: NativeBlockModel | null) {
+export function getTableHeaderTextAlign(block: BlockModel | null) {
   const textAlignProperty = getProperty(block, "headerTextAlign");
   return generateTextAlignStyle(
     textAlignProperty.valueMobile,
@@ -132,7 +132,7 @@ export function getTableHeaderTextAlign(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableBodyTextAlign(block: NativeBlockModel | null) {
+export function getTableBodyTextAlign(block: BlockModel | null) {
   const textAlignProperty = getProperty(block, "bodyTextAlign");
   return generateTextAlignStyle(
     textAlignProperty.valueMobile,
@@ -153,7 +153,7 @@ function generateFontWeightStyle(
   return `${mobileClass} ${tabletClass} ${desktopClass}`;
 }
 
-export function getFontWeight(block: NativeBlockModel | null) {
+export function getFontWeight(block: BlockModel | null) {
   const fontWeightProperty = getProperty(block, "fontWeight");
   return generateFontWeightStyle(
     fontWeightProperty.valueMobile,
@@ -162,7 +162,7 @@ export function getFontWeight(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableHeaderFontWeight(block: NativeBlockModel | null) {
+export function getTableHeaderFontWeight(block: BlockModel | null) {
   const fontWeightProperty = getProperty(block, "headerFontWeight");
   return generateFontWeightStyle(
     fontWeightProperty.valueMobile,
@@ -171,7 +171,7 @@ export function getTableHeaderFontWeight(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableBodyFontWeight(block: NativeBlockModel | null) {
+export function getTableBodyFontWeight(block: BlockModel | null) {
   const fontWeightProperty = getProperty(block, "bodyFontWeight");
   return generateFontWeightStyle(
     fontWeightProperty.valueMobile,
@@ -192,7 +192,7 @@ function generateTextDecorationStyle(
   return `${mobileClass} ${tabletClass} ${desktopClass}`.trim();
 }
 
-export function getTextDecoration(block: NativeBlockModel | null) {
+export function getTextDecoration(block: BlockModel | null) {
   const textDecorationProperty = getProperty(block, "textDecoration");
   return generateTextDecorationStyle(
     textDecorationProperty.valueMobile,
@@ -201,7 +201,7 @@ export function getTextDecoration(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableHeaderTextDecoration(block: NativeBlockModel | null) {
+export function getTableHeaderTextDecoration(block: BlockModel | null) {
   const textDecorationProperty = getProperty(block, "headerTextDecoration");
   return generateTextDecorationStyle(
     textDecorationProperty.valueMobile,
@@ -210,7 +210,7 @@ export function getTableHeaderTextDecoration(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableBodyTextDecoration(block: NativeBlockModel | null) {
+export function getTableBodyTextDecoration(block: BlockModel | null) {
   const textDecorationProperty = getProperty(block, "bodyTextDecoration");
   return generateTextDecorationStyle(
     textDecorationProperty.valueMobile,

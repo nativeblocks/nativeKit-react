@@ -25,7 +25,9 @@ const NativeDropdownBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const data = blockProps.block?.data ?? new Map();
   const enable = state.variables?.get(data.get("enable")?.value ?? "")?.value === "true";
   const items = state.variables?.get(data.get("items")?.value ?? "")?.value ?? "";
+  const placeholder = JSON.parse(state.variables?.get(data.get("placeholder")?.value ?? "")?.value ?? "{}");
   const itemsValue = JSON.parse(items ?? "[]") ?? [];
+  const list = placeholder.length > 0 ? [placeholder, ...itemsValue] : itemsValue;
 
   const select = state.variables?.get(data.get("selectValue")?.value ?? "");
   let selectValue = select?.value ?? "";
@@ -80,7 +82,7 @@ const NativeDropdownBlock: FC<BlockProps> = (blockProps: BlockProps) => {
       onChange={(event) => {
         selectValue = event.target.value;
         if (select) {
-          select.value = selectValue;
+          select.value = selectValue.length > 0 ? selectValue : null;
           blockProps.onVariableChange?.(select);
         }
 
@@ -92,9 +94,9 @@ const NativeDropdownBlock: FC<BlockProps> = (blockProps: BlockProps) => {
       }}
       className={classes}
     >
-      {itemsValue?.map((item: any) => {
+      {list?.map((item: any) => {
         return (
-          <option value={item.id} key={item.id}>
+          <option value={item.id} key={item.id ?? Math.random()}>
             {item.text}
           </option>
         );

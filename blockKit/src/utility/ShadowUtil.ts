@@ -1,4 +1,4 @@
-import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
+import { BlockModel } from "@nativeblocks/nativeblocks-react";
 import { getProperty } from "./BlockUtil";
 
 function generateBoxShadowStyle(boxShadowMobile: any, boxShadowTablet: any, boxShadowDesktop: any) {
@@ -17,7 +17,7 @@ function generateDropShadowStyle(dropShadowMobile: any, dropShadowTablet: any, d
   return `${mobileClass} ${tabletClass} ${desktopClass}`;
 }
 
-export function getBoxShadow(block: NativeBlockModel | null) {
+export function getBoxShadow(block: BlockModel | null) {
   const boxShadowProperty = getProperty(block, "boxShadow");
   return generateBoxShadowStyle(
     boxShadowProperty.valueMobile,
@@ -26,7 +26,7 @@ export function getBoxShadow(block: NativeBlockModel | null) {
   );
 }
 
-export function getDropShadow(block: NativeBlockModel | null) {
+export function getDropShadow(block: BlockModel | null) {
   const dropShadowProperty = getProperty(block, "dropShadow");
   return generateDropShadowStyle(
     dropShadowProperty.valueMobile,

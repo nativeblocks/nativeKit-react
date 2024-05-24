@@ -1,4 +1,4 @@
-import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
+import { BlockModel } from "@nativeblocks/nativeblocks-react";
 import { getProperty } from "./BlockUtil";
 
 class Color {
@@ -381,7 +381,7 @@ function generateColorStyle(colorMobile: ColorStyle, colorTablet: ColorStyle, co
 }
 
 export function getBackgroundColor(
-  block: NativeBlockModel | null,
+  block: BlockModel | null,
   overrideColor: string | null = null,
   overrideOpacity: string | null = null
 ) {
@@ -408,7 +408,7 @@ export function getBackgroundColor(
 }
 
 export function getTableHeaderBackgroundColor(
-  block: NativeBlockModel | null,
+  block: BlockModel | null,
   overrideColor: string | null = null,
   overrideOpacity: string | null = null
 ) {
@@ -435,7 +435,7 @@ export function getTableHeaderBackgroundColor(
 }
 
 export function getTableBodyBackgroundColor(
-  block: NativeBlockModel | null,
+  block: BlockModel | null,
   overrideColor: string | null = null,
   overrideOpacity: string | null = null
 ) {
@@ -462,7 +462,7 @@ export function getTableBodyBackgroundColor(
 }
 
 export function getForegroundAsBackgroundColor(
-  block: NativeBlockModel | null,
+  block: BlockModel | null,
   overrideColor: string | null = null,
   overrideOpacity: string | null = null
 ) {
@@ -488,7 +488,7 @@ export function getForegroundAsBackgroundColor(
   );
 }
 
-export function getForegroundColor(block: NativeBlockModel | null) {
+export function getForegroundColor(block: BlockModel | null) {
   const foregroundColorProperty = getProperty(block, "foregroundColor");
   const foregroundColorOpacityProperty = getProperty(block, "foregroundColorOpacity");
 
@@ -511,7 +511,7 @@ export function getForegroundColor(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableHeaderForegroundColor(block: NativeBlockModel | null) {
+export function getTableHeaderForegroundColor(block: BlockModel | null) {
   const foregroundColorProperty = getProperty(block, "headerForegroundColor");
   const foregroundColorOpacityProperty = getProperty(block, "headerForegroundColorOpacity");
 
@@ -534,7 +534,7 @@ export function getTableHeaderForegroundColor(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableBodyForegroundColor(block: NativeBlockModel | null) {
+export function getTableBodyForegroundColor(block: BlockModel | null) {
   const foregroundColorProperty = getProperty(block, "bodyForegroundColor");
   const foregroundColorOpacityProperty = getProperty(block, "bodyForegroundColorOpacity");
 
@@ -557,7 +557,7 @@ export function getTableBodyForegroundColor(block: NativeBlockModel | null) {
   );
 }
 
-export function getBorderColor(block: NativeBlockModel | null) {
+export function getBorderColor(block: BlockModel | null) {
   const borderColorProperty = getProperty(block, "borderColor");
   const borderColorOpacityProperty = getProperty(block, "borderColorOpacity");
 
@@ -580,7 +580,7 @@ export function getBorderColor(block: NativeBlockModel | null) {
   );
 }
 
-export function getAccentColor(block: NativeBlockModel | null) {
+export function getAccentColor(block: BlockModel | null) {
   const foregroundColorProperty = getProperty(block, "foregroundColor");
   const foregroundColorOpacityProperty = getProperty(block, "foregroundColorOpacity");
 
@@ -603,7 +603,7 @@ export function getAccentColor(block: NativeBlockModel | null) {
   );
 }
 
-export function getTinitColor(block: NativeBlockModel | null) {
+export function getTinitColor(block: BlockModel | null) {
   const foregroundColorProperty = getProperty(block, "foregroundColor");
   const foregroundColorOpacityProperty = getProperty(block, "foregroundColorOpacity");
 
@@ -626,7 +626,7 @@ export function getTinitColor(block: NativeBlockModel | null) {
   );
 }
 
-export function getOutlineColor(block: NativeBlockModel | null) {
+export function getOutlineColor(block: BlockModel | null) {
   const borderColorProperty = getProperty(block, "borderColor");
   const borderColorOpacityProperty = getProperty(block, "borderColorOpacity");
 

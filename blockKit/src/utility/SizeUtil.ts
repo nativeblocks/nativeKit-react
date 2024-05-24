@@ -1,4 +1,4 @@
-import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
+import { BlockModel } from "@nativeblocks/nativeblocks-react";
 import { getProperty } from "./BlockUtil";
 
 export function generateSizeStyle(mobileSize: any, tabletSize: any, desktopSize: any) {
@@ -9,12 +9,12 @@ export function generateSizeStyle(mobileSize: any, tabletSize: any, desktopSize:
   return `${mobileClass} ${tabletClass} ${desktopClass}`;
 }
 
-export function getHeight(block: NativeBlockModel | null) {
+export function getHeight(block: BlockModel | null) {
   const heightProperty = getProperty(block, "height");
   return generateSizeStyle(heightProperty.valueMobile, heightProperty.valueTablet, heightProperty.valueDesktop);
 }
 
-export function getWidth(block: NativeBlockModel | null) {
+export function getWidth(block: BlockModel | null) {
   const widthProperty = getProperty(block, "width");
   return generateSizeStyle(widthProperty.valueMobile, widthProperty.valueTablet, widthProperty.valueDesktop);
 }

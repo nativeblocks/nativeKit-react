@@ -1,6 +1,6 @@
-import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
+import { BlockModel } from "@nativeblocks/nativeblocks-react";
 
-export function getProperty(block: NativeBlockModel | null, propertyKey: string) {
+export function getProperty(block: BlockModel | null, propertyKey: string) {
   if (!block)
     return {
       valueMobile: "",
@@ -28,7 +28,7 @@ function generateExtraClassStyle(extraClassMobile: any, extraClassTablet: any, e
   return `${mobileClass} ${tabletClass} ${desktopClass}`;
 }
 
-export function generateExtraClass(block: NativeBlockModel | null) {
+export function generateExtraClass(block: BlockModel | null) {
   const extraClassProperty = getProperty(block, "class");
   return generateExtraClassStyle(
     extraClassProperty.valueMobile,
@@ -37,21 +37,21 @@ export function generateExtraClass(block: NativeBlockModel | null) {
   );
 }
 
-export function getTableHeaderItems(block: NativeBlockModel | null) {
+export function getTableHeaderItems(block: BlockModel | null) {
   const headersVariableProperty = getProperty(block, "headersVariable");
   if (headersVariableProperty.valueMobile) return headersVariableProperty.valueMobile;
   if (headersVariableProperty.valueTablet) return headersVariableProperty.valueTablet;
   if (headersVariableProperty.valueDesktop) return headersVariableProperty.valueDesktop;
 }
 
-export function getTableSelectedItemCell(block: NativeBlockModel | null) {
+export function getTableSelectedItemCell(block: BlockModel | null) {
   const headersVariableProperty = getProperty(block, "selectedItemCell");
   if (headersVariableProperty.valueMobile) return headersVariableProperty.valueMobile;
   if (headersVariableProperty.valueTablet) return headersVariableProperty.valueTablet;
   if (headersVariableProperty.valueDesktop) return headersVariableProperty.valueDesktop;
 }
 
-export function generateTableHeaderExtraClass(block: NativeBlockModel | null) {
+export function generateTableHeaderExtraClass(block: BlockModel | null) {
   const extraClassProperty = getProperty(block, "headerClass");
   return generateExtraClassStyle(
     extraClassProperty.valueMobile,
@@ -60,7 +60,7 @@ export function generateTableHeaderExtraClass(block: NativeBlockModel | null) {
   );
 }
 
-export function generateTableBodyExtraClass(block: NativeBlockModel | null) {
+export function generateTableBodyExtraClass(block: BlockModel | null) {
   const extraClassProperty = getProperty(block, "bodyClass");
   return generateExtraClassStyle(
     extraClassProperty.valueMobile,
@@ -69,7 +69,7 @@ export function generateTableBodyExtraClass(block: NativeBlockModel | null) {
   );
 }
 
-export function getInputType(block: NativeBlockModel | null) {
+export function getInputType(block: BlockModel | null) {
   const inputTypeProperty = getProperty(block, "inputType");
   if (inputTypeProperty.valueMobile) return inputTypeProperty.valueMobile;
   if (inputTypeProperty.valueTablet) return inputTypeProperty.valueTablet;

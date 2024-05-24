@@ -1,4 +1,4 @@
-import { NativeBlockModel } from "@nativeblocks/nativeblocks-react";
+import { BlockModel } from "@nativeblocks/nativeblocks-react";
 import { getProperty } from "./BlockUtil";
 
 export function spacingMapper(
@@ -49,7 +49,7 @@ export function generatePaddingStyle(
   return spacingMapper(mobilePadding, tabletPadding, desktopPadding);
 }
 
-export function getPadding(block: NativeBlockModel | null) {
+export function getPadding(block: BlockModel | null) {
   const paddingTop = getProperty(block, "paddingTop");
   const paddingStart = getProperty(block, "paddingStart");
   const paddingBottom = getProperty(block, "paddingBottom");
@@ -57,7 +57,7 @@ export function getPadding(block: NativeBlockModel | null) {
   return generatePaddingStyle(paddingTop, paddingEnd, paddingBottom, paddingStart);
 }
 
-export function getTableHeaderPadding(block: NativeBlockModel | null) {
+export function getTableHeaderPadding(block: BlockModel | null) {
   const paddingTop = getProperty(block, "headerPaddingTop");
   const paddingStart = getProperty(block, "headerPaddingStart");
   const paddingBottom = getProperty(block, "headerPaddingBottom");
@@ -65,7 +65,7 @@ export function getTableHeaderPadding(block: NativeBlockModel | null) {
   return generatePaddingStyle(paddingTop, paddingEnd, paddingBottom, paddingStart);
 }
 
-export function getTableBodyPadding(block: NativeBlockModel | null) {
+export function getTableBodyPadding(block: BlockModel | null) {
   const paddingTop = getProperty(block, "bodyPaddingTop");
   const paddingStart = getProperty(block, "bodyPaddingStart");
   const paddingBottom = getProperty(block, "bodyPaddingBottom");

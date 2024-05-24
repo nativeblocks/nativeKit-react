@@ -78,10 +78,10 @@ const NativeTextFieldBlock: FC<BlockProps> = (blockProps: BlockProps) => {
         textValue = event.target.value;
         if (text) {
           setTimeout(() => {
-            text.value = textValue;
+            text.value = textValue.length > 0 ? textValue : null;
             blockProps.onVariableChange?.(text);
             onTextChange(blockProps, magics);
-          }, 500);
+          }, 50);
         }
       }}
       className={classes}

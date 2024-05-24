@@ -1,9 +1,4 @@
-import {
-  INativeMagic,
-  MagicProps,
-  NativeVariableModel,
-  nativeFrameStateService,
-} from "@nativeblocks/nativeblocks-react";
+import { INativeMagic, MagicProps, VariableModel, nativeFrameStateService } from "@nativeblocks/nativeblocks-react";
 
 export default class NativeLocalStorageMagic implements INativeMagic {
   handle(magicProps: MagicProps): void {
@@ -25,7 +20,7 @@ export default class NativeLocalStorageMagic implements INativeMagic {
             key: variableKey,
             value: localStorageValue,
             type: variable?.type,
-          } as NativeVariableModel;
+          } as VariableModel;
           magicProps.onVariableChange(chagedVariable);
         }
         break;

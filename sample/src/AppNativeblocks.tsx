@@ -11,12 +11,14 @@ import React, { useState } from "react";
 function AppNativeblocks() {
   NativeblocksManager.initialize({
     endpoint: "http://localhost:8585/graphql",
-    apiKey: "",
+    apiKey:
+      "",
     developmentMode: true,
   });
 
   NativeblocksBlockHelper.provideBlocks();
   NativeblocksMagicHelper.provideMagics();
+
   NativeblocksManager.getInstance().provideEventLogger("AppLogger", new AppLogger());
 
   const [isLoading, setIsLoading] = useState(false);

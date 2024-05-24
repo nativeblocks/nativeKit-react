@@ -1,21 +1,16 @@
 import {
   INativeMagic,
   MagicProps,
-  NativeVariableModel,
-  nativeFrameStateService,
+  VariableModel,
+  nativeFrameStateService
 } from "@nativeblocks/nativeblocks-react";
-import {
-  getIndexValue,
-  getJsonPathValue,
-  getVariableValue,
-} from "../../utility/VariableUtil";
+import { getIndexValue, getJsonPathValue, getVariableValue } from "../../utility/VariableUtil";
 
 export default class NativeJsonParserMagic implements INativeMagic {
-  
   private isObject(item: any): boolean {
     return typeof item === "object" && !Array.isArray(item) && item !== null;
   }
-  
+
   private isArray(item: any): boolean {
     return Array.isArray(item) && item !== null;
   }
@@ -32,11 +27,7 @@ export default class NativeJsonParserMagic implements INativeMagic {
 
     let jsonPathValue = jsonPath;
     latestState.variables?.forEach((variable) => {
-      jsonPathValue = getVariableValue(
-        jsonPathValue,
-        variable.key ?? "",
-        variable.value ?? ""
-      );
+      jsonPathValue = getVariableValue(jsonPathValue, variable.key ?? "", variable.value ?? "");
     });
     jsonPathValue = getIndexValue(jsonPathValue, magicProps.index);
 
@@ -46,9 +37,9 @@ export default class NativeJsonParserMagic implements INativeMagic {
       const result = getJsonPathValue(jsonValue, jsonPathValue) ?? {};
       const chagedVariable = {
         key: variableKey,
-        value: (this.isObject(result) || this.isArray(result)) ? JSON.stringify(result) : result,
+        value: this.isObject(result) || this.isArray(result) ? JSON.stringify(result) : result,
         type: variableType,
-      } as NativeVariableModel;
+      } as VariableModel;
       magicProps.onVariableChange(chagedVariable);
     }
 

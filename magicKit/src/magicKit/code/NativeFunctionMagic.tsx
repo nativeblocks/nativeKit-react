@@ -1,9 +1,4 @@
-import {
-  INativeMagic,
-  MagicProps,
-  NativeVariableModel,
-  nativeFrameStateService,
-} from "@nativeblocks/nativeblocks-react";
+import { INativeMagic, MagicProps, nativeFrameStateService, VariableModel } from "@nativeblocks/nativeblocks-react";
 import { getVariableValue } from "../../utility/VariableUtil";
 
 type NativeFunction = () => any;
@@ -23,9 +18,7 @@ export default class NativeFunctionMagic implements INativeMagic {
       value = getVariableValue(value, variable.key ?? "", variable.value ?? "");
     });
 
-    const nativeFunction: NativeFunction = new Function(
-      value
-    ) as NativeFunction;
+    const nativeFunction: NativeFunction = new Function(value) as NativeFunction;
 
     const result: any = nativeFunction();
 
@@ -34,7 +27,7 @@ export default class NativeFunctionMagic implements INativeMagic {
         key: variableKey,
         value: result ? JSON.stringify(result) : "",
         type: variableType,
-      } as NativeVariableModel;
+      } as VariableModel;
       magicProps.onVariableChange(chagedVariable);
     }
 

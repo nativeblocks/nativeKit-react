@@ -5,13 +5,8 @@ import { NativeJsonPath } from "@nativeblocks/nativeblocks-react";
  * replace counter key with runtime value like 1
  * return => 1
  * */
-export function getVariableValue(
-  variable: string,
-  key?: string | null,
-  value?: string | null
-): string {
-  if (!variable || !key) return "";
-  return variable.replace(`{${key}}`, value ?? "");
+export function getVariableValue(variable: string, key?: string | null, value?: string | null): string {
+  return variable.replace(`{${key}}`, value ?? `${value}`);
 }
 
 export function getIndexValue(variable: string, index: number): string {

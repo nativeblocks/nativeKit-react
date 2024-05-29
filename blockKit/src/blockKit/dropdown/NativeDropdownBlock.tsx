@@ -27,7 +27,8 @@ const NativeDropdownBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const items = state.variables?.get(data.get("items")?.value ?? "")?.value ?? "";
   const placeholder = JSON.parse(state.variables?.get(data.get("placeholder")?.value ?? "")?.value ?? "{}");
   const itemsValue = JSON.parse(items ?? "[]") ?? [];
-  const list = placeholder.length > 0 ? [placeholder, ...itemsValue] : itemsValue;
+
+  const list = placeholder ? [placeholder, ...itemsValue] : itemsValue;
 
   const select = state.variables?.get(data.get("selectValue")?.value ?? "");
   let selectValue = select?.value ?? "";

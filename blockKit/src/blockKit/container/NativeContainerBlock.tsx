@@ -20,7 +20,7 @@ const NativeContainerBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   }
   
   const blockKey = blockProps.block?.key ?? "";
-  const magics = state.magics?.get(blockKey) ?? [];
+  const actions = state.actions?.get(blockKey) ?? [];
 
   const padding = getPadding(blockProps.block);
   const shapeRadius = getBorderRaduis(blockProps.block);
@@ -56,7 +56,7 @@ const NativeContainerBlock: FC<BlockProps> = (blockProps: BlockProps) => {
       className={classes}
       key={blockProps.block?.key}
       onClick={(e) => {
-        handleOnClick(blockProps, magics);
+        handleOnClick(blockProps, actions);
       }}
     >
       {renderSubBlocks(blockProps)}

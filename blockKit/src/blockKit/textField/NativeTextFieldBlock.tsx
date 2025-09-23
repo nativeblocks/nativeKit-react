@@ -21,7 +21,7 @@ const NativeTextFieldBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   }
 
   const blockKey = blockProps.block?.key ?? "";
-  const magics = state.magics?.get(blockKey) ?? [];
+  const actions = state.actions?.get(blockKey) ?? [];
 
   const data = blockProps.block?.data ?? new Map();
   const text = state.variables?.get(data.get("text")?.value ?? "");
@@ -80,7 +80,7 @@ const NativeTextFieldBlock: FC<BlockProps> = (blockProps: BlockProps) => {
           setTimeout(() => {
             text.value = textValue.length > 0 ? textValue : null;
             blockProps.onVariableChange?.(text);
-            onTextChange(blockProps, magics);
+            onTextChange(blockProps, actions);
           }, 50);
         }
       }}

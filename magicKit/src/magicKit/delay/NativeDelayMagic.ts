@@ -1,7 +1,7 @@
-import { INativeMagic, MagicProps } from "@nativeblocks/nativeblocks-react";
+import { ActionProps, INativeAction } from "@nativeblocks/nativeblocks-react";
 
-export default class NativeDelayMagic implements INativeMagic {
-  handle(magicProps: MagicProps): void {
+export default class NativeDelayMagic implements INativeAction {
+  handle(magicProps: ActionProps): void {
     const delayField = magicProps.nativeTrigger?.properties?.get("delay");
     setTimeout(() => {
       if (magicProps.nativeTrigger) {

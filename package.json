@@ -1,0 +1,28 @@
+{
+  "name": "nativeKit-react-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Monorepo for Nativeblocks React SDKs (blockKit, magicKit) and sample app",
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "blockKit",
+    "magicKit",
+    "sample"
+  ],
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "scripts": {
+    "build": "yarn build:kits && yarn build:sample",
+    "build:kits": "yarn workspace @nativeblocks/block-kit-react build && yarn workspace @nativeblocks/magic-kit-react build",
+    "build:sample": "yarn workspace sample build",
+    "dev": "yarn build:kits && yarn workspace sample start",
+    "dev:watch": "yarn build:kits && yarn workspace sample start",
+    "clean": "rimraf node_modules **/node_modules **/dist",
+    "lint": "echo 'add linter config'"
+  },
+  "devDependencies": {
+    "@nativeblocks/nativeblocks-react": "file:../nativeblocks-react/sdk",
+    "rimraf": "^5.0.5"
+  }
+}

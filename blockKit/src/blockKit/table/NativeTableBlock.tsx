@@ -56,7 +56,7 @@ const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
     return <></>;
   }
 
-  const magics = state.magics?.get(blockKey) ?? [];
+  const actions = state.actions?.get(blockKey) ?? [];
   const variable = state.variables?.get(blockKey);
   let result = {} as any;
   if (blockProps.block?.jsonPath) {
@@ -204,7 +204,7 @@ const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
                                   type: "STRING",
                                 });
                               }
-                              handleTableItemCellClick(blockProps, magics);
+                              handleTableItemCellClick(blockProps, actions);
                             }}
                           >
                             {cell.text}

@@ -20,7 +20,7 @@ const NativeDropdownBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   }
 
   const blockKey = blockProps.block?.key ?? "";
-  const magics = state.magics?.get(blockKey) ?? [];
+  const actions = state.actions?.get(blockKey) ?? [];
 
   const data = blockProps.block?.data ?? new Map();
   const enable = state.variables?.get(data.get("enable")?.value ?? "")?.value === "true";
@@ -87,10 +87,10 @@ const NativeDropdownBlock: FC<BlockProps> = (blockProps: BlockProps) => {
           blockProps.onVariableChange?.(select);
         }
 
-        if (!magics) return;
-        const onChangeEvent = magics.find((magic: any) => magic.event === "onSelect");
+        if (!actions) return;
+        const onChangeEvent = actions.find((magic: any) => magic.event === "onSelect");
         if (onChangeEvent) {
-          blockProps.onHandleMagic?.(blockProps.index ?? NONE_INDEX, onChangeEvent, "onSelect");
+          blockProps.onHandleAction?.(blockProps.index ?? NONE_INDEX, onChangeEvent, "onSelect");
         }
       }}
       className={classes}

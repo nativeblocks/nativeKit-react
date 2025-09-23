@@ -1,13 +1,13 @@
 import {
-  INativeMagic,
-  MagicProps,
+  INativeAction,
+  ActionProps,
   nativeFrameStateService,
 } from "@nativeblocks/nativeblocks-react";
 
 const NAVIGATION_BACK = "../";
 
-export default class NativeNavigationMagic implements INativeMagic {
-  handle(magicProps: MagicProps): void {
+export default class NativeNavigationMagic implements INativeAction {
+  handle(magicProps: ActionProps): void {
     const latestState = nativeFrameStateService.getState();
 
     const destinationField =

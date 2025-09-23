@@ -44,7 +44,7 @@ const NativeListBlock: FC<BlockProps> = (blockProps: BlockProps) => {
     result = variable?.value ?? "";
   }
 
-  const magics = state.magics?.get(blockKey) ?? [];
+  const actions = state.actions?.get(blockKey) ?? [];
 
   const padding = getPadding(blockProps.block);
   const shapeRadius = getBorderRaduis(blockProps.block);

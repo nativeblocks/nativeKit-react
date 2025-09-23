@@ -27,7 +27,7 @@ const NativeTextBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   }
 
   const blockKey = blockProps.block?.key ?? "";
-  const magics = state.magics?.get(blockKey) ?? [];
+  const actions = state.actions?.get(blockKey) ?? [];
 
   const data = blockProps.block?.data ?? new Map();
   const text = state.variables?.get(data.get("text")?.value ?? "")?.value ?? "";
@@ -66,7 +66,7 @@ const NativeTextBlock: FC<BlockProps> = (blockProps: BlockProps) => {
       className={classes}
       key={blockKey}
       onClick={(e) => {
-        handleOnClick(blockProps, magics);
+        handleOnClick(blockProps, actions);
       }}
     >
       {text}

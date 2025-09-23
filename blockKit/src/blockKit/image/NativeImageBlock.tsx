@@ -18,7 +18,7 @@ const NativeImageBlock: FC<BlockProps> = (blockProps: BlockProps) => {
     return <></>;
   }
   const blockKey = blockProps.block?.key ?? "";
-  const magics = state.magics?.get(blockKey) ?? [];
+  const actions = state.actions?.get(blockKey) ?? [];
 
   const data = blockProps.block?.data ?? new Map();
   const url = state.variables?.get(data.get("url")?.value ?? "")?.value ?? "";
@@ -42,7 +42,7 @@ const NativeImageBlock: FC<BlockProps> = (blockProps: BlockProps) => {
       className={classes}
       key={blockProps.block?.key}
       onClick={(e) => {
-        handleOnClick(blockProps, magics);
+        handleOnClick(blockProps, actions);
       }}
       src={url}
       alt={alt}

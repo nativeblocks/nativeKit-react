@@ -1,12 +1,12 @@
 import {
-  INativeMagic,
-  MagicProps,
+  ActionProps,
+  INativeAction,
   VariableModel,
   nativeFrameStateService
 } from "@nativeblocks/nativeblocks-react";
 import { getIndexValue, getJsonPathValue, getVariableValue } from "../../utility/VariableUtil";
 
-export default class NativeJsonParserMagic implements INativeMagic {
+export default class NativeJsonParserMagic implements INativeAction {
   private isObject(item: any): boolean {
     return typeof item === "object" && !Array.isArray(item) && item !== null;
   }
@@ -15,7 +15,7 @@ export default class NativeJsonParserMagic implements INativeMagic {
     return Array.isArray(item) && item !== null;
   }
 
-  handle(magicProps: MagicProps): void {
+  handle(magicProps: ActionProps): void {
     const latestState = nativeFrameStateService.getState();
 
     const properties = magicProps.nativeTrigger?.properties;

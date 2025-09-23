@@ -1,4 +1,4 @@
-import { INativeMagic, MagicProps, nativeFrameStateService, VariableModel } from "@nativeblocks/nativeblocks-react";
+import { INativeAction, ActionProps, nativeFrameStateService, VariableModel } from "@nativeblocks/nativeblocks-react";
 import { getIndexValue, getVariableValue } from "../../utility/VariableUtil";
 
 type RestApiMethod = "GET" | "POST" | "PATCH" | "PUT" | "DELETE";
@@ -45,8 +45,8 @@ function parseJson(data: string, replacements: Map<string, VariableModel> | null
   return parsedData;
 }
 
-export default class NativeRestApi implements INativeMagic {
-  handle(magicProps: MagicProps): void {
+export default class NativeRestApi implements INativeAction {
+  handle(magicProps: ActionProps): void {
     const properties = magicProps.nativeTrigger?.properties;
 
     const latestState = nativeFrameStateService.getState();

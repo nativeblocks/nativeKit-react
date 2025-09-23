@@ -1,10 +1,10 @@
-import { INativeMagic, MagicProps, nativeFrameStateService, VariableModel } from "@nativeblocks/nativeblocks-react";
+import { INativeAction, ActionProps, nativeFrameStateService, VariableModel } from "@nativeblocks/nativeblocks-react";
 import { getVariableValue } from "../../utility/VariableUtil";
 
 type NativeFunction = () => any;
 
-export default class NativeFunctionMagic implements INativeMagic {
-  handle(magicProps: MagicProps): void {
+export default class NativeFunctionMagic implements INativeAction {
+  handle(magicProps: ActionProps): void {
     const latestState = nativeFrameStateService.getState();
 
     const properties = magicProps.nativeTrigger?.properties;

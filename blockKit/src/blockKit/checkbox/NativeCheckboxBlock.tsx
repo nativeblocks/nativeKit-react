@@ -18,7 +18,7 @@ const NativeCheckboxBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   }
 
   const blockKey = blockProps.block?.key ?? "";
-  const magics = state?.magics?.get(blockKey) ?? [];
+  const actions = state?.actions?.get(blockKey) ?? [];
 
   const data = blockProps.block?.data ?? new Map();
   const check = state.variables?.get(data.get("checkValue")?.value ?? "");
@@ -50,10 +50,10 @@ const NativeCheckboxBlock: FC<BlockProps> = (blockProps: BlockProps) => {
           blockProps.onVariableChange?.(check);
         }
 
-        if (!magics) return;
-        const onChangeEvent = magics.find((magic: any) => magic.event === "onCheckChange");
+        if (!actions) return;
+        const onChangeEvent = actions.find((magic: any) => magic.event === "onCheckChange");
         if (onChangeEvent) {
-          blockProps.onHandleMagic?.(blockProps.index ?? NONE_INDEX, onChangeEvent, "onCheckChange");
+          blockProps.onHandleAction?.(blockProps.index ?? NONE_INDEX, onChangeEvent, "onCheckChange");
         }
       }}
       className={classes}

@@ -1,11 +1,16 @@
 {
-  "name": "Native text",
-  "description": "This is text",
-  "documentation": "",
-  "imageIcon": "",
-  "keyType": "NATIVE_TEXT",
-  "kind": "BLOCK",
-  "platformSupport": "REACT",
+  "versionName": "1.0.0",
   "price": 0,
-  "public": true
+  "version": 1,
+  "deprecatedReason": "",
+  "keyType": "nativeblocks/text",
+  "kind": "BLOCK",
+  "organizationId": "",
+  "public": true,
+  "platformSupport": "REACT",
+  "name": "Native Text",
+  "description": "Nativeblocks text block",
+  "deprecated": false,
+  "documentation": "",
+  "imageIcon": ""
 }

@@ -35,6 +35,7 @@ const NativeContainerBlock: FC<BlockProps> = (blockProps: BlockProps) => {
   const gap = getGap(blockProps.block);
   const justifyContent = getJustifyContent(blockProps.block);
   const alignItems = getAlignItems(blockProps.block);
+  const contentSlot = blockProps.block?.slots?.get("content");
 
   const mergedStyle = mergeStyles([padding, shapeRadius, direction, backgroundColor]);
   const classes = mergeClasses([
@@ -59,17 +60,20 @@ const NativeContainerBlock: FC<BlockProps> = (blockProps: BlockProps) => {
         handleOnClick(blockProps, actions);
       }}
     >
-      {renderSubBlocks(blockProps)}
+  {renderSubBlocks(blockProps, (contentSlot as any) ?? null)}
     </div>
   );
 };
 
-function renderSubBlocks(blockProps: BlockProps) {
-  if (blockProps.onChangeBlocks) {
-    return <>{blockProps.onChangeBlocks(blockProps.block?.subBlocks ?? new Map(), NONE_INDEX)}</>;
-  } else {
-    return <></>;
+
+type LocalBlockSlotModel = { slot: string | null };
+
+function renderSubBlocks(blockProps: BlockProps, slot: LocalBlockSlotModel | null) {
+  if (slot && blockProps.onSubBlock) {
+    const subBlockContent = blockProps.onSubBlock(blockProps.block?.subBlocks ?? new Map(), slot, NONE_INDEX);
+    return subBlockContent !== undefined && subBlockContent !== null ? <>{subBlockContent}</> : <></>;
   }
+  return <></>;
 }
 
 export default NativeContainerBlock;

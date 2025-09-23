@@ -1,0 +1,8 @@
+[
+  {
+    "description": "The content displayed inside the Container.",
+    "deprecated": false,
+    "deprecatedReason": "",
+    "slot": "content"
+  }
+]

@@ -1,1 +1,9 @@
-[{"key":"text","type":"STRING"}]
+[
+  {
+    "key": "text",
+    "deprecated": false,
+    "type": "STRING",
+    "deprecatedReason": "",
+    "description": "The text content to be displayed."
+  }
+]

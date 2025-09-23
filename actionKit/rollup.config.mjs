@@ -38,7 +38,7 @@ export default [
     external: ["react", "react-dom", "react-router-dom"],
   },
   {
-    input: "dist/esm/types/index.d.ts",
+    input: "dist/esm/index.d.ts",
     output: [{ file: "dist/types.d.ts", format: "esm" }],
     plugins: [dts.default()],
   },

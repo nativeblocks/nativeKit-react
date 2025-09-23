@@ -1,5 +1,5 @@
 import { NativeblocksBlockHelper } from "@nativeblocks/block-kit-react";
-import { NativeblocksMagicHelper } from "@nativeblocks/magic-kit-react";
+import { NativeblocksActionHelper } from "@nativeblocks/action-kit-react";
 import {
   INativeLogger,
   NativeblocksError,
@@ -21,7 +21,7 @@ function AppNativeblocks() {
   });
 
   NativeblocksBlockHelper.provideBlocks();
-  NativeblocksMagicHelper.provideMagics();
+  NativeblocksActionHelper.provideActions();
 
   NativeblocksManager.getInstance().provideEventLogger("AppLogger", new AppLogger());
 

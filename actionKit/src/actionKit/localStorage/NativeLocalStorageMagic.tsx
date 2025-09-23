@@ -21,22 +21,22 @@ export default class NativeLocalStorageMagic implements INativeAction {
             value: localStorageValue,
             type: variable?.type,
           } as VariableModel;
-          magicProps.onVariableChange(chagedVariable);
+            magicProps.onVariableChange(chagedVariable);
         }
         break;
       case "ADD":
         if (variable?.value) {
-          const value = localStorage.setItem(storageKey, variable?.value);
+          localStorage.setItem(storageKey, variable?.value);
         }
         break;
       case "UPDATE":
         if (variable?.value) {
-          const value = localStorage.setItem(storageKey, variable?.value);
+          localStorage.setItem(storageKey, variable?.value);
         }
         break;
       case "DELETE":
         if (variable?.value) {
-          const value = localStorage.removeItem(storageKey);
+          localStorage.removeItem(storageKey);
         }
         break;
     }

@@ -51,7 +51,6 @@ export default class NativeRestApi implements INativeAction {
 
     const latestState = nativeFrameStateService.getState();
 
-    // https://api.example.com/page/{pageVariable}?state={stateVariable}&level={levelVariable}
     const endpointUrl = properties?.get("endpointUrl")?.value ?? "";
     const method = properties?.get("method")?.value ?? "";
     const headers = properties?.get("headers")?.value ?? "";

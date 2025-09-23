@@ -7,8 +7,8 @@ import NativeLocalStorageMagic from "./localStorage/NativeLocalStorageMagic";
 import NativeFunctionMagic from "./code/NativeFunctionMagic";
 import NativeDelayMagic from "./delay/NativeDelayMagic";
 
-export const NativeblocksMagicHelper = {
-  provideMagics() {
+export const NativeblocksActionHelper = {
+  provideActions() {
     NativeblocksManager.getInstance().provideAction("NATIVE_NAVIGATION", new NativeNavigationMagic());
     NativeblocksManager.getInstance().provideAction("NATIVE_REST_API", new NativeRestApi());
     NativeblocksManager.getInstance().provideAction("NATIVE_CHANGE_VARIABLE", new NativeChangeVariableMagic());

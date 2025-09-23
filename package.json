@@ -1,12 +1,12 @@
 {
-  "name": "nativeKit-react-monorepo",
+  "name": "nativekit-react-monorepo",
   "private": true,
   "version": "0.1.0",
-  "description": "Monorepo for Nativeblocks React SDKs (blockKit, magicKit) and sample app",
+  "description": "Monorepo for Nativeblocks React SDKs (blockKit, actionKit) and sample app",
   "packageManager": "yarn@1.22.22",
   "workspaces": [
     "blockKit",
-    "magicKit",
+    "actionKit",
     "sample"
   ],
   "engines": {
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build": "yarn build:kits && yarn build:sample",
-    "build:kits": "yarn workspace @nativeblocks/block-kit-react build && yarn workspace @nativeblocks/magic-kit-react build",
+    "build:kits": "yarn workspace @nativeblocks/block-kit-react build && yarn workspace @nativeblocks/action-kit-react build",
     "build:sample": "yarn workspace sample build",
     "dev": "yarn build:kits && yarn workspace sample start",
     "dev:watch": "yarn build:kits && yarn workspace sample start",

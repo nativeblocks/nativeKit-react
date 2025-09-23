@@ -1,9 +1,4 @@
-import {
-  ActionProps,
-  INativeAction,
-  VariableModel,
-  nativeFrameStateService
-} from "@nativeblocks/nativeblocks-react";
+import { ActionProps, INativeAction, VariableModel, nativeFrameStateService } from "@nativeblocks/nativeblocks-react";
 import { getIndexValue, getJsonPathValue, getVariableValue } from "../../utility/VariableUtil";
 
 export default class NativeJsonParserMagic implements INativeAction {

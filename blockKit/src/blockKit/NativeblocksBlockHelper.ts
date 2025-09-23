@@ -17,20 +17,20 @@ import NativeToggleBlock from "./toggle/NativeToggleBlock";
 
 export const NativeblocksBlockHelper = {
   provideBlocks() {
-    NativeblocksManager.getInstance().provideBlock("NATIVE_CONTAINER", NativeContainerBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_LIST", NativeListBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_TEXT", NativeTextBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_BUTTON", NativeButtonBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_TEXT_FIELD", NativeTextFieldBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_IMAGE", NativeImageBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_DROPDOWN", NativeDropdownBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_CHECKBOX", NativeCheckboxBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_SWITCH", NativeSwitchBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_IFRAME", NativeIframeBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_TABLE", NativeTableBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_TOGGLE", NativeToggleBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_RADIO_GROUP", NativeRadioGroup);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_HTML", NativeHtmlBlock);
-    NativeblocksManager.getInstance().provideBlock("NATIVE_MARKDOWN", NativeMarkdownBlock);
+    NativeblocksManager.getInstance().provideBlock("nativeblocks/container", NativeContainerBlock);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_LIST", NativeListBlock);
+    NativeblocksManager.getInstance().provideBlock("nativeblocks/text", NativeTextBlock);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_BUTTON", NativeButtonBlock);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_TEXT_FIELD", NativeTextFieldBlock);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_IMAGE", NativeImageBlock);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_DROPDOWN", NativeDropdownBlock);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_CHECKBOX", NativeCheckboxBlock);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_SWITCH", NativeSwitchBlock);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_IFRAME", NativeIframeBlock);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_TABLE", NativeTableBlock);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_TOGGLE", NativeToggleBlock);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_RADIO_GROUP", NativeRadioGroup);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_HTML", NativeHtmlBlock);
+    // NativeblocksManager.getInstance().provideBlock("NATIVE_MARKDOWN", NativeMarkdownBlock);
   },
 };

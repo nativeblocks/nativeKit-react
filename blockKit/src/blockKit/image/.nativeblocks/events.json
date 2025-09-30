@@ -1,1 +1,8 @@
-[{ "event": "onClick" }]
+[
+  {
+    "event": "onClick",
+    "deprecated": false,
+    "deprecatedReason": "",
+    "description": "Action triggered when the Image is tapped."
+  }
+]

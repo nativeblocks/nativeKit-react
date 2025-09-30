@@ -1,11 +1,16 @@
 {
-  "name": "Native image",
-  "description": "This is image",
-  "documentation": "",
-  "imageIcon": "",
-  "keyType": "NATIVE_IMAGE",
-  "kind": "BLOCK",
-  "platformSupport": "REACT",
+  "versionName": "1.0.0",
   "price": 0,
-  "public": true
+  "version": 1,
+  "deprecatedReason": "",
+  "keyType": "nativeblocks/image",
+  "kind": "BLOCK",
+  "organizationId": "",
+  "public": false,
+  "platformSupport": "REACT",
+  "description": "Nativeblocks image block",
+  "deprecated": false,
+  "name": "Native Image",
+  "documentation": "",
+  "imageIcon": ""
 }

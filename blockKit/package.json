@@ -40,7 +40,9 @@
   },
   "dependencies": {
     "@emotion/css": "^11.11.2",
+    "bootstrap": "^5.3.3",
     "html-react-parser": "^5.1.8",
+    "react-bootstrap": "^2.10.2",
     "react-markdown": "^9.0.1",
     "react-syntax-highlighter": "^15.5.0",
     "rehype-raw": "^7.0.0",

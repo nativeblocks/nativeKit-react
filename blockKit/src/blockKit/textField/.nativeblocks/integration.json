@@ -1,11 +1,16 @@
 {
-  "name": "Native text field",
-  "description": "This is text field",
-  "documentation": "",
-  "imageIcon": "",
-  "keyType": "NATIVE_TEXT_FIELD",
   "kind": "BLOCK",
-  "platformSupport": "REACT",
+  "versionName": "1.0.0",
   "price": 0,
-  "public": true
+  "name": "Native Text field",
+  "organizationId": "",
+  "public": true,
+  "version": 1,
+  "imageIcon": "",
+  "deprecated": false,
+  "keyType": "nativeblocks/text_field",
+  "description": "Nativeblocks text field block",
+  "deprecatedReason": "",
+  "platformSupport": "REACT",
+  "documentation": ""
 }

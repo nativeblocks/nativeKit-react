@@ -1,45 +1,45 @@
 [
   {
     "key": "paddingTop",
-    "value": "0.5",
+    "value": "0.0",
     "type": "FLOAT",
     "description": "0 or any number (rem)",
     "valuePicker": "number-input",
     "valuePickerGroup": "Padding",
-    "valuePickerOption": "[]",
+    "valuePickerOptions": "[]",
     "deprecated": false,
     "deprecatedReason": ""
   },
   {
     "key": "paddingStart",
-    "value": "0.5",
+    "value": "0.0",
     "type": "FLOAT",
     "description": "0 or any number (rem)",
     "valuePicker": "number-input",
     "valuePickerGroup": "Padding",
-    "valuePickerOption": "[]",
+    "valuePickerOptions": "[]",
     "deprecated": false,
     "deprecatedReason": ""
   },
   {
     "key": "paddingEnd",
-    "value": "0.5",
+    "value": "0.0",
     "type": "FLOAT",
     "description": "0 or any number (rem)",
     "valuePicker": "number-input",
     "valuePickerGroup": "Padding",
-    "valuePickerOption": "[]",
+    "valuePickerOptions": "[]",
     "deprecated": false,
     "deprecatedReason": ""
   },
   {
     "key": "paddingBottom",
-    "value": "0.5",
+    "value": "0.0",
     "type": "FLOAT",
     "description": "0 or any number (rem)",
     "valuePicker": "number-input",
     "valuePickerGroup": "Padding",
-    "valuePickerOption": "[]",
+    "valuePickerOptions": "[]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -50,7 +50,7 @@
     "description": "box shadow",
     "valuePicker": "dropdown",
     "valuePickerGroup": "Clip",
-    "valuePickerOption": "[{\"id\":\"shadow-none\",\"text\":\"none\"},{\"id\":\"shadow-sm\",\"text\":\"sm\"},{\"id\":\"shadow\",\"text\":\"normal\"},{\"id\":\"shadow-md\",\"text\":\"md\"},{\"id\":\"shadow-lg\",\"text\":\"lg\"},{\"id\":\"shadow-xl\",\"text\":\"xl\"},{\"id\":\"shadow-2xl\",\"text\":\"2xl\"}]",
+    "valuePickerOptions": "[{\"id\":\"shadow-none\",\"text\":\"none\"},{\"id\":\"shadow-sm\",\"text\":\"sm\"},{\"id\":\"shadow\",\"text\":\"normal\"},{\"id\":\"shadow-md\",\"text\":\"md\"},{\"id\":\"shadow-lg\",\"text\":\"lg\"},{\"id\":\"shadow-xl\",\"text\":\"xl\"},{\"id\":\"shadow-2xl\",\"text\":\"2xl\"}]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -61,7 +61,7 @@
     "description": "drop shadow",
     "valuePicker": "dropdown",
     "valuePickerGroup": "Clip",
-    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"text\":\"none\"},{\"id\":\"drop-shadow-sm\",\"text\":\"sm\"},{\"id\":\"drop-shadow\",\"text\":\"normal\"},{\"id\":\"drop-shadow-md\",\"text\":\"md\"},{\"id\":\"drop-shadow-lg\",\"text\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"text\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"text\":\"2xl\"}]",
+    "valuePickerOptions": "[{\"id\":\"drop-shadow-none\",\"text\":\"none\"},{\"id\":\"drop-shadow-sm\",\"text\":\"sm\"},{\"id\":\"drop-shadow\",\"text\":\"normal\"},{\"id\":\"drop-shadow-md\",\"text\":\"md\"},{\"id\":\"drop-shadow-lg\",\"text\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"text\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"text\":\"2xl\"}]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -72,18 +72,18 @@
     "description": "layout direction",
     "valuePicker": "dropdown",
     "valuePickerGroup": "Layout",
-    "valuePickerOption": "[{ \"id\": \"LTR\", \"text\": \"LTR\" }, { \"id\": \"RTL\", \"text\": \"RTL\" }]",
+    "valuePickerOptions": "[{ \"id\": \"LTR\", \"text\": \"LTR\" }, { \"id\": \"RTL\", \"text\": \"RTL\" }]",
     "deprecated": false,
     "deprecatedReason": ""
   },
   {
     "key": "foregroundColor",
-    "value": "#fafafa",
+    "value": "#000000",
     "type": "STRING",
     "description": "hex color",
     "valuePicker": "color-picker",
     "valuePickerGroup": "foregroundColor",
-    "valuePickerOption": "[]",
+    "valuePickerOptions": "[]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -94,7 +94,7 @@
     "description": "a number between 0 to 100",
     "valuePicker": "slider",
     "valuePickerGroup": "foregroundColor",
-    "valuePickerOption": "[]",
+    "valuePickerOptions": "[]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -105,7 +105,7 @@
     "description": "height of the element",
     "valuePicker": "text-input",
     "valuePickerGroup": "Size",
-    "valuePickerOption": "[]",
+    "valuePickerOptions": "[]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -116,7 +116,7 @@
     "description": "width of the element",
     "valuePicker": "text-input",
     "valuePickerGroup": "Size",
-    "valuePickerOption": "[]",
+    "valuePickerOptions": "[]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -127,7 +127,7 @@
     "description": "0 or any number (rem)",
     "valuePicker": "number-input",
     "valuePickerGroup": "Font",
-    "valuePickerOption": "[]",
+    "valuePickerOptions": "[]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -138,7 +138,7 @@
     "description": "font family name",
     "valuePicker": "combobox-input",
     "valuePickerGroup": "Font",
-    "valuePickerOption": "[{\"id\":\"default\",\"text\":\"default\"}]",
+    "valuePickerOptions": "[{\"id\":\"default\",\"text\":\"default\"}]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -149,7 +149,7 @@
     "description": "letter spacing (rem)",
     "valuePicker": "number-input",
     "valuePickerGroup": "Font",
-    "valuePickerOption": "[]",
+    "valuePickerOptions": "[]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -160,7 +160,7 @@
     "description": "text alignment",
     "valuePicker": "dropdown",
     "valuePickerGroup": "Font",
-    "valuePickerOption": "[{\"id\":\"text-start\",\"text\":\"start\"},{\"id\":\"text-end\",\"text\":\"end\"},{\"id\":\"text-center\",\"text\":\"center\"},{\"id\":\"text-justify\",\"text\":\"justify\"}]",
+    "valuePickerOptions": "[{\"id\":\"text-start\",\"text\":\"start\"},{\"id\":\"text-end\",\"text\":\"end\"},{\"id\":\"text-center\",\"text\":\"center\"},{\"id\":\"text-justify\",\"text\":\"justify\"}]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -171,7 +171,7 @@
     "description": "text decoration",
     "valuePicker": "dropdown",
     "valuePickerGroup": "Font",
-    "valuePickerOption": "[{\"id\":\"no-underline\",\"text\":\"none\"},{\"id\":\"underline\",\"text\":\"underline\"},{\"id\":\"line-through\",\"text\":\"lineThrough\"},{\"id\":\"overlinex\",\"text\":\"overline\"}]",
+    "valuePickerOptions": "[{\"id\":\"no-underline\",\"text\":\"none\"},{\"id\":\"underline\",\"text\":\"underline\"},{\"id\":\"line-through\",\"text\":\"lineThrough\"},{\"id\":\"overlinex\",\"text\":\"overline\"}]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -182,7 +182,7 @@
     "description": "font weight",
     "valuePicker": "dropdown",
     "valuePickerGroup": "Font",
-    "valuePickerOption": "[{\"id\":\"font-thin\",\"text\":\"thin\"},{\"id\":\"font-extralight\",\"text\":\"extraLight\"},{\"id\":\"font-light\",\"text\":\"light\"},{\"id\":\"font-normal\",\"text\":\"normal\"},{\"id\":\"font-medium\",\"text\":\"medium\"},{\"id\":\"font-semibold\",\"text\":\"semiBold\"},{\"id\":\"font-bold\",\"text\":\"bold\"},{\"id\":\"font-extrabold\",\"text\":\"extraBold\"},{\"id\":\"font-black\",\"text\":\"black\"}]",
+    "valuePickerOptions": "[{\"id\":\"font-thin\",\"text\":\"thin\"},{\"id\":\"font-extralight\",\"text\":\"extraLight\"},{\"id\":\"font-light\",\"text\":\"light\"},{\"id\":\"font-normal\",\"text\":\"normal\"},{\"id\":\"font-medium\",\"text\":\"medium\"},{\"id\":\"font-semibold\",\"text\":\"semiBold\"},{\"id\":\"font-bold\",\"text\":\"bold\"},{\"id\":\"font-extrabold\",\"text\":\"extraBold\"},{\"id\":\"font-black\",\"text\":\"black\"}]",
     "deprecated": false,
     "deprecatedReason": ""
   },
@@ -193,7 +193,7 @@
     "description": "extra classes",
     "valuePicker": "text-area-input",
     "valuePickerGroup": "Extra",
-    "valuePickerOption": "[]",
+    "valuePickerOptions": "[]",
     "deprecated": false,
     "deprecatedReason": ""
   }

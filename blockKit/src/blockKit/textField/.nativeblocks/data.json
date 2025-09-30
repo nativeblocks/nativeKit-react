@@ -1,5 +1,20 @@
 [
-  { "key": "text", "type": "STRING" },
-  { "key": "enable", "type": "BOOLEAN" },
-  { "key": "placeholder", "type": "STRING" }
+  {
+    "key": "text",
+    "type": "STRING",
+    "deprecated": false,
+    "deprecatedReason": ""
+  },
+  {
+    "key": "enable",
+    "type": "BOOLEAN",
+    "deprecated": false,
+    "deprecatedReason": ""
+  },
+  {
+    "key": "placeholder",
+    "type": "STRING",
+    "deprecated": false,
+    "deprecatedReason": ""
+  }
 ]

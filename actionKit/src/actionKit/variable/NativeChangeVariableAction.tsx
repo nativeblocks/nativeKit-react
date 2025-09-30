@@ -1,12 +1,11 @@
 import { INativeAction, ActionProps, VariableModel, nativeFrameStateService } from "@nativeblocks/nativeblocks-react";
 import { getVariableValue } from "../../utility/VariableUtil";
 
-export default class NativeChangeVariableMagic implements INativeAction {
-  handle(magicProps: ActionProps): void {
+export default class NativeChangeVariableAction implements INativeAction {
+  handle(actionProps: ActionProps): void {
     const latestState = nativeFrameStateService.getState();
 
-    const properties = magicProps.nativeTrigger?.properties;
-
+    const properties = actionProps.nativeTrigger?.properties;
     const variableKey = properties?.get("variableKey")?.value ?? "";
     const variableType = properties?.get("variableType")?.value ?? "";
     const variableValue = properties?.get("variableValue")?.value ?? "STRING";
@@ -16,18 +15,18 @@ export default class NativeChangeVariableMagic implements INativeAction {
       value = getVariableValue(value, variable.key ?? "", variable.value ?? "");
     });
 
-    if (magicProps.onVariableChange) {
+    if (actionProps.onVariableChange) {
       const chagedVariable = {
         key: variableKey,
         value: value,
         type: variableType,
       } as VariableModel;
-      magicProps.onVariableChange(chagedVariable);
+      actionProps.onVariableChange(chagedVariable);
     }
 
-    if (magicProps.nativeTrigger) {
-      if (magicProps.onHandleNextTrigger) {
-        magicProps.onHandleNextTrigger(magicProps.nativeTrigger);
+    if (actionProps.nativeTrigger) {
+      if (actionProps.onHandleNextTrigger) {
+        actionProps.onHandleNextTrigger(actionProps.nativeTrigger);
       }
     }
   }

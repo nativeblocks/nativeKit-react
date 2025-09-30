@@ -3,11 +3,11 @@ import { getVariableValue } from "../../utility/VariableUtil";
 
 type NativeFunction = () => any;
 
-export default class NativeFunctionMagic implements INativeAction {
-  handle(magicProps: ActionProps): void {
+export default class NativeFunctionAction implements INativeAction {
+  handle(actionProps: ActionProps): void {
     const latestState = nativeFrameStateService.getState();
 
-    const properties = magicProps.nativeTrigger?.properties;
+    const properties = actionProps.nativeTrigger?.properties;
 
     const functionCode = properties?.get("functionCode")?.value ?? "";
     const variableKey = properties?.get("variableKey")?.value ?? "";
@@ -22,18 +22,18 @@ export default class NativeFunctionMagic implements INativeAction {
 
     const result: any = nativeFunction();
 
-    if (magicProps.onVariableChange) {
+    if (actionProps.onVariableChange) {
       const chagedVariable = {
         key: variableKey,
         value: result ? JSON.stringify(result) : "",
         type: variableType,
       } as VariableModel;
-      magicProps.onVariableChange(chagedVariable);
+      actionProps.onVariableChange(chagedVariable);
     }
 
-    if (magicProps.nativeTrigger) {
-      if (magicProps.onHandleNextTrigger) {
-        magicProps.onHandleNextTrigger(magicProps.nativeTrigger);
+    if (actionProps.nativeTrigger) {
+      if (actionProps.onHandleNextTrigger) {
+        actionProps.onHandleNextTrigger(actionProps.nativeTrigger);
       }
     }
   }

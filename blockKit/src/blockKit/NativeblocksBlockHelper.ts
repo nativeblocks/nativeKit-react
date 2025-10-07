@@ -16,21 +16,21 @@ import NativeTextFieldBlock from "./textField/NativeTextFieldBlock";
 import NativeToggleBlock from "./toggle/NativeToggleBlock";
 
 export const NativeblocksBlockHelper = {
-  provideBlocks() {
-    NativeblocksManager.getInstance().provideBlock("nativeblocks/container", NativeContainerBlock);
-    NativeblocksManager.getInstance().provideBlock("nativeblocks/text", NativeTextBlock);
-    NativeblocksManager.getInstance().provideBlock("nativeblocks/button", NativeButtonBlock);
-    NativeblocksManager.getInstance().provideBlock("nativeblocks/text_field", NativeTextFieldBlock);
-    NativeblocksManager.getInstance().provideBlock("nativeblocks/image", NativeImageBlock);
-    // NativeblocksManager.getInstance().provideBlock("nativeblocks/list", NativeListBlock);
-    // NativeblocksManager.getInstance().provideBlock("nativeblocks/dropdown", NativeDropdownBlock);
-    // NativeblocksManager.getInstance().provideBlock("nativeblocks/checkbox", NativeCheckboxBlock);
-    // NativeblocksManager.getInstance().provideBlock("nativeblocks/switch", NativeSwitchBlock);
-    // NativeblocksManager.getInstance().provideBlock("nativeblocks/iframe", NativeIframeBlock);
-    // NativeblocksManager.getInstance().provideBlock("nativeblocks/table", NativeTableBlock);
-    // NativeblocksManager.getInstance().provideBlock("nativeblocks/toggle", NativeToggleBlock);
-    // NativeblocksManager.getInstance().provideBlock("nativeblocks/radio_group", NativeRadioGroup);
-    // NativeblocksManager.getInstance().provideBlock("nativeblocks/html", NativeHtmlBlock);
-    // NativeblocksManager.getInstance().provideBlock("nativeblocks/markdown", NativeMarkdownBlock);
+  provideBlocks( manager: NativeblocksManager) {
+    manager.provideBlock("nativeblocks/container", NativeContainerBlock);
+    manager.provideBlock("nativeblocks/text", NativeTextBlock);
+    manager.provideBlock("nativeblocks/button", NativeButtonBlock);
+    manager.provideBlock("nativeblocks/text_field", NativeTextFieldBlock);
+    manager.provideBlock("nativeblocks/image", NativeImageBlock);
+    // manager.provideBlock("nativeblocks/list", NativeListBlock);
+    // manager.provideBlock("nativeblocks/dropdown", NativeDropdownBlock);
+    // manager.provideBlock("nativeblocks/checkbox", NativeCheckboxBlock);
+    // manager.provideBlock("nativeblocks/switch", NativeSwitchBlock);
+    // manager.provideBlock("nativeblocks/iframe", NativeIframeBlock);
+    // manager.provideBlock("nativeblocks/table", NativeTableBlock);
+    // manager.provideBlock("nativeblocks/toggle", NativeToggleBlock);
+    // manager.provideBlock("nativeblocks/radio_group", NativeRadioGroup);
+    // manager.provideBlock("nativeblocks/html", NativeHtmlBlock);
+    // manager.provideBlock("nativeblocks/markdown", NativeMarkdownBlock);
   },
 };

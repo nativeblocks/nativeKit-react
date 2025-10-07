@@ -56,19 +56,20 @@ const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
     return <></>;
   }
 
-  const magics = state.magics?.get(blockKey) ?? [];
+  const actions = state.actions?.get(blockKey) ?? [];
   const variable = state.variables?.get(blockKey);
   let result = {} as any;
-  if (blockProps.block?.jsonPath) {
-    const query = getVariableValue(
-      blockProps.block?.jsonPath,
-      "index",
-      blockProps.index.toString()
-    );
-    result = getJsonPathValue(variable?.value ?? "", query);
-  } else {
-    result = variable?.value ?? "";
-  }
+  // TODO : FIX THIS
+  // if (blockProps.block?.jsonPath) {
+  //   const query = getVariableValue(
+  //     blockProps.block?.jsonPath,
+  //     "index",
+  //     blockProps.index.toString()
+  //   );
+  //   result = getJsonPathValue(variable?.value ?? "", query);
+  // } else {
+  //   result = variable?.value ?? "";
+  // }
 
   const boxShadow = getBoxShadow(blockProps.block);
   const dropShadow = getDropShadow(blockProps.block);
@@ -204,7 +205,7 @@ const NativeTableBlock: FC<BlockProps> = (blockProps: BlockProps) => {
                                   type: "STRING",
                                 });
                               }
-                              handleTableItemCellClick(blockProps, magics);
+                              handleTableItemCellClick(blockProps, actions);
                             }}
                           >
                             {cell.text}

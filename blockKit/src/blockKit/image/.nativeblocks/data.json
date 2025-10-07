@@ -1,4 +1,16 @@
 [
-  { "key": "url", "type": "STRING" },
-  { "key": "alt", "type": "STRING" }
+  {
+    "key": "url",
+    "description": "The URL of the image to display.",
+    "type": "STRING",
+    "deprecatedReason": "",
+    "deprecated": false
+  },
+  {
+    "key": "alt",
+    "description": "A plain text summary of the image for screen readers.",
+    "type": "STRING",
+    "deprecatedReason": "",
+    "deprecated": false
+  }
 ]

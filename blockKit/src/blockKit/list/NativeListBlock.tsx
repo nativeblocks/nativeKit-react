@@ -33,18 +33,19 @@ const NativeListBlock: FC<BlockProps> = (blockProps: BlockProps) => {
 
   const variable = state.variables?.get(blockKey);
   let result = {} as any;
-  if (blockProps.block?.jsonPath) {
-    const query = getVariableValue(
-      blockProps.block?.jsonPath,
-      "index",
-      blockProps.index.toString()
-    );
-    result = getJsonPathValue(variable?.value ?? "", query);
-  } else {
-    result = variable?.value ?? "";
-  }
+  // TODO : FIX THIS
+  // if (blockProps.block?.jsonPath) { 
+  //   const query = getVariableValue(
+  //     blockProps.block?.jsonPath,
+  //     "index",
+  //     blockProps.index.toString()
+  //   );
+  //   result = getJsonPathValue(variable?.value ?? "", query);
+  // } else {
+  //   result = variable?.value ?? "";
+  // }
 
-  const magics = state.magics?.get(blockKey) ?? [];
+  const actions = state.actions?.get(blockKey) ?? [];
 
   const padding = getPadding(blockProps.block);
   const shapeRadius = getBorderRaduis(blockProps.block);
@@ -91,20 +92,22 @@ const NativeListBlock: FC<BlockProps> = (blockProps: BlockProps) => {
 };
 
 function renderSubBlocks(blockProps: BlockProps, index: number) {
-  if (blockProps.onChangeBlocks) {
-    return (
-      <Fragment key={Math.random()}>
-        <>
-          {blockProps.onChangeBlocks(
-            blockProps.block?.subBlocks ?? new Map(),
-            index
-          )}
-        </>
-      </Fragment>
-    );
-  } else {
-    return <></>;
-  }
+  // if (blockProps.onChangeBlocks) {
+  //   return (
+  //     <Fragment key={Math.random()}>
+  //       <>
+  //         {blockProps.onChangeBlocks(
+  //           blockProps.block?.subBlocks ?? new Map(),
+  //           index
+  //         )}
+  //       </>
+  //     </Fragment>
+  //   );
+  // } else {
+  //   return <></>;
+  // }
+
+  return <></>;
 }
 
 export default NativeListBlock;

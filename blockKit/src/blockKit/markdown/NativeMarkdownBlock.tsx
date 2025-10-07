@@ -52,19 +52,20 @@ const NativeMarkdownBlock: FC<BlockProps> = (blockProps: BlockProps) => {
             </>
           );
         },
-        code({ node, inline, className, children, ...props }: any) {
-          const match = /language-(\w+)/.exec(className || "");
+        // TODO : FIX THIS
+        // code({ node, inline, className, children, ...props }: any) {
+        //   const match = /language-(\w+)/.exec(className || "");
 
-          return !inline && match ? (
-            <SyntaxHighlighter PreTag="div" language={match[1]} {...props}>
-              {String(children).replace(/\n$/, "")}
-            </SyntaxHighlighter>
-          ) : (
-            <code className={className} {...props}>
-              {children}
-            </code>
-          );
-        },
+        //   return !inline && match ? (
+        //     <SyntaxHighlighter PreTag="div" language={match[1]} {...props}>
+        //       {String(children).replace(/\n$/, "")}
+        //     </SyntaxHighlighter>
+        //   ) : (
+        //     <code className={className} {...props}>
+        //       {children}
+        //     </code>
+        //   );
+        // },
       }}
     >
       {content}

@@ -1,0 +1,16 @@
+{
+  "public": true,
+  "name": "Native Change Variable",
+  "organizationId": "",
+  "versionName": "1.0.0",
+  "imageIcon": "",
+  "platformSupport": "REACT",
+  "keyType": "nativeblocks/change_variable",
+  "version": 1,
+  "price": 0,
+  "description": "Native Change Variable",
+  "deprecated": false,
+  "kind": "ACTION",
+  "deprecatedReason": "",
+  "documentation": ""
+}

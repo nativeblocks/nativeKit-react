@@ -1,43 +1,47 @@
 [
   {
     "key": "paddingTop",
-    "value": "0.5",
+    "value": "0.0",
     "type": "FLOAT",
     "description": "0 or any number (rem)",
     "valuePicker": "number-input",
-    "valuePickerCategory": "Padding",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
+    "valuePickerGroup": "Padding",
+    "valuePickerOptions": "[]",
+    "deprecated": false,
+    "deprecatedReason": ""
   },
   {
     "key": "paddingStart",
-    "value": "0.5",
+    "value": "0.0",
     "type": "FLOAT",
     "description": "0 or any number (rem)",
     "valuePicker": "number-input",
-    "valuePickerCategory": "Padding",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
+    "valuePickerGroup": "Padding",
+    "valuePickerOptions": "[]",
+    "deprecated": false,
+    "deprecatedReason": ""
   },
   {
     "key": "paddingEnd",
-    "value": "0.5",
+    "value": "0.0",
     "type": "FLOAT",
     "description": "0 or any number (rem)",
     "valuePicker": "number-input",
-    "valuePickerCategory": "Padding",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
+    "valuePickerGroup": "Padding",
+    "valuePickerOptions": "[]",
+    "deprecated": false,
+    "deprecatedReason": ""
   },
   {
     "key": "paddingBottom",
-    "value": "0.5",
+    "value": "0.0",
     "type": "FLOAT",
     "description": "0 or any number (rem)",
     "valuePicker": "number-input",
-    "valuePickerCategory": "Padding",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
+    "valuePickerGroup": "Padding",
+    "valuePickerOptions": "[]",
+    "deprecated": false,
+    "deprecatedReason": ""
   },
   {
     "key": "boxShadow",
@@ -45,9 +49,10 @@
     "type": "STRING",
     "description": "box shadow",
     "valuePicker": "dropdown",
-    "valuePickerCategory": "Clip",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"shadow-none\",\"text\":\"none\"},{\"id\":\"shadow-sm\",\"text\":\"sm\"},{\"id\":\"shadow\",\"text\":\"normal\"},{\"id\":\"shadow-md\",\"text\":\"md\"},{\"id\":\"shadow-lg\",\"text\":\"lg\"},{\"id\":\"shadow-xl\",\"text\":\"xl\"},{\"id\":\"shadow-2xl\",\"text\":\"2xl\"}]"
+    "valuePickerGroup": "Clip",
+    "valuePickerOptions": "[{\"id\":\"shadow-none\",\"text\":\"none\"},{\"id\":\"shadow-sm\",\"text\":\"sm\"},{\"id\":\"shadow\",\"text\":\"normal\"},{\"id\":\"shadow-md\",\"text\":\"md\"},{\"id\":\"shadow-lg\",\"text\":\"lg\"},{\"id\":\"shadow-xl\",\"text\":\"xl\"},{\"id\":\"shadow-2xl\",\"text\":\"2xl\"}]",
+    "deprecated": false,
+    "deprecatedReason": ""
   },
   {
     "key": "dropShadow",
@@ -55,9 +60,10 @@
     "type": "STRING",
     "description": "drop shadow",
     "valuePicker": "dropdown",
-    "valuePickerCategory": "Clip",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"drop-shadow-none\",\"text\":\"none\"},{\"id\":\"drop-shadow-sm\",\"text\":\"sm\"},{\"id\":\"drop-shadow\",\"text\":\"normal\"},{\"id\":\"drop-shadow-md\",\"text\":\"md\"},{\"id\":\"drop-shadow-lg\",\"text\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"text\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"text\":\"2xl\"}]"
+    "valuePickerGroup": "Clip",
+    "valuePickerOptions": "[{\"id\":\"drop-shadow-none\",\"text\":\"none\"},{\"id\":\"drop-shadow-sm\",\"text\":\"sm\"},{\"id\":\"drop-shadow\",\"text\":\"normal\"},{\"id\":\"drop-shadow-md\",\"text\":\"md\"},{\"id\":\"drop-shadow-lg\",\"text\":\"lg\"},{\"id\":\"drop-shadow-xl\",\"text\":\"xl\"},{\"id\":\"drop-shadow-2xl\",\"text\":\"2xl\"}]",
+    "deprecated": false,
+    "deprecatedReason": ""
   },
   {
     "key": "direction",
@@ -65,9 +71,10 @@
     "type": "STRING",
     "description": "layout direction",
     "valuePicker": "dropdown",
-    "valuePickerCategory": "Layout",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[{ \"id\": \"LTR\", \"text\": \"LTR\" }, { \"id\": \"RTL\", \"text\": \"RTL\" }]"
+    "valuePickerGroup": "Layout",
+    "valuePickerOptions": "[{ \"id\": \"LTR\", \"text\": \"LTR\" }, { \"id\": \"RTL\", \"text\": \"RTL\" }]",
+    "deprecated": false,
+    "deprecatedReason": ""
   },
   {
     "key": "objectType",
@@ -75,9 +82,10 @@
     "type": "STRING",
     "description": "object type",
     "valuePicker": "dropdown",
-    "valuePickerCategory": "General",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[{\"id\":\"object-none\",\"text\":\"none\"},{\"id\":\"object-cover\",\"text\":\"cover\"},{\"id\":\"object-fill\",\"text\":\"fill\"},{\"id\":\"object-contain\",\"text\":\"contain\"},{\"id\":\"object-scale-down\",\"text\":\"scaleDown\"}]"
+    "valuePickerGroup": "General",
+    "valuePickerOptions": "[{\"id\":\"object-none\",\"text\":\"none\"},{\"id\":\"object-cover\",\"text\":\"cover\"},{\"id\":\"object-fill\",\"text\":\"fill\"},{\"id\":\"object-contain\",\"text\":\"contain\"},{\"id\":\"object-scale-down\",\"text\":\"scaleDown\"}]",
+    "deprecated": false,
+    "deprecatedReason": ""
   },
   {
     "key": "height",
@@ -85,9 +93,10 @@
     "type": "STRING",
     "description": "height of the element",
     "valuePicker": "text-input",
-    "valuePickerCategory": "Size",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
+    "valuePickerGroup": "Size",
+    "valuePickerOptions": "[]",
+    "deprecated": false,
+    "deprecatedReason": ""
   },
   {
     "key": "width",
@@ -95,9 +104,10 @@
     "type": "STRING",
     "description": "width of the element",
     "valuePicker": "text-input",
-    "valuePickerCategory": "Size",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
+    "valuePickerGroup": "Size",
+    "valuePickerOptions": "[]",
+    "deprecated": false,
+    "deprecatedReason": ""
   },
   {
     "key": "class",
@@ -105,8 +115,9 @@
     "type": "STRING",
     "description": "extra classes",
     "valuePicker": "text-area-input",
-    "valuePickerCategory": "Extra",
-    "valuePickerGroup": "",
-    "valuePickerOption": "[]"
+    "valuePickerGroup": "Extra",
+    "valuePickerOptions": "[]",
+    "deprecated": false,
+    "deprecatedReason": ""
   }
 ]

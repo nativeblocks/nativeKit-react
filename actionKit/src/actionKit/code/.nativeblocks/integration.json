@@ -1,0 +1,16 @@
+{
+  "public": true,
+  "name": "Native Function",
+  "organizationId": "",
+  "versionName": "1.0.0",
+  "imageIcon": "",
+  "platformSupport": "REACT",
+  "keyType": "nativeblocks/function",
+  "version": 1,
+  "price": 0,
+  "description": "Native Function",
+  "deprecated": false,
+  "kind": "ACTION",
+  "deprecatedReason": "",
+  "documentation": ""
+}

@@ -1,0 +1,18 @@
+import { NativeJsonPath } from "@nativeblocks/nativeblocks-react";
+
+export function getVariableValue(variable: string, key?: string | null, value?: string | null): string {
+  return variable.replace(`{${key}}`, value ?? `${value}`);
+}
+
+export function getIndexValue(variable: string, index: number): string {
+  if (!variable) return "";
+  return variable.replace(`{index}`, index.toString());
+}
+
+export function getJsonPathValue(variable: string, query: string) {
+  try {
+    return new NativeJsonPath().query(variable, query) as any;
+  } catch (e) {
+    return {} as any;
+  }
+}

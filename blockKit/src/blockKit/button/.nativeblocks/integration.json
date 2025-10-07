@@ -1,11 +1,16 @@
 {
-  "name": "Native button",
-  "description": "This is button",
-  "documentation": "",
-  "imageIcon": "",
-  "keyType": "NATIVE_BUTTON",
-  "kind": "BLOCK",
   "platformSupport": "REACT",
+  "version": 1,
+  "public": false,
+  "documentation": "",
   "price": 0,
-  "public": true
+  "kind": "BLOCK",
+  "versionName": "1.0.0",
+  "organizationId": "",
+  "description": "Nativeblocks Button block",
+  "name": "Native Button",
+  "keyType": "nativeblocks/button",
+  "imageIcon": "",
+  "deprecated": false,
+  "deprecatedReason": ""
 }

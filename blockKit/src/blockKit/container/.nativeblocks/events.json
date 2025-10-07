@@ -1,1 +1,8 @@
-[{ "event": "onClick" }]
+[
+  {
+    "event": "onClick",
+    "description": "Action triggered when the Container is tapped.",
+    "deprecatedReason": "",
+    "deprecated": false
+  }
+]

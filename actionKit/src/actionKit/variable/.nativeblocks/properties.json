@@ -1,0 +1,35 @@
+[
+  {
+    "type": "STRING",
+    "valuePicker": "text-area-input",
+    "valuePickerOptions": "[]",
+    "deprecated": false,
+    "deprecatedReason": "",
+    "description": "value of the variable",
+    "key": "variableValue",
+    "valuePickerGroup": "General",
+    "value": ""
+  },
+   {
+    "type": "STRING",
+    "valuePicker": "text-area-input",
+    "valuePickerOptions": "[]",
+    "deprecated": false,
+    "deprecatedReason": "",
+    "description": "key of the variable",
+    "key": "variableKey",
+    "valuePickerGroup": "General",
+    "value": ""
+  },
+   {
+    "type": "STRING",
+    "valuePicker": "dropdown",
+    "valuePickerOptions": "[{\"id\":\"STRING\",\"text\":\"STRING\"},{\"id\":\"FLOAT\",\"text\":\"FLOAT\"},{\"id\":\"INT\",\"text\":\"INT\"},{\"id\":\"BOOLEAN\",\"text\":\"BOOLEAN\"},{\"id\":\"LONG\",\"text\":\"LONG\"}]",
+    "deprecated": false,
+    "deprecatedReason": "",
+    "description": "Type of the variable",
+    "key": "variableType",
+    "valuePickerGroup": "General",
+    "value": "STRING"
+  }
+]

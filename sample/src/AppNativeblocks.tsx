@@ -1,23 +1,27 @@
 import { NativeblocksBlockHelper } from "@nativeblocks/block-kit-react";
-import { NativeblocksMagicHelper } from "@nativeblocks/magic-kit-react";
+import { NativeblocksActionHelper } from "@nativeblocks/action-kit-react";
 import {
   INativeLogger,
+  NativeblocksError,
+  NativeblocksFrame,
   NativeblocksLoading,
   NativeblocksManager,
-  NativeblocksProvider,
 } from "@nativeblocks/nativeblocks-react";
 import React, { useState } from "react";
 
 function AppNativeblocks() {
   NativeblocksManager.initialize({
-    endpoint: "http://localhost:8585/graphql",
-    apiKey:
-      "",
-    developmentMode: true,
+    edition: {
+      type: "CLOUD",
+      endpoint: "http://localhost:8585/graphql",
+      apiKey:
+        "",
+      developmentMode: true,
+    },
   });
 
   NativeblocksBlockHelper.provideBlocks();
-  NativeblocksMagicHelper.provideMagics();
+  NativeblocksActionHelper.provideActions();
 
   NativeblocksManager.getInstance().provideEventLogger("AppLogger", new AppLogger());
 
@@ -25,20 +29,7 @@ function AppNativeblocks() {
 
   return (
     <>
-      <NativeblocksProvider
-        onLoading={() => {
-          setIsLoading(true);
-        }}
-        onError={(error: string) => {
-          console.log("ERROR", error);
-
-          setIsLoading(false);
-        }}
-        onSuccess={() => {
-          setIsLoading(false);
-        }}
-      />
-      {isLoading ? <NativeblocksLoading /> : <></>}
+      <NativeblocksFrame frameRoute="/home" Loading={NativeblocksLoading} Error={NativeblocksError} />
     </>
   );
 }

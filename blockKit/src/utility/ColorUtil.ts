@@ -488,24 +488,27 @@ export function getForegroundAsBackgroundColor(
   );
 }
 
-export function getForegroundColor(block: BlockModel | null) {
+export function getForegroundColor(
+  block: BlockModel | null,
+  overrideColor: string | null = null,
+  overrideOpacity: string | null = null) {
   const foregroundColorProperty = getProperty(block, "foregroundColor");
   const foregroundColorOpacityProperty = getProperty(block, "foregroundColorOpacity");
 
   return generateColorStyle(
     {
-      color: foregroundColorProperty.valueMobile,
-      alpha: foregroundColorOpacityProperty.valueMobile,
+      color: overrideColor ? overrideColor : foregroundColorProperty.valueMobile,
+      alpha: overrideOpacity ? overrideOpacity : foregroundColorOpacityProperty.valueMobile,
       type: "foreground",
     },
     {
-      color: foregroundColorProperty.valueTablet,
-      alpha: foregroundColorOpacityProperty.valueTablet,
+      color: overrideColor ? overrideColor : foregroundColorProperty.valueTablet,
+      alpha: overrideOpacity ? overrideOpacity : foregroundColorOpacityProperty.valueTablet,
       type: "foreground",
     },
     {
-      color: foregroundColorProperty.valueDesktop,
-      alpha: foregroundColorOpacityProperty.valueDesktop,
+      color: overrideColor ? overrideColor : foregroundColorProperty.valueDesktop,
+      alpha: overrideOpacity ? overrideOpacity : foregroundColorOpacityProperty.valueDesktop,
       type: "foreground",
     }
   );

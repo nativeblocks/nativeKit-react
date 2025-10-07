@@ -20,7 +20,7 @@ function AppNativeblocks() {
     },
   });
 
-  NativeblocksBlockHelper.provideBlocks(NativeblocksManager.getInstance());
+  NativeblocksBlockHelper.provideBlocks();
   NativeblocksActionHelper.provideActions();
 
   NativeblocksManager.getInstance().provideEventLogger("AppLogger", new AppLogger());

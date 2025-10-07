@@ -22,7 +22,7 @@
     "lint": "echo 'add linter config'"
   },
   "devDependencies": {
-    "@nativeblocks/nativeblocks-react": "file:../nativeblocks-react/sdk",
+    "@nativeblocks/nativeblocks-react": "link:../nativeblocks-react/sdk",
     "rimraf": "^5.0.5"
   }
 }

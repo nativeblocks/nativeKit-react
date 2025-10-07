@@ -33,14 +33,14 @@
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
-    "@nativeblocks/nativeblocks-react": "file:../../nativeblocks-react/sdk",
+    "@nativeblocks/nativeblocks-react": "link:../../nativeblocks-react/sdk",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.5.0"
   },
   "dependencies": {
     "@emotion/css": "^11.11.2",
-    "@nativeblocks/nativeblocks-react": "file:../../nativeblocks-react/sdk",
+    "@nativeblocks/nativeblocks-react": "link:../../nativeblocks-react/sdk",
     "bootstrap": "^5.3.3",
     "html-react-parser": "^5.1.8",
     "react-bootstrap": "^2.10.2",
